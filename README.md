@@ -13,17 +13,43 @@
   <ul>
     <li><b>Relevant Coursework:</b></li>
     <ul>
-      <li><a href="#">Embedded System Modeling</a></li>
-      <li><a href="#">Energy Efficiency</a></li>
-      <li><a href="#">VLSI Design</a></li>
-      <li><a href="#">Internet of Things</a></li>
-      <li><a href="#">Autonomous Systems</a></li>
-      <li><a href="#">DL Hardware Accelerator</a></li>
-      <li><a href="#">ML Signal Processing</a></li>
-      <li><a href="#">Communications and Networking</a></li>
+      <li><a href="#embedded-system-modeling">Embedded System Modeling</a></li>
+      <li><a href="#energy-efficiency">Energy Efficiency</a></li>
+      <li><a href="#vlsi-design">VLSI Design</a></li>
+      <li><a href="#internet-of-things">Internet of Things</a></li>
+      <li><a href="#autonomous-systems">Autonomous Systems</a></li>
+      <li><a href="#dl-hardware-accelerator">DL Hardware Accelerator</a></li>
+      <li><a href="#ml-signal-processing">ML Signal Processing</a></li>
+      <li><a href="#communications-and-networking">Communications and Networking</a></li>
     </ul>
   </ul>
 </details>
+
+<!-- Sections to jump to -->
+<h2 id="embedded-system-modeling">Embedded System Modeling</h2>
+<p>Details about Embedded System Modeling...</p>
+
+<h2 id="energy-efficiency">Energy Efficiency</h2>
+<p>Details about Energy Efficiency...</p>
+
+<h2 id="vlsi-design">VLSI Design</h2>
+<p>Details about VLSI Design...</p>
+
+<h2 id="internet-of-things">Internet of Things</h2>
+<p>Details about Internet of Things...</p>
+
+<h2 id="autonomous-systems">Autonomous Systems</h2>
+<p>Details about Autonomous Systems...</p>
+
+<h2 id="dl-hardware-accelerator">DL Hardware Accelerator</h2>
+<p>Details about DL Hardware Accelerator...</p>
+
+<h2 id="ml-signal-processing">ML Signal Processing</h2>
+<p>Details about ML Signal Processing...</p>
+
+<h2 id="communications-and-networking">Communications and Networking</h2>
+<p>Details about Communications and Networking...</p>
+
 
 
 <details>
