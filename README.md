@@ -66,25 +66,25 @@
 ---
 
 ## Projects
-<h2 id="embedded-system-modeling">1. Embedded System Modeling</h2>
+<h3 id="embedded-system-modeling">1. Embedded System Modeling</h3>
 <p>Details about Embedded System Modeling...</p>
 
-<h2 id="energy-efficiency">2. Energy Efficiency</h2>
+<h3 id="energy-efficiency">2. Energy Efficiency</h3>
 <p>Details about Energy Efficiency...</p>
 
-<h2 id="vlsi-design">3. VLSI Design</h2>
+<h3 id="vlsi-design">3. VLSI Design</h3>
 <p>Details about VLSI Design...</p>
 
-<h2 id="internet-of-things">4. Internet of Things</h2>
+<h3 id="internet-of-things">4. Internet of Things</h3>
 <p>Details about Internet of Things...</p>
 
-<h2 id="autonomous-systems">5. Autonomous Systems</h2>
+<h3 id="autonomous-systems">5. Autonomous Systems</h3>
 <p>Details about Autonomous Systems...</p>
 
-<h2 id="dl-hardware-accelerator">6. DL Hardware Accelerator</h2>
+<h3 id="dl-hardware-accelerator">6. DL Hardware Accelerator</h3>
 <p>Details about DL Hardware Accelerator...</p>
 
-<h2 id="ml-signal-processing">7. ML Signal Processing</h2>
+<h3 id="ml-signal-processing">7. ML Signal Processing</h3>
 <p>Details about ML Signal Processing...</p>
 
 ---
