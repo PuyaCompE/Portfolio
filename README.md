@@ -1,6 +1,6 @@
 # Welcome to My Portfolio 👋
  <summary><b>This is my personal profolio where I share my projects, research, and experience gained through my academic and work journey.</summary>
- <n></n>
+<br>
  
 <img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Your Image Description" width="200" style="border: 2px solid white; border-radius: 8px;"/>
 
