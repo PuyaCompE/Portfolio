@@ -26,8 +26,7 @@
 </details>
 
 <!-- Sections to jump to -->
-<h2 id="embedded-system-modeling">Embedded System Modeling</h2>
-<p>Details about Embedded System Modeling...</p>
+
 
 <h2 id="energy-efficiency">Energy Efficiency</h2>
 <p>Details about Energy Efficiency...</p>
@@ -76,7 +75,8 @@
 ---
 
 ## Projects
-1. **[Project Title]**
+1. **<h2 id="embedded-system-modeling">Embedded System Modeling</h2>
+<p>Details about Embedded System Modeling...</p>**
    - Description: [Briefly describe the project, its purpose, and key technologies used.]
    - Highlights: [List any notable achievements or features, such as performance improvements, user outcomes, or challenges solved.]
    - Repository: [Provide a link to the relevant repository if available.]
