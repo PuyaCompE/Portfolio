@@ -1,44 +1,98 @@
-# Welcome to My Portfolio 👋
- <summary><b>This is my personal profolio where I share my projects, research, and experience gained through my academic and work journey.</summary>
-<br>
- 
-<img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Your Image Description" width="200" style="border: 2px solid white; border-radius: 8px;"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        img {
+            border: 2px solid white;
+            border-radius: 8px;
+            width: 200px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Portfolio 👋</h1>
+    <p>This is my personal portfolio where I share my projects, research, and experience gained through my academic and work journey.</p>
+    
+   <img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Your Image Description" />
+    <hr>
 
----
+   <h2>Background Education</h2>
 
-## Background Education
+   <details>
+      <summary><b>Masters of Science in Computer Engineering</b> - University of California, Irvine (2023-2024)</summary>
+      <ul>
+        <li><b>Relevant Coursework:</b>
+          <ul>
+            <li><a href="#embedded-system-modeling">Embedded System Modeling</a></li>
+            <li><a href="#energy-efficiency">Energy Efficiency</a></li>
+            <li><a href="#vlsi-design">VLSI Design</a></li>
+            <li><a href="#internet-of-things">Internet of Things</a></li>
+            <li><a href="#autonomous-systems">Autonomous Systems</a></li>
+            <li><a href="#dl-hardware-accelerator">DL Hardware Accelerator</a></li>
+            <li><a href="#ml-signal-processing">ML Signal Processing</a></li>
+            <li><a href="#communications-and-networking">Communications and Networking</a></li>
+          </ul>
+        </li>
+      </ul>
+    </details>
 
-<details>
-  <summary><b>Masters of Science in Computer Engineering</b> - University of California, Irvine (2023-2024)</summary>
-  <ul>
-    <li><b>Relevant Coursework:</b></li>
-    <ul>
-      <li><a href="#embedded-system-modeling">Embedded System Modeling</a></li>
-      <li><a href="#energy-efficiency">Energy Efficiency</a></li>
-      <li><a href="#vlsi-design">VLSI Design</a></li>
-      <li><a href="#internet-of-things">Internet of Things</a></li>
-      <li><a href="#autonomous-systems">Autonomous Systems</a></li>
-      <li><a href="#dl-hardware-accelerator">DL Hardware Accelerator</a></li>
-      <li><a href="#ml-signal-processing">ML Signal Processing</a></li>
-      <li><a>Communications and Networking</a></li>
-    </ul>
-  </ul>
-</details>
+   <details>
+     <summary><b>Bachelor of Science in Computer Engineering</b> - California State University, Fresno (2021-2023)</summary>
+      <ul>
+        <li><b>Relevant Coursework:</b>
+          <ul>
+            <li><a href="#fundamentals-of-cryptography">Fundamentals of Cryptography</a></li>
+            <li><a href="#fundamentals-of-machine-learning">Fundamentals of Machine Learning</a></li>
+            <li><a href="#advanced-comp-arch">Advanced Computer Architecture</a></li>
+            <li><a href="#senior-design">Senior Design</a></li>
+            <li><a href="#embedded-systems">Embedded Systems</a></li>
+            <li><a href="#professional-dev">Professional Development</a></li>
+          </ul>
+        </li>
+      </ul>
+    </details>
 
-<details>
-  <summary><b>Bachelor of Science in Computer Engineering</b> - California State University, Fresno (2021-2023)</summary>
-  <ul>
-    <li><b>Relevant Coursework:</b></li>
-    <ul>
-     <li><a href="#Fundamentals-of-Cryptoagraphy">Fundamentals of Cryptoagraphy</a></li>
-     <li><a href="#Fundamentals-of-machine-learning">Fundamentals of Machine Learning</a></li>
-     <li><a href="#advanced-comp-arch">Advanced Computer Architecture</a></li>
-     <li><a href="#senior-design">Senior Design</a></li>
-     <li><a href="#embedded-systems">Embedded Systems</a></li>
-     <li><a href="#professional-dev">Professional Development</a></li>
-    </ul>
-  </ul>
-</details>
+   <h2>Work Experience</h2>
+    <ol>
+        <li>
+            <strong>[Job Title]</strong> - [Company Name, Location, Dates]
+            <ul>
+                <li>[Summarize key responsibilities and achievements, particularly those that demonstrate problem-solving and technical skills.]</li>
+            </ul>
+        </li>
+        <li>
+            <strong>[Previous Job Title]</strong> - [Previous Company Name, Location, Dates]
+            <ul>
+                <li>[Summarize key responsibilities and achievements.]</li>
+            </ul>
+        </li>
+    </ol>
+
+   <h2>Projects</h2>
+    <ol>
+      <li><a href="#embedded-system-modeling">Embedded System Modeling</a> - Details about Embedded System Modeling...</li>
+      <!-- Add more projects as needed -->
+    </ol>
+</body>
+</html>
+
 
 ---
 
