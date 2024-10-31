@@ -28,12 +28,15 @@
 <details>
   <summary><b>Bachelor of Science in Computer Engineering</b> - California State University, Fresno (2021-2023)</summary>
   <ul>
-    <li><a href="#Fundamentals-of-Cryptoagraphy">Fundamentals of Cryptoagraphy</a></li>
-    <li><a href="#Fundamentals-of-machine-learning">Fundamentals of Machine Learning</a></li>
-    <li><a href="#advanced-comp-arch">Advanced Computer Architecture</a></li>
-    <li><a href="#senior-design">Senior Design</a></li>
-    <li><a href="#embedded-systems">Embedded Systems</a></li>
-    <li><a href="#professional-dev">Professional Development</a></li>
+    <li><b>Relevant Coursework:</b></li>
+    <ul>
+     <li><a href="#Fundamentals-of-Cryptoagraphy">Fundamentals of Cryptoagraphy</a></li>
+     <li><a href="#Fundamentals-of-machine-learning">Fundamentals of Machine Learning</a></li>
+     <li><a href="#advanced-comp-arch">Advanced Computer Architecture</a></li>
+     <li><a href="#senior-design">Senior Design</a></li>
+     <li><a href="#embedded-systems">Embedded Systems</a></li>
+     <li><a href="#professional-dev">Professional Development</a></li>
+    </ul>
   </ul>
 </details>
 
