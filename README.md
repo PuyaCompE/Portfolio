@@ -1,6 +1,6 @@
 # Welcome to My GitHub Portfolio 👋
 This is my personal profolio where I share my projects, research, and experience gained through my academic and work journey.
-
+![Profile Image](assets/pfard@uci.edu-48365f5c.jpg)
 
 
 ---
