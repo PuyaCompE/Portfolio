@@ -11,12 +11,16 @@
 <details>
   <summary><b>Masters of Science in Computer Engineering</b> - University of California, Irvine (2023-2024)</summary>
   <ul>
-    <li>Relevant coursework:</li>
+    Relevant coursework:
     <li><a>Embedded System Modeling</a></li>
     <li>Energy Efficiency</a></li>
     <li><a>VLSI Deisign</a></li>
     <li><a>Internet of Things</a></li>
     <li><a>Auonomous Systems</a></li>
+   <li><a>DL Hardware Accelerator</a></li>
+   <li><a>ML Signal Processing</a></li>
+   <li><a>Communications and Networking</a></li>
+
   </ul>
 </details>
 
