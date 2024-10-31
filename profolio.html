@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,6 +21,18 @@
             border: 2px solid white;
             border-radius: 8px;
             width: 200px;
+            vertical-align: middle; /* Aligns the image vertically with text */
+        }
+        .social-links {
+            display: inline-block; /* Allows for inline layout with the image */
+            margin-left: 15px; /* Adds space between the image and links */
+            vertical-align: middle; /* Aligns the icons vertically with the image */
+        }
+        .social-links a {
+            text-decoration: none; /* Removes underline from links */
+            color: #333; /* Link color */
+            margin-right: 10px; /* Space between icons */
+            font-size: 24px; /* Icon size */
         }
         summary {
             cursor: pointer;
@@ -41,12 +54,17 @@
     </style>
 </head>
 <body>
-    <h1>Welcomes to My Portfolio 👋</h1>
+    <h1>Welcome to My Portfolio 👋</h1>
     <p>This is my personal portfolio where I share my projects, research, and experience gained through my academic and work journey.</p>
-    <img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Your Image Description">
 
-    <!-- Add your content here -->
-    
+    <img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Your Image Description">
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yourprofile" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <!-- Add more social media links as needed -->
+    </div>
+
     <hr>
     <h2>Background Education</h2>
     <!-- Add your educational details here -->
