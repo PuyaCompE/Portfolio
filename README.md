@@ -39,8 +39,6 @@ This is my personal portfolio where I share my projects, research, and experienc
   </ul>
 </details>
 
----
-
 ## Work Experience
 1. **[Job Title]** - [Company Name, Location, Dates]
    - Responsibilities:
@@ -49,8 +47,6 @@ This is my personal portfolio where I share my projects, research, and experienc
 2. **[Previous Job Title]** - [Previous Company Name, Location, Dates]
    - Responsibilities:
       - [Summarize key responsibilities and achievements.]
-
----
 
 ## Projects
 ### <a id="embedded-system-modeling"></a>1. Embedded System Modeling
@@ -73,8 +69,6 @@ Details about DL Hardware Accelerator...
 
 ### <a id="ml-signal-processing"></a>7. ML Signal Processing
 Details about ML Signal Processing...
-
----
 
 ## Skills
 - **Programming Languages**: [e.g., Python, C++, MATLAB, etc.]
