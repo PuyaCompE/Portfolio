@@ -28,26 +28,17 @@
 <!-- Sections to jump to -->
 
 
-<h2 id="energy-efficiency">Energy Efficiency</h2>
-<p>Details about Energy Efficiency...</p>
 
-<h2 id="vlsi-design">VLSI Design</h2>
-<p>Details about VLSI Design...</p>
 
-<h2 id="internet-of-things">Internet of Things</h2>
-<p>Details about Internet of Things...</p>
 
-<h2 id="autonomous-systems">Autonomous Systems</h2>
-<p>Details about Autonomous Systems...</p>
 
-<h2 id="dl-hardware-accelerator">DL Hardware Accelerator</h2>
-<p>Details about DL Hardware Accelerator...</p>
 
-<h2 id="ml-signal-processing">ML Signal Processing</h2>
-<p>Details about ML Signal Processing...</p>
 
-<h2 id="communications-and-networking">Communications and Networking</h2>
-<p>Details about Communications and Networking...</p>
+
+
+
+
+
 
 
 
@@ -75,14 +66,26 @@
 ---
 
 ## Projects
-1. **<h2 id="embedded-system-modeling">Embedded System Modeling</h2>
-<p>Details about Embedded System Modeling...</p>**
-   - Description: [Briefly describe the project, its purpose, and key technologies used.]
-   - Highlights: [List any notable achievements or features, such as performance improvements, user outcomes, or challenges solved.]
-   - Repository: [Provide a link to the relevant repository if available.]
+1. <h2 id="embedded-system-modeling">Embedded System Modeling</h2>
+<p>Details about Embedded System Modeling...</p>
 
-2. **[Another Project Title]**
-   - Description: [Briefly describe the project, its purpose, and key technologies used.]
+2. <h2 id="energy-efficiency">Energy Efficiency</h2>
+<p>Details about Energy Efficiency...</p>
+
+3. <h2 id="vlsi-design">VLSI Design</h2>
+<p>Details about VLSI Design...</p>
+
+4. <h2 id="internet-of-things">Internet of Things</h2>
+<p>Details about Internet of Things...</p>
+
+5. <h2 id="autonomous-systems">Autonomous Systems</h2>
+<p>Details about Autonomous Systems...</p>
+
+6. <h2 id="dl-hardware-accelerator">DL Hardware Accelerator</h2>
+<p>Details about DL Hardware Accelerator...</p>
+
+7. <h2 id="ml-signal-processing">ML Signal Processing</h2>
+<p>Details about ML Signal Processing...</p>
 
 ---
 
