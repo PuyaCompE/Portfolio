@@ -11,18 +11,20 @@
 <details>
   <summary><b>Masters of Science in Computer Engineering</b> - University of California, Irvine (2023-2024)</summary>
   <ul>
-   ###Relevant coursework:
-    <li><a>Embedded System Modeling</a></li>
-    <li>Energy Efficiency</a></li>
-    <li><a>VLSI Deisign</a></li>
-    <li><a>Internet of Things</a></li>
-    <li><a>Auonomous Systems</a></li>
-   <li><a>DL Hardware Accelerator</a></li>
-   <li><a>ML Signal Processing</a></li>
-   <li><a>Communications and Networking</a></li>
-
+    <li><b>Relevant Coursework:</b></li>
+    <ul>
+      <li><a href="#">Embedded System Modeling</a></li>
+      <li><a href="#">Energy Efficiency</a></li>
+      <li><a href="#">VLSI Design</a></li>
+      <li><a href="#">Internet of Things</a></li>
+      <li><a href="#">Autonomous Systems</a></li>
+      <li><a href="#">DL Hardware Accelerator</a></li>
+      <li><a href="#">ML Signal Processing</a></li>
+      <li><a href="#">Communications and Networking</a></li>
+    </ul>
   </ul>
 </details>
+
 
 <details>
   <summary><b>Bachelor of Science in Computer Engineering</b> - California State University, Fresno (2021-2023)</summary>
