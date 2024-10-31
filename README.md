@@ -78,3 +78,7 @@ Details about ML Signal Processing...
 ---
 
 Thank you for visiting my portfolio! Feel free to reach out if you’d like to connect or learn more about my work.
+
+.footer { 
+    display: none; 
+}
