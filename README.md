@@ -1,13 +1,28 @@
 # Welcome to My Portfolio 👋
 This is my personal profolio where I share my projects, research, and experience gained through my academic and work journey.
 <img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Your Image Description" width="200" style="border: 2px solid white; border-radius: 8px;"/>
-
 ---
-
 ## Background Education
-- **[Degree Name, Major]** - [University Name, Year]
-  - Relevant coursework: [List any relevant courses or projects completed as part of your degree.]
-- **Additional Certifications**: [Any certifications or professional courses you’ve completed.]
+
+<details>
+  <summary><b>Masters of Science in Computer Engineering</b> - University of California, Irvine (2023-2024)</summary>
+  <ul>
+    <li>Relevant coursework:</li>
+    <li><a href="link-to-course1">Course 1</a></li>
+    <li><a href="link-to-course2">Course 2</a></li>
+    <li><a href="link-to-course3">Course 3</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary><b>Bachelor of Science in Computer Engineering</b> - California State University, Fresno (2021-2023)</summary>
+  <ul>
+    <li>Relevant coursework:</li>
+    <li><a href="link-to-course1">Course 1</a></li>
+    <li><a href="link-to-course2">Course 2</a></li>
+    <li><a href="link-to-course3">Course 3</a></li>
+  </ul>
+</details>
 
 ---
 
