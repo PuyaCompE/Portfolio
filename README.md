@@ -20,7 +20,7 @@
       <li><a href="#autonomous-systems">Autonomous Systems</a></li>
       <li><a href="#dl-hardware-accelerator">DL Hardware Accelerator</a></li>
       <li><a href="#ml-signal-processing">ML Signal Processing</a></li>
-      <li><a href="#communications-and-networking">Communications and Networking</a></li>
+      <li><a>Communications and Networking</a></li>
     </ul>
   </ul>
 </details>
