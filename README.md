@@ -1,6 +1,4 @@
-# Profolio
 # Welcome to My GitHub Portfolio 👋
-
 ## About Me
 [Projects, Research, and Experience gained through my academic and work journey.]
 
