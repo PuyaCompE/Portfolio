@@ -25,14 +25,22 @@
         }
         .social-links {
             display: inline-block; /* Allows for inline layout with the image */
-            margin-left: 15px; /* Adds space between the image and links */
+            margin-left: 15px;    /* Adds space between the image and links */
             vertical-align: middle; /* Aligns the icons vertically with the image */
         }
+        
         .social-links a {
             text-decoration: none; /* Removes underline from links */
-            color: #333; /* Link color */
-            margin-right: 10px; /* Space between icons */
-            font-size: 24px; /* Icon size */
+            color: #333;          /* Link color */
+            margin-right: 10px;  /* Space between icons */
+            font-size: 24px;     /* Icon size */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+        
+        .social-links a:hover {
+            color: #0077b5; /* Change color on hover (adjust as needed) */
+        }
+
         }
         summary {
             cursor: pointer;
@@ -64,23 +72,7 @@
     <a href="https://Instagram.com/py.frd" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     <!-- Add more social media links as needed -->
 </div>
-.social-links {
-    display: flex;           /* Use flexbox to align items in a row */
-    justify-content: center; /* Center the links horizontally */
-    margin-top: 10px;       /* Add some space between the image and the links */
-}
-
-.social-links a {
-    margin: 0 10px;        /* Add space between each link */
-    text-decoration: none;  /* Remove underline from links */
-    color: #000;           /* Change link color as needed */
-}
-
-.social-links a:hover {
-    color: #0077b5;       /* Change color on hover (optional) */
-}
-
-
+    
     <hr style="border: none; border-top: 2px dashed #333; margin: 20px 0;">
     <h2>Background Education</h2>
 <details>
