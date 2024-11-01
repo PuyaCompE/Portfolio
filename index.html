@@ -13,15 +13,23 @@
             display: flex;
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
-            background: linear-gradient(90deg, gray, black); /* Initial gradient background */
-            animation: gradientAnimation 10s ease infinite; /* Animation for gradient */
-            color: white; /* Default text color */
+            background: linear-gradient(90deg, gray, black); /* Gradient background */
+            animation: gradientAnimation 20s ease infinite; /* Animation for gradient changed to 20s */
+            color: white; /* Text color */
             font-family: Arial, sans-serif;
         }
 
         @keyframes gradientAnimation {
             0% { background: gray; }
+            10% { background: gray; }
+            20% { background: darkgray; }
+            30% { background: dimgray; }
+            40% { background: black; }
             50% { background: black; }
+            60% { background: dimgray; }
+            70% { background: darkgray; }
+            80% { background: gray; }
+            90% { background: gray; }
             100% { background: gray; }
         }
 
@@ -30,13 +38,6 @@
             font-weight: bold; /* Bold text */
             text-align: center; /* Center text */
             margin: 0; /* Remove default margin */
-            animation: colorChange 10s ease infinite; /* Animation for font color */
-        }
-
-        @keyframes colorChange {
-            0% { color: lightgray; }
-            50% { color: white; }
-            100% { color: lightgray; }
         }
 
         /* Menu bar styles */
