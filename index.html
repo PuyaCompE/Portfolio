@@ -138,13 +138,23 @@
             opacity: 0; /* Start hidden */
             transform: translateY(20px); /* Start slightly lower */
             transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
-            margin-top: 80vh; /* Start displaying after some space */
+            margin-top: 100vh; /* Increase to delay appearance further */
             text-align: left; /* Align text to the left */
         }
 
         .visible {
             opacity: 1; /* Fully visible */
             transform: translateY(0); /* Move to original position */
+        }
+
+        /* Center the welcome heading */
+        .welcome-heading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height for centering */
+            flex-direction: column; /* Stack elements vertically */
+            text-align: center; /* Center text */
         }
     </style>
 </head>
@@ -160,7 +170,9 @@
     </nav>
     
     <div class="content-wrapper">
-        <h1>Welcome to My Portfolio</h1>
+        <div class="welcome-heading">
+            <h1>Welcome to My Portfolio</h1>
+        </div>
         <!-- Your existing content... -->
     </div> <!-- Closing content-wrapper -->
 
@@ -193,12 +205,12 @@
             const aboutSection = document.querySelector('.about-section');
             if (isElementInViewport(aboutSection)) {
                 aboutSection.classList.add('visible');
+                window.removeEventListener('scroll', handleScroll); // Remove listener once section is visible
             }
         }
 
-        // Initial check and add event listener for scroll
+        // Add scroll event listener
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Check on initial load
     </script>
 </body>
 </html>
