@@ -36,6 +36,7 @@
             color: white; /* Text color */
             font-family: Arial, sans-serif;
             position: relative; /* For positioning pseudo-elements */
+            overflow: hidden; /* Prevent overflow */
         }
 
         @keyframes gradientAnimation {
@@ -55,8 +56,14 @@
             text-align: center; /* Center text */
             margin: 0; /* Remove default margin */
             opacity: 0; /* Start with the text hidden */
-            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation: fadeIn 2s forwards; /* Apply fade-in animation */
             animation-delay: 0.5s; /* Delay before the animation starts */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Fade in to full visibility */
+            }
         }
 
         /* Menu bar styles */
