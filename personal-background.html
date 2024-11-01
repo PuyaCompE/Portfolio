@@ -7,47 +7,17 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>   
-        :root {
-            --secondary-glow: conic-gradient(
-                from 10deg at 50% 50%,
-                #eb7494 0deg,
-                #ae77b2 55deg,
-                #97b5da 120deg,
-                #0099ca 160deg,
-                transparent 360deg
-            );
-
-            --third-glow: conic-gradient(
-                from 90deg at 50% 50%,
-                #ff8b7e 0deg,
-                #e24e6b 160deg,
-                #7ed2da 120deg,
-                #8bdce0 55deg,
-                transparent 360deg
-            );
-        }
-
         body {
-            margin: 0;
-            height: 100vh; /* Full height */
             display: flex;
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
-            color: white; /* Text color */
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the top */
+            min-height: 100vh;
+            margin: 0;
             font-family: Arial, sans-serif;
-            position: relative; /* For positioning pseudo-elements */
-            overflow: hidden; /* Prevent overflow */
-        }
-
-        @keyframes gradientAnimation {
-            0% { background: #000000; } /* Black */
-            50% { background: #101010; } /* Slightly lighter black */
-            100% { background: #000000; } /* Black */
-        }
-
-        body {
-            animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
-            padding-top: 20px; /* Adjust based on menu height */
+            color: #ffffff;
+            padding: 20px;
+            background-color: #000000;
         }
         
         h1 {
