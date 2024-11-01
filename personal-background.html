@@ -6,36 +6,20 @@
     <title>Personal Background</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
-    <style>
+    <style>   
         body {
-            background: linear-gradient(-45deg, #0d3b66, #004d00, #000000); /* Dark green tones converging to black */
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            height: 100vh; /* Full height */
-            margin: 0;
             display: flex;
-            align-items: center; /* Center items vertically */
-            justify-content: center; /* Center horizontally */
-            color: white; /* Text color */
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the top */
+            min-height: 100vh;
+            margin: 0;
             font-family: Arial, sans-serif;
-            position: relative; /* For positioning pseudo-elements */
-            overflow: hidden; /* Prevent overflow */
-            padding-top: 20px; /* Adjust based on menu height */
+            color: #ffffff;
+            padding: 20px;
+            background-color: #000000;
         }
         
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-
         h1 {
             font-size: 40px;
             color: #ffffff;
@@ -54,13 +38,9 @@
         }
 
         .education-section {
-            max-width: 800px; /* Limit the width */
+            max-width: 800px;
             width: 100%;
-            text-align: center; /* Keep text left-aligned */
-            display: flex; /* Enable flexbox */
-            flex-direction: column; /* Arrange children in a column */
-            align-items: flex-start; /* Align items to the start of the flex container */
-            margin: 0 auto; /* Center the section horizontally */
+            text-align: left;
         }
 
         .education-degree {
@@ -148,7 +128,7 @@
 
     <div class="menu">
         <ul>
-            <li><a href="index.html">Home&nbsp;&nbsp;</a></li>
+            <li><a href="index.html">Home        </a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="educational-background.html">Educational Background</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -160,13 +140,13 @@
     <!-- Education Section -->
     <div class="education-section">
         <h3>Education</h3>
-        <p class="education-degree">Master of Science in Computer Engineering&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2023-2024</p>
+        <p class="education-degree">Master of Science in Computer Engineering&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;2023-2024</p>
         <p class="education-school">
             University of California, Irvine<br>
             <a href="assets/Transcript UCI.pdf" target="_blank" style="color: #0077b5; font-weight: normal; text-align: left; display: inline-block;">View Transcript</a>
         </p>
         <br>
-        <p class="education-degree">Bachelors of Science in Computer Engineering&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021-2024</p>
+        <p class="education-degree">Bachelors of Science in Computer Engineering&nbsp;&nbsp;-&nbsp;&nbsp;2021-2024</p>
         <p class="education-school">
             California State University, Fresno<br>
             <a href="assets/Transcript CSUF.pdf" target="_blank" style="color: #0077b5; font-weight: normal; text-align: left; display: inline-block;">View Transcript</a>
