@@ -60,6 +60,16 @@
             animation-delay: 0.5s; /* Delay before the animation starts */
         }
 
+        h2 {
+            font-size: 30px; /* Font size for h2 */
+            font-weight: normal; /* Normal weight for h2 */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+            opacity: 0; /* Start with the text hidden */
+            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation-delay: 3s; /* Delay before the animation starts */
+        }
+
         @keyframes fadeIn {
             to {
                 opacity: 1; /* Fade in to full visibility */
@@ -156,7 +166,7 @@
     
     <div class="content-wrapper">
         <h1>Welcome to My Portfolio</h1>
-        <!-- Your existing content... -->
+        <h2>Feel free to navigate through the website to learn more about me!</h2>
     </div> <!-- Closing content-wrapper -->
 </body>
 </html>
