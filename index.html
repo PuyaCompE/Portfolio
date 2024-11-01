@@ -7,8 +7,31 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Your existing styles here... */
-        
+        body {
+            margin: 0;
+            height: 100vh; /* Full height */
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            background: linear-gradient(90deg, gray, black); /* Gradient background */
+            animation: gradientAnimation 5s ease infinite; /* Animation for gradient */
+            color: white; /* Text color */
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background: gray; }
+            50% { background: black; }
+            100% { background: gray; }
+        }
+
+        h1 {
+            font-size: 50px; /* Font size */
+            font-weight: bold; /* Bold text */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+        }
+
         /* Menu bar styles */
         nav {
             width: 100%;
