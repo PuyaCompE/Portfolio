@@ -15,26 +15,26 @@
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #333;
+            color: #f0f0f0; /* Light color for better contrast */
             text-align: center;
             padding: 20px;
             background: linear-gradient(270deg, 
-                #a8d8ea 0%, 
-                #a0d2e2 10%, 
-                #99c4d9 20%, 
-                #92b6cf 30%, 
-                #8babc6 40%, 
-                #84a1bc 50%, 
-                #7c97b3 60%, 
-                #748da9 70%, 
-                #6c83a0 80%, 
+                #1a1c3d 0%,  /* Dark blue */
+                #1c1e52 10%, 
+                #1e203e 20%, 
+                #22254b 30%, 
+                #25294f 40%, 
+                #273057 50%, 
+                #28345e 60%, 
+                #2a3b70 70%, 
+                #2b4c8e 80%, 
                 #d3d3d3 100%
             );
         }
         
         h1 {
             font-size: 35px;
-            color: #2c3e50;
+            color: #ffffff; /* White for better visibility */
         }
         
         p {
@@ -84,6 +84,32 @@
             background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
         }
+
+        .socials {
+            margin-top: 10px;
+        }
+
+        .socials ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .socials ul li {
+            margin: 0 15px;
+        }
+
+        .socials ul li a {
+            color: #333;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .socials ul li a:hover {
+            color: #0077b5;
+        }
     </style>
 </head>
 <body>
@@ -112,6 +138,13 @@
 
     <footer>
         <p>Thank you for visiting my portfolio! Feel free to reach out.</p>
+        <div class="socials">
+            <ul>
+                <li><a href="https://twitter.com/yourprofile" target="_blank" class="fab fa-twitter"></a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank" class="fab fa-linkedin"></a></li>
+                <li><a href="https://github.com/yourprofile" target="_blank" class="fab fa-github"></a></li>
+            </ul>
+        </div>
     </footer>
 
 </body>
