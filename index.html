@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
         :root {
             --secondary-glow: conic-gradient(
@@ -46,7 +46,7 @@
 
         body {
             animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
-            padding-top: 20px; /* Adjust based on menu height */
+            padding-top: 70px; /* Adjust based on menu height */
         }
 
         h1 {
@@ -131,11 +131,56 @@
             50% { transform: translateX(-250px) scale(1.2); }
             100% { transform: translateX(0); }
         }
+
+        p {
+            font-size: 15px;
+            max-width: 800px; /* Limit paragraph width */
+            margin: 20px auto; /* Center the paragraph */
+            line-height: 1.6; /* Improve readability */
+            text-align: center; /* Center text */
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .socials {
+            margin-top: 10px;
+        }
+
+        .socials ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .socials ul li {
+            margin: 0 15px;
+        }
+
+        .socials ul li a {
+            color: #333;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .socials ul li a:hover {
+            color: #0077b5;
+        }
     </style>
 </head>
 <body>
+
     <nav>
         <ul class="menu-bar">
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="personal-background.html">Personal Background</a></li>
             <li><a href="educational-background.html">Educational Background</a></li>
@@ -143,10 +188,28 @@
             <li><a href="skills.html">Skills</a></li>
         </ul>
     </nav>
-    
-    <div class="content-wrapper">
-        <h1>Welcome to My Portfolio</h1>
-        <!-- Your existing content... -->
-    </div> <!-- Closing content-wrapper -->
+
+    <h1>About Me</h1>
+    <p>
+        A wise man once said, “You never change your life until you step out of your comfort zone; change begins at the end of your comfort zone.” — Roy T. Bennett. I wish I had heeded these words sooner. I am a man of principles, hard work, and commitment, driven by a clear purpose: to become the best version of myself in every aspect of life. I pursue this goal in my fitness, academics, and personal life by first stepping outside my comfort zone.
+        <br><br>
+        My journey has been complicated and lengthy. Since I was 10, I’ve moved frequently with my family, and even now, as I navigate life on my own, that pattern continues. This lifestyle has taught me that when I become attached to something, believing it to be irreplaceable, there is often something else that can take its place. This realization is both important and perilous, as it can’t be sustained indefinitely. Eventually, life will force me to make permanent decisions that could limit my ability to live this way. This doesn’t mean I will never settle for anything in my life until I’m forced to do so; rather, it means I always evaluate my options carefully, considering their lengths and limits. And that is my current life philosophy.
+        <br><br>
+        Outside of academics and philosophy, I’m a fitness enthusiast. This means I carefully cook, scale, and portion my meals, often planning what I’ll eat for the next week or two. Some might call it a bit obsessive, but I genuinely enjoy it. I work out at the gym, focusing on pushing my body to achieve an aesthetic look. In my free time, I also enjoy watching movies, shopping online, and exploring new food spots and coffee shops on the weekends. My favorite cuisines are Persian, Turkish, Japanese, and Italian.
+        <br><br>
+        For those looking to change their lives, try something new, or feeling scared to take that first step: just do it. You only live once, and opportunities don’t wait. Embrace the unknown, step outside your comfort zone, and take that leap. You’ll be surprised at what you can achieve when you start moving forward.
+    </p>
+
+    <footer>
+        <p>Thank you for visiting my portfolio! Feel free to reach out.</p>
+        <div class="socials">
+            <ul>
+                <li><a href="https://twitter.com/yourprofile" target="_blank" class="fab fa-twitter"></a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank" class="fab fa-linkedin"></a></li>
+                <li><a href="https://github.com/yourprofile" target="_blank" class="fab fa-github"></a></li>
+            </ul>
+        </div>
+    </footer>
+
 </body>
 </html>
