@@ -23,23 +23,28 @@
             width: 200px;
             vertical-align: middle; /* Aligns the image vertically with text */
         }
+        .profile-container {
+            text-align: center; /* Center the contents */
+        }
+        
         .social-links {
-            display: inline-block; /* Allows for inline layout with the image */
-            margin-left: 15px;    /* Adds space between the image and links */
-            vertical-align: middle; /* Aligns the icons vertically with the image */
+            display: flex;           /* Use flexbox to align items in a row */
+            justify-content: center; /* Center the links horizontally */
+            margin-top: 10px;       /* Adds space between the image and links */
         }
         
         .social-links a {
-            text-decoration: none; /* Removes underline from links */
-            color: #333;          /* Link color */
-            margin-right: 10px;  /* Space between icons */
-            font-size: 24px;     /* Icon size */
+            text-decoration: none;   /* Removes underline from links */
+            color: #333;             /* Link color */
+            margin-right: 10px;      /* Space between icons */
+            font-size: 24px;        /* Icon size */
             transition: color 0.3s; /* Smooth transition for hover effect */
         }
         
         .social-links a:hover {
-            color: #0077b5; /* Change color on hover (adjust as needed) */
+            color: #0077b5;         /* Change color on hover (adjust as needed) */
         }
+
 
         }
         summary {
@@ -65,11 +70,16 @@
     <h1>Welcome to My Portfolio 👋</h1>
     <p>This is my personal portfolio where I share my projects, research, and experience gained through my academic and work journey.</p>
 
-<img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Your Image Description">
-<div class="social-links">
-    <a href="https://www.linkedin.com/in/puyafard" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/PuyaCompE" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://Instagram.com/py.frd" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<div class="profile-container">
+    <img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Your Image Description">
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/puyafard" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/PuyaCompE" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://Instagram.com/py.frd" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <!-- Add more social media links as needed -->
+    </div>
+</div>
+
     <!-- Add more social media links as needed -->
 </div>
     
