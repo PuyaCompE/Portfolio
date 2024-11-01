@@ -14,13 +14,27 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(to bottom, white, gray);
             font-family: Arial, sans-serif;
             color: #333;
             text-align: center;
             padding: 20px;
+            background: linear-gradient(270deg, #ff758c, #ff7eb3); /* Initial gradient */
+            background-size: 400% 400%; /* For animation effect */
+            animation: gradient-animation 15s ease infinite; /* Animation */
         }
-
+        
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
         h1, h2, h3 {
             color: #2c3e50;
         }
@@ -29,29 +43,29 @@
             border: 2px solid white;
             border-radius: 8px;
             width: 200px;
-            vertical-align: middle; /* Aligns the image vertically with text */
+            vertical-align: middle;
         }
         
         .profile-container {
-            text-align: center; /* Center the contents */
+            text-align: center;
         }
         
         .social-links {
-            display: flex;           /* Use flexbox to align items in a row */
-            justify-content: center; /* Center the links horizontally */
-            margin-top: 10px;       /* Adds space between the image and links */
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
         }
         
         .social-links a {
-            text-decoration: none;   /* Removes underline from links */
-            color: #333;             /* Link color */
-            margin-right: 10px;      /* Space between icons */
-            font-size: 24px;        /* Icon size */
-            transition: color 0.3s; /* Smooth transition for hover effect */
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+            font-size: 24px;
+            transition: color 0.3s;
         }
         
         .social-links a:hover {
-            color: #0077b5;         /* Change color on hover (adjust as needed) */
+            color: #0077b5;
         }
         
         summary {
@@ -69,32 +83,33 @@
         }
         
         hr {
-            margin: 40px 0;
+            margin: 30px 0;
             border: none;
-            border-top: 2px dashed #333; /* Dashed line style */
+            border-top: 2px dashed #333;
         }
         
-        .skills-list {
-            margin-top: 10px;
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
         
-        .content-wrapper {
-            max-width: 800px; /* Limit max width for better appearance */
-            width: 100%;      /* Full width */
-            text-align: center; /* Center text inside the wrapper */
-            padding: 0 20px;  /* Add padding */
-        }
-        
-        /* Adding vertical lines */
         .vertical-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px; /* Width of the vertical line */
-            background-color: #333; /* Color of the vertical line */
-            transform: translateX(-50%); /* Center the line */
+            height: 100%;
+            width: 2px;
+            background-color: transparent;
+            border-left: 2px dashed #333;
+            margin: 0 20px;
         }
+        
+        .content {
+            text-align: left;
+        }
+
 
     </style>
 </head>
