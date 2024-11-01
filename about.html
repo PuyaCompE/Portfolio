@@ -40,9 +40,16 @@
         }
 
         .signature {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center the container */
             width: 100%; /* Full width for proper alignment */
-            text-align: right; /* Align content to the right */
             margin-top: 20px; /* Add some space above the signature */
+        }
+
+        .signature img {
+            max-width: 200px; /* Limit image size */
+            height: auto; /* Maintain aspect ratio */
+            align-self: flex-start; /* Align image to the left within the container */
         }
 
         .menu {
@@ -135,9 +142,9 @@
         <br><br>
         For those looking to change their lives, try something new, or feeling scared to take that first step: just do it. You only live once, and opportunities don’t wait. Embrace the unknown, step outside your comfort zone, and take that leap. You’ll be surprised at what you can achieve when you start moving forward.
     </p>
-    <div class="signature">
-        <img src="assets/signature.jpg" alt="Signature" style="max-width: 200px; width: 100%; height: auto;">
-    </div> 
+   <div class="signature">
+        <img src="signature.jpg" alt="Signature">
+    </div>
     <br><br><br><br>
     <footer>
         <div class="socials">
