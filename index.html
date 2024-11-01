@@ -36,6 +36,8 @@
             color: white; /* Text color */
             font-family: Arial, sans-serif;
             position: relative; /* For positioning pseudo-elements */
+            overflow: auto; /* Allow scrolling */
+            padding-top: 20px; /* Adjust based on menu height */
         }
 
         @keyframes gradientAnimation {
@@ -46,7 +48,6 @@
 
         body {
             animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
-            padding-top: 20px; /* Adjust based on menu height */
         }
 
         h1 {
@@ -131,6 +132,20 @@
             50% { transform: translateX(-250px) scale(1.2); }
             100% { transform: translateX(0); }
         }
+
+        /* Animation styles for About Me section */
+        .about-section {
+            opacity: 0; /* Start hidden */
+            transform: translateY(20px); /* Start slightly lower */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+            margin-top: 80vh; /* Start displaying after some space */
+            text-align: left; /* Align text to the left */
+        }
+
+        .visible {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0); /* Move to original position */
+        }
     </style>
 </head>
 <body>
@@ -148,5 +163,42 @@
         <h1>Welcome to My Portfolio</h1>
         <!-- Your existing content... -->
     </div> <!-- Closing content-wrapper -->
+
+    <!-- About Me Section -->
+    <div class="about-section">
+        <h1>About Me</h1>
+        <p>A wise man once said, “You never change your life until you step out of your comfort zone; change begins at the end of your comfort zone.” — Roy T. Bennett. I wish I had heeded these words sooner. I am a man of principles, hard work, and commitment, driven by a clear purpose: to become the best version of myself in every aspect of life. I pursue this goal in my fitness, academics, and personal life by first stepping outside my comfort zone.</p>
+        
+        <p>My journey has been complicated and lengthy. Since I was 10, I’ve moved frequently with my family, and even now, as I navigate life on my own, that pattern continues. This lifestyle has taught me that when I become attached to something, believing it to be irreplaceable, there is often something else that can take its place. This realization is both important and perilous, as it can’t be sustained indefinitely. Eventually, life will force me to make permanent decisions that could limit my ability to live this way. This doesn’t mean I will never settle for anything in my life until I’m forced to do so; rather, it means I always evaluate my options carefully, considering their lengths and limits. And that is my current life philosophy.</p>
+        
+        <p>Outside of academics and philosophy, I’m a fitness enthusiast. This means I carefully cook, scale, and portion my meals, often planning what I’ll eat for the next week or two. Some might call it a bit obsessive, but I genuinely enjoy it. I work out at the gym, focusing on pushing my body to achieve an aesthetic look. In my free time, I also enjoy watching movies, shopping online, and exploring new food spots and coffee shops on the weekends. My favorite cuisines are Persian, Turkish, Japanese, and Italian.</p>
+        
+        <p>For those looking to change their lives, try something new, or feeling scared to take that first step: just do it. You only live once, and opportunities don’t wait. Embrace the unknown, step outside your comfort zone, and take that leap. You’ll be surprised at what you can achieve when you start moving forward.</p>
+    </div>
+
+    <script>
+        // Function to check if an element is in view
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to handle scroll event
+        function handleScroll() {
+            const aboutSection = document.querySelector('.about-section');
+            if (isElementInViewport(aboutSection)) {
+                aboutSection.classList.add('visible');
+            }
+        }
+
+        // Initial check and add event listener for scroll
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Check on initial load
+    </script>
 </body>
 </html>
