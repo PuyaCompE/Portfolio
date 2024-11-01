@@ -13,9 +13,9 @@
             display: flex;
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
-            background: linear-gradient(90deg, gray, black); /* Gradient background */
-            animation: gradientAnimation 5s ease infinite; /* Animation for gradient */
-            color: white; /* Text color */
+            background: linear-gradient(90deg, gray, black); /* Initial gradient background */
+            animation: gradientAnimation 10s ease infinite; /* Animation for gradient */
+            color: white; /* Default text color */
             font-family: Arial, sans-serif;
         }
 
@@ -30,6 +30,13 @@
             font-weight: bold; /* Bold text */
             text-align: center; /* Center text */
             margin: 0; /* Remove default margin */
+            animation: colorChange 10s ease infinite; /* Animation for font color */
+        }
+
+        @keyframes colorChange {
+            0% { color: lightgray; }
+            50% { color: white; }
+            100% { color: lightgray; }
         }
 
         /* Menu bar styles */
