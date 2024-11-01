@@ -7,24 +7,47 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --secondary-glow: conic-gradient(
+                from 10deg at 50% 50%,
+                #eb7494 0deg,
+                #ae77b2 55deg,
+                #97b5da 120deg,
+                #0099ca 160deg,
+                transparent 360deg
+            );
+
+            --third-glow: conic-gradient(
+                from 90deg at 50% 50%,
+                #ff8b7e 0deg,
+                #e24e6b 160deg,
+                #7ed2da 120deg,
+                #8bdce0 55deg,
+                transparent 360deg
+            );
+        }
+
         body {
             margin: 0;
             height: 100vh; /* Full height */
             display: flex;
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
-            background: linear-gradient(90deg, gray, black); /* Gradient background */
-            animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
             color: white; /* Text color */
             font-family: Arial, sans-serif;
+            position: relative; /* For positioning pseudo-elements */
         }
 
         @keyframes gradientAnimation {
-            0% { background: ; black }  /* Dark Gray */
-            50% { background: #A9A9A9; }
-            100% { background: black }  /* Dark Gray */
+            0% { background: #A9A9A9; } /* Dark Gray */
+            50% { background: #696969; } /* Darker Gray */
+            100% { background: #A9A9A9; } /* Dark Gray */
         }
 
+        body {
+            animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
+            padding-top: 60px; /* Adjust based on menu height */
+        }
 
         h1 {
             font-size: 50px; /* Font size */
@@ -66,8 +89,47 @@
             color: #0077b5;
         }
 
-        body {
-            padding-top: 60px; /* Adjust based on menu height */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        body::before {
+            background: var(--third-glow);
+            border-radius: 50%;
+            width: 50vw;
+            height: 50vw;
+            margin-left: -200px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw);
+            animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+
+        body::after {
+            background: var(--secondary-glow);
+            border-radius: 50%;
+            width: 500px;
+            height: 700px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw - 50vw / 2);
+            animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+
+        @keyframes animateBefore {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(200px) scale(0.8); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes animateAfter {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-250px) scale(1.2); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
