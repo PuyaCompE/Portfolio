@@ -13,16 +13,23 @@
             margin: 20px;
             background-color: #f5f5dc;
             color: #333;
+            display: flex;                /* Use flexbox to center contents */
+            justify-content: center;      /* Center content horizontally */
+            flex-direction: column;       /* Stack elements vertically */
+            align-items: center;          /* Center items vertically */
         }
+        
         h1, h2, h3 {
             color: #2c3e50;
         }
+        
         img {
             border: 2px solid white;
             border-radius: 8px;
             width: 200px;
             vertical-align: middle; /* Aligns the image vertically with text */
         }
+        
         .profile-container {
             text-align: center; /* Center the contents */
         }
@@ -44,26 +51,49 @@
         .social-links a:hover {
             color: #0077b5;         /* Change color on hover (adjust as needed) */
         }
-
-
-        }
+        
         summary {
             cursor: pointer;
             font-weight: bold;
         }
+        
         ul {
             list-style-type: none;
             padding: 0;
         }
+        
         li {
             margin-bottom: 10px;
         }
+        
         hr {
             margin: 20px 0;
+            border: none;
+            border-top: 2px dashed #333; /* Dashed line style */
         }
+        
         .skills-list {
             margin-top: 10px;
         }
+        
+        /* Adding vertical lines */
+        .container {
+            position: relative; /* Position for absolute elements */
+            width: 100%;
+            max-width: 800px;  /* Limit max width for better appearance */
+            padding: 0 20px;   /* Add padding to prevent content touching edges */
+        }
+        
+        .vertical-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px; /* Width of the vertical line */
+            background-color: #333; /* Color of the vertical line */
+            transform: translateX(-50%); /* Center the line */
+        }
+
     </style>
 </head>
 <body>
