@@ -7,137 +7,73 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
-        :root {
-            --secondary-glow: conic-gradient(
-                from 10deg at 50% 50%,
-                #eb7494 0deg,
-                #ae77b2 55deg,
-                #97b5da 120deg,
-                #0099ca 160deg,
-                transparent 360deg
-            );
-
-            --third-glow: conic-gradient(
-                from 90deg at 50% 50%,
-                #ff8b7e 0deg,
-                #e24e6b 160deg,
-                #7ed2da 120deg,
-                #8bdce0 55deg,
-                transparent 360deg
-            );
-        }
-
         body {
-            margin: 0;
-            height: 100vh; /* Full height */
             display: flex;
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
-            color: white; /* Text color */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
             font-family: Arial, sans-serif;
-            position: relative; /* For positioning pseudo-elements */
+            color: #f0f0f0; /* Light color for better contrast */
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(270deg, 
+                #1a1c3d 0%,  /* Dark blue */
+                #1c1e52 10%, 
+                #1e203e 20%, 
+                #22254b 30%, 
+                #25294f 40%, 
+                #273057 50%, 
+                #28345e 60%, 
+                #2a3b70 70%, 
+                #2b4c8e 80%, 
+                #d3d3d3 100%
+            );
         }
-
-        @keyframes gradientAnimation {
-            0% { background: #000000; } /* Black */
-            50% { background: #101010; } /* Slightly lighter black */
-            100% { background: #000000; } /* Black */
-        }
-
-        body {
-            animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
-            padding-top: 70px; /* Adjust based on menu height */
-        }
-
+        
         h1 {
-            font-size: 50px; /* Font size */
-            font-weight: bold; /* Bold text */
-            text-align: center; /* Center text */
-            margin: 0; /* Remove default margin */
+            font-size: 35px;
+            color: #ffffff; /* White for better visibility */
+        }
+        
+        p {
+            font-size: 15px;
+            max-width: 800px; /* Limit paragraph width */
+            margin: 20px auto; /* Center the paragraph */
+            line-height: 1.6; /* Improve readability */
         }
 
-        /* Menu bar styles */
-        nav {
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        .menu {
             position: fixed;
             top: 0;
-            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             z-index: 1000;
         }
 
-        .menu-bar {
+        .menu ul {
+            list-style: none;
+            padding: 10px;
+            margin: 0;
             display: flex;
             justify-content: center;
-            padding: 10px 0;
-            list-style: none;
         }
 
-        .menu-bar li {
+        .menu ul li {
             margin: 0 15px;
         }
 
-        .menu-bar a {
+        .menu ul li a {
             text-decoration: none;
             color: #333;
             font-weight: bold;
             transition: color 0.3s;
         }
 
-        .menu-bar a:hover {
+        .menu ul li a:hover {
             color: #0077b5;
-        }
-
-        body::before,
-        body::after {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            opacity: 0.8;
-        }
-
-        body::before {
-            background: var(--third-glow);
-            border-radius: 50%;
-            width: 50vw;
-            height: 50vw;
-            margin-left: -200px;
-            filter: blur(90px);
-            top: calc(50vh - 50vw / 2);
-            left: calc(50vw);
-            animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
-        }
-
-        body::after {
-            background: var(--secondary-glow);
-            border-radius: 50%;
-            width: 500px;
-            height: 700px;
-            filter: blur(90px);
-            top: calc(50vh - 50vw / 2);
-            left: calc(50vw - 50vw / 2);
-            animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
-        }
-
-        @keyframes animateBefore {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(200px) scale(0.8); }
-            100% { transform: translateY(0); }
-        }
-
-        @keyframes animateAfter {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(-250px) scale(1.2); }
-            100% { transform: translateX(0); }
-        }
-
-        p {
-            font-size: 15px;
-            max-width: 800px; /* Limit paragraph width */
-            margin: 20px auto; /* Center the paragraph */
-            line-height: 1.6; /* Improve readability */
-            text-align: center; /* Center text */
         }
 
         footer {
@@ -145,7 +81,7 @@
             padding: 10px;
             text-align: center;
             font-size: 12px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
         }
 
@@ -178,8 +114,8 @@
 </head>
 <body>
 
-    <nav>
-        <ul class="menu-bar">
+    <div class="menu">
+        <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="personal-background.html">Personal Background</a></li>
@@ -187,8 +123,8 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="skills.html">Skills</a></li>
         </ul>
-    </nav>
-    <br><br>
+    </div>
+
     <h1>About Me</h1>
     <p>
         A wise man once said, “You never change your life until you step out of your comfort zone; change begins at the end of your comfort zone.” — Roy T. Bennett. I wish I had heeded these words sooner. I am a man of principles, hard work, and commitment, driven by a clear purpose: to become the best version of myself in every aspect of life. I pursue this goal in my fitness, academics, and personal life by first stepping outside my comfort zone.
