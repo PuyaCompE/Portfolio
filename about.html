@@ -4,37 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
         body {
-            margin: 0;
-            padding: 20px;
-            background-color: black; /* Black background */
-            color: white; /* Text color */
-            font-family: Arial, sans-serif;
-        }
-
-        .image-container {
             display: flex;
-            justify-content: center; /* Center the image */
-            margin-bottom: 20px; /* Space below the image */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(270deg, 
+                #a8d8ea 0%, 
+                #a0d2e2 10%, 
+                #99c4d9 20%, 
+                #92b6cf 30%, 
+                #8babc6 40%, 
+                #84a1bc 50%, 
+                #7c97b3 60%, 
+                #748da9 70%, 
+                #6c83a0 80%, 
+                #d3d3d3 100%
+            );
         }
-
-        img {
-            width: 300px; /* Set image width to 300 pixels */
-            height: auto; /* Maintain aspect ratio */
+        
+        h1 {
+            font-size: 35px;
+            color: #2c3e50;
         }
-
-        .content-wrapper {
-            max-width: 800px; /* Optional: Max width for content */
-            margin: 0 auto; /* Center the content */
-            text-align: center; /* Center text */
-        }
-
-        /* Additional styling for your paragraph, if needed */
+        
         p {
-            line-height: 1.5; /* Improve readability */
+            font-size: 15px;
+            max-width: 800px; /* Limit paragraph width */
+            margin: 20px auto; /* Center the paragraph */
+            line-height: 1.6; /* Improve readability */
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: #0077b5;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
