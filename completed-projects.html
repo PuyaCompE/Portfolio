@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Completed-Projects</title>
+    <title>Completed Projects</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
@@ -44,6 +44,7 @@
             text-align: left; /* Left align h3 */
             width: 100%; /* Full width for h3 */
             max-width: 800px; /* Constrain width */
+            cursor: pointer; /* Change cursor to pointer */
         }
 
         .education-section {
@@ -186,6 +187,11 @@
         .toggle-button:hover {
             background-color: #005f8a;
         }
+
+        .project-details {
+            display: none; /* Hide details by default */
+            margin-top: 10px; /* Space above project details */
+        }
     </style>
 </head>
 <body>
@@ -202,8 +208,7 @@
     <br><br>
 
     <div class="project">
-        <h3>SmartZoo Controlling & Monitoring System</h3>
-        <button class="toggle-button" onclick="toggleDetails('project1')">Show Details</button>
+        <h3 onclick="toggleDetails('project1')">SmartZoo Controlling & Monitoring System</h3>
         <div id="project1" class="project-details">
             <p class="styled-paragraph">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles, and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.</p>
             <a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
@@ -211,8 +216,7 @@
     </div>
 
     <div class="project">
-        <h3>5-stage Pipelined MIPS Processor</h3>
-        <button class="toggle-button" onclick="toggleDetails('project2')">Show Details</button>
+        <h3 onclick="toggleDetails('project2')">5-stage Pipelined MIPS Processor</h3>
         <div id="project2" class="project-details">
             <p class="styled-paragraph">This project aims to integrate and prototype the datapath and control units of a simple 32-bit MIPS processor featuring five pipeline stages, utilizing the Verilog hardware description language. The processor is designed to execute various instructions, including arithmetic, logic, data movement, and flow control.</p>
             <a href="assets/ECE174-Project-Report (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
@@ -220,8 +224,7 @@
     </div>
 
     <div class="project">
-        <h3>Cryptography Project: BREACH Attack</h3>
-        <button class="toggle-button" onclick="toggleDetails('project3')">Show Details</button>
+        <h3 onclick="toggleDetails('project3')">Cryptography Project: BREACH Attack</h3>
         <div id="project3" class="project-details">
             <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server.</p>
             <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
@@ -231,6 +234,7 @@
     <script>
         function toggleDetails(projectId) {
             const details = document.getElementById(projectId);
+            // Toggle the display of the project details
             if (details.style.display === "none" || details.style.display === "") {
                 details.style.display = "block";
             } else {
@@ -238,6 +242,7 @@
             }
         }
     </script>
+    
     <footer>
         <div class="socials">
             <ul>
