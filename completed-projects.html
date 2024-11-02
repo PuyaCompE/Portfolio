@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Completed-Projects</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
         body {
             display: flex;
@@ -23,18 +23,86 @@
         h1 {
             font-size: 50px;
             color: #ffffff;
-            text-align: left; 
-            width: 100%; 
-            max-width: 800px; 
-            margin: 20px 0; 
+            text-align: left; /* Keep left-aligned */
+            width: 100%; /* Full width */
+            max-width: 800px; /* Max width constraint */
+            margin: 20px 0 20px 0; /* Adjust margins for top and bottom spacing */
         }
 
-        /* Other styles remain unchanged */
+        h2 {
+            font-size: 30px; /* Adjusted size for h2 */
+            color: #ffffff;
+            text-align: left; /* Left align h2 */
+            width: 100%; /* Full width for h2 */
+            max-width: 800px; /* Constrain width */
+            margin: 30px 0 10px 0; /* Margin for spacing */
+        }
 
-        .content {
-            padding-top: 60px;
-            width: 100%;
+        h3 {
+            font-size: 18px; /* Adjusted size for h3 */
+            color: #ffffff;
+            text-align: left; /* Left align h3 */
+            width: 100%; /* Full width for h3 */
+            max-width: 800px; /* Constrain width */
+        }
+
+        .education-section {
             max-width: 800px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .education-degree {
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .education-school {
+            font-weight: normal;
+            color: #ffffff;
+            margin-top: 2px;
+        }
+
+        /* Menu bar styles */
+        .menu {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed; /* Make the menu fixed */
+            top: 0; /* Position at the top */
+            left: 0;
+            z-index: 1000;
+            padding: 10px 0; /* Add padding for spacing */
+        }
+
+        .menu-bar {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+        }
+
+        .menu-bar li {
+            margin: 0 15px;
+        }
+
+        .menu-bar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-bar a:hover {
+            color: #0077b5;
+        }
+
+        /* Main content offset for fixed menu */
+        .content {
+            padding-top: 60px; /* Add padding to offset fixed menu height */
+            width: 100%; /* Ensure full width for content */
+            max-width: 800px; /* Constrain width */
         }
 
         footer {
@@ -44,8 +112,61 @@
             font-size: 12px;
             background-color: rgba(255, 255, 255, 0.1);
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .socials {
+            margin-top: 10px;
+        }
+
+        .socials ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .socials ul li {
+            margin: 0 15px;
+        }
+
+        .socials ul li a {
+            color: #ffffff;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .socials ul li a:hover {
+            color: #0077b5;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
             max-width: 800px;
-            width: 100%;
+            text-align: left;
+        }
+
+        .skills-list li {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        /* Ensure h3 headers are left-aligned */
+        .skills-list + h3, .skills-list h3 {
+            text-align: left;
+            margin-left: 0; /* Ensure no unintended margin shifts */
+        }
+        .styled-paragraph {
+            text-align: justify;
+            max-width: 800px;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px auto;
+            color: #ffffff;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -58,19 +179,19 @@
         </ul>
     </div>
     
-    <div class="content"> <!-- Content wrapper -->
-        <h1>Completed Projects</h1>
-        <!-- Add project details here -->
+<div class="content"> <!-- Added content wrapper to create space below fixed menu -->
+    <h1>Completed Projects</h1>
+    <hw>SmartZoo Controlling & Monitoring system</hw>
+    <p class="styled-paragraph">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.</p>
         
-        <footer>
-            <div class="socials">
-                <ul>
-                    <li><a href="https://www.instagram.com/py.frd/" target="_blank" class="fab fa-instagram"></a></li>
-                    <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
-                    <li><a href="https://puyacompe.github.io/Profolio/" target="_blank" class="fab fa-github"></a></li>
-                </ul>
-            </div>
-        </footer>
-    </div> <!-- End of content div -->
-</body>
-</html>
+    <footer>
+        <div class="socials">
+            <ul>
+                <li><a href="https://www.instagram.com/py.frd/" target="_blank" class="fab fa-instagram"></a></li>
+                <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
+                <li><a href="https://puyacompe.github.io/Profolio/" target="_blank" class="fab fa-github"></a></li>
+            </ul>
+        </div>
+    </footer>
+</div> <!-- End of content div -->
+
