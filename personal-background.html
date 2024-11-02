@@ -6,7 +6,7 @@
     <title>Personal Background</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
-   <style>   
+    <style>   
         body {
             display: flex;
             flex-direction: column;
@@ -47,22 +47,28 @@
             max-width: 800px; /* Constrain width */
         }
         
-        .education-section {
+        .education-section, .work-experience-section {
             max-width: 800px;
             width: 100%;
             text-align: left;
         }
 
-        .education-degree {
+        .education-degree, .work-title {
             font-weight: bold;
             color: #ffffff;
             margin: 0;
+            cursor: pointer; /* Change cursor to pointer for clickable items */
         }
 
         .education-school {
             font-weight: normal;
             color: #ffffff;
             margin-top: 2px;
+        }
+
+        .work-details {
+            display: none; /* Hide details initially */
+            padding-left: 20px; /* Indent details for better visibility */
         }
 
         /* Navbar styles */
@@ -110,7 +116,6 @@
             width: 100%;
         }
 
-
         .socials {
             margin-top: 10px;
         }
@@ -154,6 +159,7 @@
             text-align: left;
             margin-left: 0; /* Ensure no unintended margin shifts */
         }
+
         .project-report-link {
             display: inline-block; /* Keep it like a button */
             margin-top: 10px; /* Space above the link */
@@ -166,6 +172,16 @@
             text-align: left; /* Ensure left alignment */
         }
     </style>
+    <script>
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            if (details.style.display === "none") {
+                details.style.display = "block"; // Show details
+            } else {
+                details.style.display = "none"; // Hide details
+            }
+        }
+    </script>
 </head>
 <body>
     <br><br>
@@ -179,30 +195,56 @@
     </nav>
     <br><br>
     <div>
-    <h2>Statement</h2> 
-    <p style="text-align: justify; max-width: 800px; font-size: 18px;">Throughout my academic journey, I have learned an important lesson that I would like to share: never be convinced that you know everything. I have often found myself proven wrong about information I was certain I understood. This experience has taught me that knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence in their knowledge, but rather that we should remain open to learning more and be willing to adjust our viewpoints on subjects that matter.</p>
-    <br><br>
-    <div class="education-section">
-        <h2>Education</h2>
-        <br>
-        <p class="education-degree">Master of Science in Computer Engineering (2023-2024)</p>
-        <p class="education-school">
-            University of California, Irvine<br>
-            <a href="assets/Transcript UCI.pdf" target="_blank" class="project-report-link">View Transcript</a>
-        </p>
-        <br>
-        <p class="education-degree">Bachelors of Science in Computer Engineering (2021-2024)</p>
-        <p class="education-school">
-            California State University, Fresno<br>
-            <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
-        </p>
-        <br>
-        <p class="education-degree">Bachelors of Science in Computer Engineering (2019-2021)</p>
-        <p class="education-school">
-            Santa Monica College, Santa Monica<br>
-            <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
-        </p>
-    </div>
+        <h2>Statement</h2> 
+        <p style="text-align: justify; max-width: 800px; font-size: 18px;">Throughout my academic journey, I have learned an important lesson that I would like to share: never be convinced that you know everything. I have often found myself proven wrong about information I was certain I understood. This experience has taught me that knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence in their knowledge, but rather that we should remain open to learning more and be willing to adjust our viewpoints on subjects that matter.</p>
+        <br><br>
+        <div class="education-section">
+            <h2>Education</h2>
+            <br>
+            <p class="education-degree">Master of Science in Computer Engineering (2023-2024)</p>
+            <p class="education-school">
+                University of California, Irvine<br>
+                <a href="assets/Transcript UCI.pdf" target="_blank" class="project-report-link">View Transcript</a>
+            </p>
+            <br>
+            <p class="education-degree">Bachelors of Science in Computer Engineering (2021-2024)</p>
+            <p class="education-school">
+                California State University, Fresno<br>
+                <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
+            </p>
+            <br>
+            <p class="education-degree">Bachelors of Science in Computer Engineering (2019-2021)</p>
+            <p class="education-school">
+                Santa Monica College, Santa Monica<br>
+                <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
+            </p>
+        </div>
+        <br><br>
+        <div class="work-experience-section">
+            <h2>Work Experience</h2>
+            <br>
+            <div>
+                <p class="work-title" onclick="toggleDetails('research-assistant-details')">Research Assistant, Associate Prof. Dr. Salma Elmalaki (Mar 2024 - Present)</p>
+                <div id="research-assistant-details" class="work-details">
+                    <p>Research topic: Human-aware automotive testbed using CARLA with VR environment, supervised by Associate Prof. Dr. Salma Elmalaki in the Pervasive Autonomy Lab.</p>
+                    <p>Successfully assembled a fully functional testbed, integrating a steering wheel, pedals, and a track chair synchronized with the CARLA simulator, utilizing a VR headset for immersive display.</p>
+                    <p>Optimized user experience to match real world driving standards for best performance and data harvesting results.</p>
+                    <p>Developed a PyGame script to enable this application to operate seamlessly on the CarlaUE4 platform.</p>
+                </div>
+                <br>
+                <p class="work-title" onclick="toggleDetails('web-intern-details')">Web Design Intern, California State University, Fresno (Jun 2021 - Aug 2021)</p>
+                <div id="web-intern-details" class="work-details">
+                    <p>Redesigned and maintained multiple department websites, focusing on improving user experience and accessibility.</p>
+                    <p>Assisted faculty and students with web-related inquiries, contributing to a collaborative educational environment.</p>
+                </div>
+                <br>
+                <p class="work-title" onclick="toggleDetails('ta-grader-details')">Teaching Assistant & Grader, California State University, Fresno (Sept 2021 - May 2022)</p>
+                <div id="ta-grader-details" class="work-details">
+                    <p>Supported students in various ECE courses, providing guidance and clarification on course materials.</p>
+                    <p>Conducted review sessions and graded assignments, ensuring academic standards and promoting student success.</p>
+                </div>
+            </div>
+        </div>
     <br><br>
     <div>
         <h2>Engineering Skills</h2>
