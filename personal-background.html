@@ -154,7 +154,17 @@
             text-align: left;
             margin-left: 0; /* Ensure no unintended margin shifts */
         }
-
+        .project-report-link {
+            display: inline-block; /* Keep it like a button */
+            margin-top: 10px; /* Space above the link */
+            padding: 8px 15px; /* Padding for a button-like appearance */
+            color: #0077b5; /* Link color */
+            text-decoration: none; /* Remove underline */
+            border: 1px solid #0077b5; /* Optional: add a border */
+            border-radius: 4px; /* Optional: round corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover effects */
+            text-align: left; /* Ensure left alignment */
+        }
     </style>
 </head>
 <body>
@@ -178,17 +188,19 @@
         <p class="education-degree">Master of Science in Computer Engineering (2023-2024)</p>
         <p class="education-school">
             University of California, Irvine<br>
-            <a href="assets/Transcript UCI.pdf" target="_blank" style="color: #0077b5; font-weight: normal; text-align: left; display: inline-block;">View Transcript</a>
+            <a href="assets/Transcript UCI.pdf" target="_blank" class="project-report-link">View Transcript</a>
         </p>
         <p class="education-degree">Bachelors of Science in Computer Engineering (2021-2024)</p>
         <p class="education-school">
             California State University, Fresno<br>
-            <a href="assets/Transcript CSUF.pdf" target="_blank" style="color: #0077b5; font-weight: normal; text-align: left; display: inline-block;">View Transcript</a>
+            <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
         </p>
         <br>
         <p class="education-degree">Bachelors of Science in Computer Engineering (2019-2021)</p>
         <p class="education-school">
             Santa Monica College, Santa Monica
+            <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
+
         </p>
     </div>
     <br><br>
