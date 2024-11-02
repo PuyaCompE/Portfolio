@@ -128,11 +128,18 @@
             color: #0077b5;
         }
         /* Image styles */
+        .image-wrapper {
+            display: flex;
+            justify-content: center; /* Center the image wrapper */
+            max-width: 800px; /* Match the max width of the other content */
+            width: 100%; /* Ensure the wrapper takes full width */
+            margin: 20px auto; /* Center the wrapper in the page */
+        }
+        
         .profile-image {
             width: 200px; /* Set width to 200 pixels */
             height: auto; /* Maintain aspect ratio */
-            margin: 20px 0; /* Space above and below the image */
-            align-self: flex-start; /* Aligns the image to the left */
+            margin: 0; /* Remove margin from the image */
         }
     </style>
 </head>
