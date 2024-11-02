@@ -29,49 +29,61 @@
 
         body {
             margin: 0;
-            height: 100vh;
+            height: 100vh; /* Full height */
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            color: white; /* Text color */
             font-family: Arial, sans-serif;
-            position: relative;
-            overflow: hidden;
+            position: relative; /* For positioning pseudo-elements */
+            overflow: hidden; /* Prevent overflow */
         }
 
         @keyframes gradientAnimation {
-            0% { background: #000000; }
-            50% { background: #101010; }
-            100% { background: #000000; }
+            0% { background: #000000; } /* Black */
+            50% { background: #101010; } /* Slightly lighter black */
+            100% { background: #000000; } /* Black */
         }
 
         body {
-            animation: gradientAnimation 60s ease infinite;
-            padding-top: 20px;
+            animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
+            padding-top: 20px; /* Adjust based on menu height */
         }
 
         h1 {
-            font-size: 50px;
-            font-weight: bold;
-            text-align: center;
-            margin: 0;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-            animation-delay: 0.5s;
+            font-size: 50px; /* Font size */
+            font-weight: bold; /* Bold text */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+            opacity: 0; /* Start with the text hidden */
+            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation-delay: 0.5s; /* Delay before the animation starts */
         }
 
         h2 {
-            font-size: 30px;
-            font-weight: normal;
-            text-align: center;
-            margin: 0;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-            animation-delay: 2.5s;
+            font-size: 30px; /* Font size for h2 */
+            font-weight: normal; /* Normal weight for h2 */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+            opacity: 0; /* Start with the text hidden */
+            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation-delay: 2.5s; /* Delay before the animation starts */
+        }
+
+        h3 {
+            font-size: 18px; /* Font size for h2 */
+            font-weight: normal; /* Normal weight for h2 */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+            opacity: 0; /* Start with the text hidden */
+            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation-delay: 6s; /* Delay before the animation starts */
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1; /* Fade in to full visibility */
+            }
         }
 
         /* Menu bar styles */
@@ -90,7 +102,7 @@
             justify-content: center;
             padding: 10px 0;
             list-style: none;
-            margin: 0;
+            margin: 0; /* Added margin 0 here */
         }
 
         .menu-bar li {
@@ -113,9 +125,9 @@
             display: flex;
             justify-content: center;
             position: relative;
-            top: 10px; /* Adjust to control spacing between nav and emojis */
-            background-color: transparent;
+            top: 50px; /* Position right below main nav */
             font-size: 24px;
+            background-color: transparent;
             z-index: 999;
         }
 
@@ -124,7 +136,7 @@
             animation: bounce 1s ease-in-out infinite;
         }
 
-        /* Keyframes for bouncing effect */
+        /* Bounce animation for emojis */
         @keyframes bounce {
             0%, 100% {
                 transform: translateY(0);
@@ -134,28 +146,76 @@
             }
         }
 
-        /* Responsive styling for smaller screens */
+        /* Media query for smaller screens */
         @media (max-width: 768px) {
             .menu-bar {
+                display: flex;
+                padding: 10px 0;
+                justify-content: center;
+                gap: 20px; /* Space between items */
                 font-size: 3vw;
             }
-
+        
             .menu-bar li {
-                margin: 5px;
+                margin: 0 10px; /* Adds spacing between nav items */
             }
-
+        
+            /* Adjust container padding */
             .content-wrapper {
                 padding: 10px;
                 text-align: center;
             }
-
+        
             h1 {
-                font-size: 10vw;
+                font-size: 10vw; 
             }
             
-            h2 {
-                font-size: 6vw;
+            h2, h3 {
+                font-size: 6vw; /* Adjust font size for small screens */
             }
+        }
+
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        body::before {
+            background: var(--third-glow);
+            border-radius: 50%;
+            width: 50vw;
+            height: 50vw;
+            margin-left: -200px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw);
+            animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+
+        body::after {
+            background: var(--secondary-glow);
+            border-radius: 50%;
+            width: 500px;
+            height: 700px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw - 50vw / 2);
+            animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+
+        @keyframes animateBefore {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(200px) scale(0.8); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes animateAfter {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-250px) scale(1.2); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
@@ -167,17 +227,17 @@
             <li><a href="completed-projects.html">Completed Projects</a></li>
         </ul>
     </nav>
-
-    <!-- Emoji nav pointing up at each menu item -->
+    
+    <!-- Second nav with animated emojis pointing up -->
     <div class="emoji-nav">
-        <span>⬆️</span>
-        <span>⬆️</span>
-        <span>⬆️</span>
+        <span>☝️</span>
+        <span>☝️</span>
+        <span>☝️</span>
     </div>
 
     <div class="content-wrapper">
         <h1>Welcome to My Portfolio</h1>
         <h2> - Puya Fard</h2>
-    </div>
+    </div> <!-- Closing content-wrapper -->
 </body>
 </html>
