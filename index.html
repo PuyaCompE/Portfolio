@@ -217,6 +217,26 @@
             50% { transform: translateX(-250px) scale(1.2); }
             100% { transform: translateX(0); }
         }
+
+        /* Finger animation styles */
+        .finger {
+            position: absolute;
+            top: 35px;
+            font-size: 24px;
+            opacity: 0;
+            animation: fingerAnimation 1s ease-in-out forwards;
+        }
+
+        /* Each finger has a different animation delay */
+        .finger-1 { animation-delay: 0.5s; left: 0; }
+        .finger-2 { animation-delay: 1s; left: 0; }
+        .finger-3 { animation-delay: 1.5s; left: 0; }
+
+        @keyframes fingerAnimation {
+            0% { opacity: 0; transform: translateY(10px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
     </style>
 </head>
 <body>
@@ -230,9 +250,9 @@
     
     <!-- Second nav with animated emojis pointing up -->
     <div class="emoji-nav">
-        <span>☝️</span>
-        <span>☝️</span>
-        <span>☝️</span>
+        <span class="finger finger-1">☝️</span>
+        <span class="finger finger-2">☝️</span>
+        <span class="finger finger-3">>☝️</span>
     </div>
 
     <div class="content-wrapper">
