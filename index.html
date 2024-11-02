@@ -221,10 +221,11 @@
         /* Finger animation styles */
         .finger {
             position: absolute;
-            top: 35px;
+            top: 60px; /* Adjust this value as needed to position below the nav bar */
             font-size: 24px;
             opacity: 0; /* Start as invisible */
             animation: fingerAnimation 1s ease-in-out forwards; /* Ensure animation runs */
+            animation-iteration-count: infinite; /* Keep the animation running */
         }
         
         /* Each finger has a different animation delay and positioning */
@@ -233,11 +234,9 @@
         .finger-3 { animation-delay: 1.5s; left: 70%; }
         
         @keyframes fingerAnimation {
-            0% { opacity: 0; transform: translateY(10px); }
-            50% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(-10px); }
+            0%, 100% { opacity: 1; transform: translateY(0); }
+            50% { opacity: 0.5; transform: translateY(-10px); }
         }
-
     </style>
 </head>
 <body>
