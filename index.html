@@ -51,7 +51,7 @@
         }
 
         h1 {
-            font-size: 8vw; /* Font size */
+            font-size: 50px; /* Font size */
             font-weight: bold; /* Bold text */
             text-align: center; /* Center text */
             margin: 0; /* Remove default margin */
@@ -61,7 +61,7 @@
         }
 
         h2 {
-            font-size: 6vw; /* Font size for h2 */
+            font-size: 30px; /* Font size for h2 */
             font-weight: normal; /* Normal weight for h2 */
             text-align: center; /* Center text */
             margin: 0; /* Remove default margin */
@@ -71,7 +71,7 @@
         }
 
         h3 {
-            font-size: 4vw; /* Font size for h2 */
+            font-size: 18px; /* Font size for h2 */
             font-weight: normal; /* Normal weight for h2 */
             text-align: center; /* Center text */
             margin: 0; /* Remove default margin */
@@ -123,7 +123,7 @@
         /* Media query for smaller screens */
         @media (max-width: 768px) {
             .menu-bar {
-                flex-direction: column; /* Stack items vertically */
+                font-size: 3vw;
             }
     
             .menu-bar li {
@@ -136,8 +136,12 @@
                 text-align: center;
             }
     
-            h1, h2, h3 {
-                font-size: 7vw; /* Adjust font size for small screens */
+            h1 {
+                font-size: 10vw; 
+            }
+            
+            h2, h3 {
+                font-size: 6vw; /* Adjust font size for small screens */
             }
         }
 
