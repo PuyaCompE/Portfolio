@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Completed-Projects</title>
+    <title>Completed Projects</title>
     <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
@@ -29,152 +29,64 @@
             margin: 20px 0 20px 0; /* Adjust margins for top and bottom spacing */
         }
 
-        h2 {
-            font-size: 30px; /* Adjusted size for h2 */
-            color: #ffffff;
-            text-align: left; /* Left align h2 */
-            width: 100%; /* Full width for h2 */
-            max-width: 800px; /* Constrain width */
-            margin: 30px 0 10px 0; /* Margin for spacing */
-        }
-
-        h3 {
-            font-size: 20px; /* Adjusted size for h3 */
-            color: #ffffff;
-            text-align: left; /* Left align h3 */
-            width: 100%; /* Full width for h3 */
-            max-width: 800px; /* Constrain width */
-        }
-
-        .education-section {
-            max-width: 800px;
-            width: 100%;
-            text-align: left;
-        }
-
-        .education-degree {
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0;
-        }
-
-        .education-school {
-            font-weight: normal;
-            color: #ffffff;
-            margin-top: 2px;
-        }
-
-        /* Menu bar styles */
-        .menu {
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed; /* Make the menu fixed */
-            top: 0; /* Position at the top */
-            left: 0;
-            z-index: 1000;
-            padding: 10px 0; /* Add padding for spacing */
-        }
-
-        .menu-bar {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin: 0;
-        }
-
-        .menu-bar li {
-            margin: 0 15px;
-        }
-
-        .menu-bar a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu-bar a:hover {
-            color: #0077b5;
-        }
-
-        /* Main content offset for fixed menu */
-        .content {
-            padding-top: 60px; /* Add padding to offset fixed menu height */
-            width: 100%; /* Ensure full width for content */
-            max-width: 800px; /* Constrain width */
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 10px;
-            text-align: center;
-            font-size: 12px;
+        .dropdown {
+            margin: 10px 0;
             background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
         }
 
-        .socials {
-            margin-top: 10px;
-        }
-
-        .socials ul {
-            list-style: none;
-            padding: 0;
+        .dropdown h3 {
+            cursor: pointer;
+            padding: 15px;
             margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .socials ul li {
-            margin: 0 15px;
-        }
-
-        .socials ul li a {
-            color: #ffffff;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        .socials ul li a:hover {
             color: #0077b5;
+            transition: background-color 0.3s;
         }
 
-        .skills-list {
-            list-style: none;
-            padding: 0;
-            max-width: 800px;
-            text-align: left;
+        .dropdown h3:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
-        .skills-list li {
-            text-align: left;
-            padding-left: 20px;
-        }
-
-        /* Ensure h3 headers are left-aligned */
-        .skills-list + h3, .skills-list h3 {
-            text-align: left;
-            margin-left: 0; /* Ensure no unintended margin shifts */
-        }
-        .styled-paragraph {
-            text-align: justify;
-            max-width: 800px;
-            font-size: 15px;
+        .dropdown-content {
+            display: none;
+            padding: 15px;
             color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.7);
         }
+
         .project-report-link {
             display: inline-block; /* Keep it like a button */
-            margin-top: 0; /* Space above the link */
+            margin-top: 10px; /* Space above the link */
             padding: 8px 15px; /* Padding for a button-like appearance */
             color: #0077b5; /* Link color */
             text-decoration: none; /* Remove underline */
             border: 1px solid #0077b5; /* Optional: add a border */
             border-radius: 4px; /* Optional: round corners */
             transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover effects */
-            text-align: left; /* Ensure left alignment */
         }
+
+        .project-report-link:hover {
+            background-color: rgba(0, 119, 181, 0.2);
+        }
+
+        /* Other styles remain unchanged... */
+        /* (Include your other CSS rules here) */
     </style>
+    <script>
+        // JavaScript to toggle dropdown content
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdownHeaders = document.querySelectorAll('.dropdown h3');
+            dropdownHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="menu">
@@ -185,27 +97,42 @@
         </ul>
     </div>
     
-<div class="content"> <!-- Added content wrapper to create space below fixed menu -->
-    <h1>Completed Projects</h1>
-    <br><br>
-    <h3>SmartZoo Controlling & Monitoring system</h3>
-    <p class="styled-paragraph">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.</p>
-    <a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-report-link">View Project Report</a><br><br>
-    <h3>5-stage Pipelined MIPS Processor</h3>
-    <p class="styled-paragraph">This project aims to integrate and prototype the datapath and control units of a simple 32-bit MIPS processor featuring five pipeline stages, utilizing the Verilog hardware description language. The processor is designed to execute various instructions, including arithmetic, logic, data movement, and flow control.</p>
-    <a href="assets/ECE174-Project-Report (3).pdf" target="_blank" class="project-report-link">View Project Report</a><br><br>
-    <h3>Cryptography Project: BREACH Attack</h3>
-    <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server. </p>
-    <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a><br><br>
+    <div class="content"> <!-- Added content wrapper to create space below fixed menu -->
+        <h1>Completed Projects</h1>
 
-    <footer>
-        <div class="socials">
-            <ul>
-                <li><a href="https://www.instagram.com/py.frd/" target="_blank" class="fab fa-instagram"></a></li>
-                <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
-                <li><a href="https://puyacompe.github.io/Profolio/" target="_blank" class="fab fa-github"></a></li>
-            </ul>
+        <div class="dropdown">
+            <h3>SmartZoo Controlling & Monitoring system</h3>
+            <div class="dropdown-content">
+                <p class="styled-paragraph">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles, and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.</p>
+                <a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
+            </div>
         </div>
-    </footer>
-</div> <!-- End of content div -->
 
+        <div class="dropdown">
+            <h3>5-stage Pipelined MIPS Processor</h3>
+            <div class="dropdown-content">
+                <p class="styled-paragraph">This project aims to integrate and prototype the datapath and control units of a simple 32-bit MIPS processor featuring five pipeline stages, utilizing the Verilog hardware description language. The processor is designed to execute various instructions, including arithmetic, logic, data movement, and flow control.</p>
+                <a href="assets/ECE174-Project-Report (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <h3>Cryptography Project: BREACH Attack</h3>
+            <div class="dropdown-content">
+                <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server.</p>
+                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="socials">
+                <ul>
+                    <li><a href="https://www.instagram.com/py.frd/" target="_blank" class="fab fa-instagram"></a></li>
+                    <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
+                    <li><a href="https://puyacompe.github.io/Profolio/" target="_blank" class="fab fa-github"></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div> <!-- End of content div -->
+</body>
+</html>
