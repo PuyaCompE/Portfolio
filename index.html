@@ -193,22 +193,34 @@
             100% { transform: translateX(0); }
         }
 
-        /* Pointing emoji animation */
-        .pointer {
-            display: inline-block;
-            margin-right: 5px;
-            animation: bounce 1s infinite ease-in-out;
-            font-size: 1.5em;
-            transform-origin: bottom; /* Makes bounce look more natural */
+        /* Emoji navigation */
+        .emoji-nav {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 50px; /* Position under main nav */
         }
         
-        /* Bounce animation */
-        @keyframes bounce {
+        .emoji-bar {
+            display: flex;
+            list-style: none;
+            gap: 45px;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .pointer-up {
+            font-size: 1.5em;
+            animation: bounceUp 1s infinite ease-in-out;
+        }
+        
+        /* Bounce up animation */
+        @keyframes bounceUp {
             0%, 100% {
-                transform: translateY(0); /* Start and end at the same position */
+                transform: translateY(0);
             }
             50% {
-                transform: translateY(-10px); /* Move up slightly */
+                transform: translateY(-10px);
             }
         }
     </style>
@@ -216,11 +228,21 @@
 <body>
         <nav>
             <ul class="menu-bar">
-                <li><span class="pointer">👇</span><a href="about.html">About Me</a></li>
-                <li><span class="pointer">👇</span><a href="personal-background.html">Personal Background</a></li>
-                <li><span class="pointer">👇</span><a href="completed-projects.html">Completed Projects</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="personal-background.html">Personal Background</a></li>
+                <li><a href="completed-projects.html">Completed Projects</a></li>
             </ul>
         </nav>
+        
+        <!-- Secondary nav for pointing emojis -->
+        <nav class="emoji-nav">
+            <ul class="emoji-bar">
+                <li><span class="pointer-up">👆</span></li>
+                <li><span class="pointer-up">👆</span></li>
+                <li><span class="pointer-up">👆</span></li>
+            </ul>
+        </nav>
+
 
     <div class="content-wrapper">
         <h1>Welcome to My Portfolio</h1>
@@ -228,8 +250,8 @@
     </div> <!-- Closing content-wrapper -->
     <script>
         // JavaScript to add staggered animation delay
-        document.querySelectorAll('.pointer').forEach((emoji, index) => {
-            emoji.style.animationDelay = `${index * 0.3}s`;
+        document.querySelectorAll('.pointer-up').forEach((emoji, index) => {
+            emoji.style.animationDelay = `${index * 3}s`;
         });
     </script>
 </body>
