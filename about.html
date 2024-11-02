@@ -128,18 +128,19 @@
             color: #0077b5;
         }
         /* Image styles */
-        .image-wrapper {
-            justify-content: center; /* Center the image wrapper */
-            max-width: 800px; /* Match the max width of the other content */
-            width: 100%; /* Ensure the wrapper takes full width */
-            margin: 20px auto; /* Center the wrapper in the page */
-        }
-        
         .profile-image {
             width: 200px; /* Set width to 200 pixels */
             height: auto; /* Maintain aspect ratio */
             float: left; /* Align image to the left */
-            margin: 0; /* Remove margin from the image */
+            margin-right: 20px; /* Add space between image and text */
+            margin-bottom: 20px; /* Add some space below the image */
+        }
+        
+        /* Ensure no extra margins are set on the first paragraph following the image */
+        p:first-of-type {
+            margin-top: 0; /* Remove margin-top to tighten the layout */
+        }
+
         }
     </style>
 </head>
