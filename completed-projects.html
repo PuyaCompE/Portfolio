@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed-Projects</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the top */
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            padding: 20px;
+            background-color: #000000;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #ffffff;
+            text-align: left;
+            width: 100%;
+            max-width: 800px;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 30px; /* Adjusted size for h2 */
+            color: #ffffff;
+            text-align: left; /* Left align h2 */
+            width: 100%; /* Full width for h2 */
+            max-width: 800px; /* Constrain width */
+            margin: 30px 0 10px 0; /* Margin for spacing */
+        }
+
+        h3 {
+            font-size: 18px; /* Adjusted size for h3 */
+            color: #ffffff;
+            text-align: left; /* Left align h3 */
+            width: 100%; /* Full width for h3 */
+            max-width: 800px; /* Constrain width */
+        }
+
+        .education-section {
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .education-degree {
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .education-school {
+            font-weight: normal;
+            color: #ffffff;
+            margin-top: 2px;
+        }
+
+        /* Menu bar styles */
+        .menu {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed; /* Make the menu fixed */
+            top: 0; /* Position at the top */
+            left: 0;
+            z-index: 1000;
+            padding: 10px 0; /* Add padding for spacing */
+        }
+
+        .menu-bar {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .menu-bar li {
+            margin: 0 15px;
+        }
+
+        .menu-bar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-bar a:hover {
+            color: #0077b5;
+        }
+
+        /* Main content offset for fixed menu */
+        .content {
+            padding-top: 60px; /* Add padding to offset fixed menu height */
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .socials {
+            margin-top: 10px;
+        }
+
+        .socials ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .socials ul li {
+            margin: 0 15px;
+        }
+
+        .socials ul li a {
+            color: #ffffff;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .socials ul li a:hover {
+            color: #0077b5;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .skills-list li {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        /* Ensure h3 headers are left-aligned */
+        .skills-list + h3, .skills-list h3 {
+            text-align: left;
+            margin-left: 0; /* Ensure no unintended margin shifts */
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul class="menu-bar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="personal-background.html">Personal Background</a></li>
+        </ul>
+    </div>
+    
+    <div class="content"> <!-- Added content wrapper to create space below fixed menu -->
+        <h1>Completed Projects</h1>
+        
+        <footer>
+            <div class="socials">
+                <ul>
+                    <li><a href="https://www.instagram.com/py.frd/" target="_blank" class="fab fa-instagram"></a></li>
+                    <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
+                    <li><a href="https://puyacompe.github.io/Profolio/" target="_blank" class="fab fa-github"></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
