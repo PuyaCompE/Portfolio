@@ -218,34 +218,26 @@
             100% { transform: translateX(0); }
         }
 
+        /* Finger animation styles */
         .finger {
             position: absolute;
-            top: 35px; /* Keep this as it is */
-            font-size: 24px; /* Font size */
+            top: 35px;
+            font-size: 24px;
             opacity: 0; /* Start as invisible */
             animation: fingerAnimation 1s ease-in-out forwards; /* Ensure animation runs */
         }
         
-        /* Position fingers differently */
-        .finger-1 { 
-            animation-delay: 0.5s; 
-            left: 30%; /* Adjusted left position */
-        }
-        .finger-2 { 
-            animation-delay: 1s; 
-            left: 50%; /* Adjusted left position */
-        }
-        .finger-3 { 
-            animation-delay: 1.5s; 
-            left: 70%; /* Adjusted left position */
-        }
-
-
+        /* Each finger has a different animation delay and positioning */
+        .finger-1 { animation-delay: 0.5s; left: 30%; }
+        .finger-2 { animation-delay: 1s; left: 50%; }
+        .finger-3 { animation-delay: 1.5s; left: 70%; }
+        
         @keyframes fingerAnimation {
             0% { opacity: 0; transform: translateY(10px); }
             50% { opacity: 1; transform: translateY(0); }
             100% { opacity: 0; transform: translateY(-10px); }
         }
+
     </style>
 </head>
 <body>
