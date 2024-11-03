@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Completed Projects</title>
+    <title>Personal Background</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -36,11 +36,12 @@
         body {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
             color: #333333;
-            text-align: center;
             padding: 20px;
             animation: gradientAnimation 60s ease infinite;
             position: relative;
@@ -91,35 +92,50 @@
             100% { transform: translateX(0); }
         }
 
-        h1, h2, h3, p {
-            color: #333333; /* Use the same font color */
+        .content, .education-section, .work-experience-section {
             max-width: 800px;
             width: 100%;
-            margin: 20px auto;
+            margin: 10px auto;
+            text-align: left;
+        }
+
+        h1, h2, h3, p {
+            color: #333333;
+            width: 100%;
+            margin: 10px 0;
         }
 
         h1 {
             font-size: 50px;
-            text-align: left;
         }
 
         h2 {
             font-size: 30px;
-            text-align: left;
         }
 
         h3 {
             font-size: 18px;
-            text-align: left;
+        }
+
+        .education-degree, .work-title {
+            font-weight: bold;
+            color: #333333;
+            margin: 0;
             cursor: pointer;
-            transition: color 0.3s;
         }
 
-        h3:hover {
-            color: #0077b5;
+        .education-school {
+            font-weight: normal;
+            color: #333333;
+            margin-top: 2px;
         }
 
-        .menu {
+        .work-details {
+            display: none;
+            padding-left: 20px;
+        }
+
+        nav {
             width: 100%;
             background-color: #333333;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -128,7 +144,7 @@
             left: 0;
             z-index: 1000;
         }
-
+        
         .menu-bar {
             display: flex;
             justify-content: center;
@@ -136,36 +152,36 @@
             list-style: none;
             margin: 0;
         }
-
+        
+        .menu-bar ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
         .menu-bar li {
             margin: 15px;
         }
-
+        
         .menu-bar a {
             text-decoration: none;
             color: #ffffff;
             font-weight: bold;
             transition: color 0.3s;
         }
-
+        
         .menu-bar a:hover {
             color: #0077b5;
         }
 
-        .content {
-            padding-top: 60px;
-            width: 100%;
-            max-width: 800px;
-        }
-
         footer {
+            margin-top: auto;
             padding: 10px;
             text-align: center;
             font-size: 12px;
+            color: #333333;
             width: 100%;
-            margin: 0;
-            background-color: #333333;
-            color: #ffffff;
         }
 
         .socials {
@@ -189,21 +205,31 @@
             font-size: 20px;
             transition: color 0.3s;
         }
-
+        
         .socials ul li a:hover {
             color: #0077b5;
         }
 
-        .styled-paragraph {
-            text-align: justify;
+        .skills-list {
+            list-style: none;
+            padding: 0;
             max-width: 800px;
-            font-size: 15px;
-            color: #333333;
+            text-align: left;
+        }
+    
+        .skills-list li {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .skills-list + h3, .skills-list h3 {
+            text-align: left;
+            margin-left: 0;
         }
 
         .project-report-link {
             display: inline-block;
-            margin-top: 0;
+            margin-top: 10px;
             padding: 8px 15px;
             color: #0077b5;
             text-decoration: none;
@@ -212,132 +238,128 @@
             transition: background-color 0.3s, color 0.3s;
             text-align: left;
         }
-
-        .toggle-button {
-            background-color: #0077b5;
-            color: white;
-            border: none;
-            padding: 10px;
+        
+        .work-title {
+            font-weight: bold;
+            color: #333333;
+            margin: 0;
             cursor: pointer;
-            margin-top: 5px;
-            font-size: 16px;
+            transition: color 0.3s;
+        }
+    
+        .work-title:hover {
+            color: #0077b5;
         }
 
-        .toggle-button:hover {
-            background-color: #005f8a;
-        }
-
-        .project-details {
-            display: none;
-            margin-top: 10px;
+        @media (max-width: 768px) {
+            .menu-bar {
+                display: flex;
+                padding: 20px 0;
+                justify-content: center;
+                gap: 25px;
+                font-size: 3vw;
+            }
+            
+            .menu-bar li {
+                margin: 10px;
+            }
+            
+            .content-wrapper {
+                padding: 10px;
+                text-align: center;
+            }
+        
+            h1 {
+                font-size: 7vw; 
+                color: #333333;
+            }
+            
+            h2, h3 {
+                font-size: 4vw;
+                color: #333333;
+            }
         }
     </style>
-</head>
-<body>
-    <div class="menu">
-        <ul class="menu-bar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="personal-background.html">Personal Background</a></li>
-        </ul>
-    </div>
-    
-<div class="content">
-    <h1>Completed Projects</h1>
-    <h2>Click on the projects below to learn more about their details and access the project reports.</h2>
-    <br><br><br>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project1')">SmartZoo Controlling & Monitoring System</h3>
-        <div id="project1" class="project-details">
-            <p class="styled-paragraph">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles, and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.</p>
-            <a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project2')">5-stage Pipelined MIPS Processor</h3>
-        <div id="project2" class="project-details">
-            <p class="styled-paragraph">This project aims to integrate and prototype the datapath and control units of a simple 32-bit MIPS processor featuring five pipeline stages, utilizing the Verilog hardware description language. The processor is designed to execute various instructions, including arithmetic, logic, data movement, and flow control.</p>
-            <a href="assets/ECE174-Project-Report (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project3')">Cryptography Project: BREACH Attack</h3>
-        <div id="project3" class="project-details">
-            <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server.</p>
-            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project4')">DCNN Image Classification Algorithm</h3>
-        <div id="project4" class="project-details">
-            <p class="styled-paragraph">Conducted a comparative study on DCNN, DarkNet-19, ResNet-50, and Efficient B0 architectures, achieving a 94.35% validation accuracy with Efficient B0 on a dataset of over 3500 32x32 grayscale images across 28 classes; custom-designed DCNN achieved 92.35% validation accuracy with the lowest training time, demonstrating efficient model design.</p>
-            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project5')">Autonomous Driving Stack Integration</h3>
-        <div id="project5" class="project-details">
-            <p class="styled-paragraph">Developed a comprehensive autonomous driving stack in ROS2, integrating perception, planning, and control modules, enabling real-time navigation and decision-making in dynamic environments.</p>
-            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project6')">Edge detection System on Chip (SoC) Design</h3>
-        <div id="project6" class="project-details">
-            <p class="styled-paragraph">Designed and developed a high-performance edge detection algorithm module using SystemC for image and Video processing at 24fps.</p>
-            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project7')">Cryptography Project: BREACH Attack</h3>
-        <div id="project7" class="project-details">
-            <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server.</p>
-            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project8')">Research: Nuclear Power in Space</h3>
-        <div id="project8" class="project-details">
-            <p class="styled-paragraph">Abstract- Space missions increasingly rely on nuclear power, notably Radioisotope Thermoelectric Generators (RTGs) and nuclear fission reactors, for energy. This paper reviews their applications, focusing on Nuclear Thermal Propulsion (NTP), analysis, and data acquisition. RTGs, fueled by Plutonium-238, provide reliable energy for space probes and rovers, as seen in the Curiosity (2011) and Mars 2020: Perseverance missions. Nuclear fission reactors, particularly in NTP systems, offer potential for high-energy propulsion, enabling faster exploration. Emphasizing nuclear power's significance, this paper underscores its role in mission success, scientific discovery, and human exploration beyond Earth.</p>
-            <a href="assets/EECS230-report (1).pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project9')">Parallel to Serial Interfacing</h3>
-        <div id="project9" class="project-details">
-            <p class="styled-paragraph">The project focuses on enhancing data transmission efficiency within communication networks by implementing a Parallel to Serial Interface and a Serial to Parallel Interface. It explores the integration of these interfaces in conjunction with the OSI model, which consists of seven layers, each serving a unique purpose in the communication process.</p>
-            <a href="assets/ECE 176 Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
-    <div class="project">
-        <h3 onclick="toggleDetails('project10')">Analysis of Human Behavior in Different Driving Scenarios</h3>
-        <div id="project10" class="project-details">
-            <p class="styled-paragraph">Despite advancements in automotive technology and infrastructure, traffic accidents remain a significant global issue. The graph that you see indicates the the number of deaths due to accidents  between 2018-2022 sourced from NHTSA. This makes it crucial to understand the drivers behaviour to enhance safety. Advanced simulation technology like CARLA gives us an opportunity to study the driving behaviour. The goal of this project is to create and simulate various traffic scenarios using carla simulator and understand the driver behaviour. This is done by gathering vehicle metric data and biometrics such as heart rate and breathing rate.</p>
-            <a href="assets/Final PPT (1).pdf" target="_blank" class="project-report-link">View Project Report</a>
-        </div>
-    </div>
-
     <script>
-        function toggleDetails(projectId) {
-            const details = document.getElementById(projectId);
-            if (details.style.display === "none" || details.style.display === "") {
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            if (details.style.display === "none") {
                 details.style.display = "block";
             } else {
                 details.style.display = "none";
             }
         }
     </script>
-    
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="completed-projects.html">Completed Projects</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Personal Background</h1>
+        <h2>Brief Statement & Resume</h2> 
+        <p>Throughout my academic journey, I have learned an important lesson that I would like to share: never be convinced that you know everything. I have often found myself proven wrong about information I was certain I understood. This experience has taught me that knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence in their knowledge, but rather that we should remain open to learning more and be willing to adjust our viewpoints on subjects that matter.
+        <br><a href="assets/FARD_RESUME.pdf" target="_blank" class="project-report-link">View Resume</a>
+        </p>
+        
+        <div class="education-section">
+            <h2>Education</h2>
+            <p class="education-degree">Master of Science in Computer Engineering (2023-2024)</p>
+            <p class="education-school">
+                University of California, Irvine<br>
+                <a href="assets/Transcript UCI.pdf" target="_blank" class="project-report-link">View Transcript</a>
+            </p>
+            <p class="education-degree">Bachelors of Science in Computer Engineering (2021-2024)</p>
+            <p class="education-school">
+                California State University, Fresno<br>
+                <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
+            </p>
+            <p class="education-degree">Bachelors of Science in Computer Engineering (2019-2021)</p>
+            <p class="education-school">
+                Santa Monica College, Santa Monica<br>
+                <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
+            </p>
+        </div>
+
+        <div class="work-experience-section">
+            <h2>Work Experience</h2>
+            <div>
+                <p class="work-title" onclick="toggleDetails('research-assistant-details')">Research Assistant, Associate Prof. Dr. Salma Elmalaki (Mar 2024 - Present)</p>
+                <div id="research-assistant-details" class="work-details">
+                    <p>Research topic: Human-aware automotive testbed using CARLA with VR environment, supervised by Associate Prof. Dr. Salma Elmalaki in the Pervasive Autonomy Lab.</p>
+                    <p>Successfully assembled a fully functional testbed, integrating a steering wheel, pedals, and a track chair synchronized with the CARLA simulator, utilizing a VR headset for immersive display.</p>
+                    <p>Optimized user experience to match real world driving standards for best performance and data harvesting results.</p>
+                    <p>Developed a PyGame script to enable this application to operate seamlessly on the CarlaUE4 platform.</p>
+                </div>
+                <p class="work-title" onclick="toggleDetails('web-intern-details')">Web Design Intern, California State University, Fresno (Jun 2021 - Aug 2021)</p>
+                <div id="web-intern-details" class="work-details">
+                    <p>Redesigned and maintained multiple department websites, focusing on improving user experience and accessibility.</p>
+                    <p>Assisted faculty and students with web-related inquiries, contributing to a collaborative educational environment.</p>
+                </div>
+                <p class="work-title" onclick="toggleDetails('ta-grader-details')">Teaching Assistant & Grader, California State University, Fresno (Sept 2021 - May 2022)</p>
+                <div id="ta-grader-details" class="work-details">
+                    <p>Supported students in various ECE courses, providing guidance and clarification on course materials.</p>
+                    <p>Conducted review sessions and graded assignments, ensuring academic standards and promoting student success.</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Engineering Skills</h2>
+            <h3>Embedded Computing Skills:</h3>
+            <p>Cadence | Linux | ModelSim | FPGA | Microcontrollers | SoC | Quartus Prime | SystemC | HDL | MultiSim</p>
+            
+            <h3>Software Development Skills:</h3>
+            <p>C Programming | C++ | C# | Python | Assembly | HTML + CSS | HDL</p>
+                
+            <h3>Project Management Skills:</h3>
+            <p>TOPSIS | SWOT | Scheduling | Project Control | Planning</p>
+        </div>
+    </div>
     <footer>
         <div class="socials">
             <ul>
@@ -348,6 +370,5 @@
         </div>
         <p>&copy; 2024 Puya Fard. All Rights Reserved.</p>
     </footer>
-</div> <!-- End of content div -->
 </body>
 </html>
