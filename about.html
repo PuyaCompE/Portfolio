@@ -28,9 +28,9 @@
         }
         
         @keyframes gradientAnimation {
-            0% { background: #f5f5dc; }
-            50% { background: #dcdcdc; }
-            100% { background: #f5f5dc; }
+            0% { background: #f5f5dc; } /* Beige */
+            50% { background: #dcdcdc; } /* Light silver */
+            100% { background: #f5f5dc; } /* Beige */
         }
         
         body {
@@ -44,12 +44,12 @@
             padding: 20px;
             animation: gradientAnimation 60s ease infinite;
             position: relative;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-x: hidden; /* Allow vertical scrolling */
             box-sizing: border-box;
         }
         
         .content {
-            flex: 1;
+            flex: 1; /* Allow content to grow and push footer down */
         }
         
         footer {
@@ -57,7 +57,7 @@
             text-align: center;
             font-size: 12px;
             width: 100%;
-            margin: 0;
+            margin: 0; /* Remove margin to eliminate gap */
         }
         
         h1, h2 {
@@ -101,7 +101,7 @@
         
         nav {
             width: 100%;
-            background-color: #333333;
+            background-color: #333333; /* Match the font color of the rest of the page */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
@@ -112,16 +112,24 @@
         .menu-bar {
             display: flex;
             justify-content: center;
-            padding: 10px;
+            padding: 10px; /* Increased padding for more space */
             list-style: none;
             margin: 0;
         }
 
-        .menu-bar ul {
+        .menu-bar {
             display: flex;
-            padding: 0;
-            margin: 0;
+            justify-content: center;
+            padding: 10px; /* Increased padding for more space */
             list-style: none;
+            margin: 0;
+        }
+        
+        .menu-bar ul {
+            display: flex; /* Ensure the list items are displayed horizontally */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            list-style: none; /* Remove default list styling */
         }
         
         .menu-bar li {
@@ -130,7 +138,7 @@
         
         .menu-bar a {
             text-decoration: none;
-            color: #ffffff;
+            color: #ffffff; /* Change text color to white */
             font-weight: bold;
             transition: color 0.3s;
         }
@@ -156,13 +164,13 @@
         }
         
         .socials ul li a {
-            color: #333333;
+            color: #333333; /* Match the font color of the rest of the page */
             font-size: 20px;
             transition: color 0.3s;
         }
         
         .socials ul li a:hover {
-            color: #0077b5;
+            color: #0077b5; /* Optional: Change color on hover for effect */
         }
         
         .profile-image {
@@ -220,12 +228,13 @@
             100% { transform: translateX(0); }
         }
         
+        /* Media query for smaller screens */
         @media (max-width: 768px) {
             .menu-bar {
                 display: flex;
-                padding: 20px 0;
+                padding: 20px 0; /* Increased padding for mobile */
                 justify-content: center;
-                gap: 25px;
+                gap: 25px; /* Increase space between items */
                 font-size: 3vw;
             }
             
@@ -233,6 +242,7 @@
                 margin: 10px;
             }
             
+            /* Adjust container padding */
             .content-wrapper {
                 padding: 10px;
                 text-align: center;
