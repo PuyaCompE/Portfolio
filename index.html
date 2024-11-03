@@ -29,64 +29,50 @@
 
         body {
             margin: 0;
-            height: 100vh; /* Full height */
+            height: 100vh;
             display: flex;
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
-            color: white; /* Text color */
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-family: Arial, sans-serif;
-            position: relative; /* For positioning pseudo-elements */
-            overflow: hidden; /* Prevent overflow */
+            position: relative;
+            overflow: hidden;
+            animation: gradientAnimation 60s ease infinite;
+            padding-top: 70px; /* Adjust based on menu height */
         }
 
         @keyframes gradientAnimation {
-            0% { background: #000000; } /* Black */
-            50% { background: #101010; } /* Slightly lighter black */
-            100% { background: #000000; } /* Black */
-        }
-
-        body {
-            animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
-            padding-top: 20px; /* Adjust based on menu height */
+            0% { background: #000000; }
+            50% { background: #101010; }
+            100% { background: #000000; }
         }
 
         h1 {
-            font-size: 50px; /* Font size */
-            font-weight: bold; /* Bold text */
-            text-align: center; /* Center text */
-            margin: 0; /* Remove default margin */
-            opacity: 0; /* Start with the text hidden */
-            animation: fadeIn 3s forwards; /* Apply fade-in animation */
-            animation-delay: 0.5s; /* Delay before the animation starts */
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 0.5s;
         }
 
         h2 {
-            font-size: 30px; /* Font size for h2 */
-            font-weight: normal; /* Normal weight for h2 */
-            text-align: center; /* Center text */
-            margin: 0; /* Remove default margin */
-            opacity: 0; /* Start with the text hidden */
-            animation: fadeIn 3s forwards; /* Apply fade-in animation */
-            animation-delay: 2.5s; /* Delay before the animation starts */
-        }
-
-        h3 {
-            font-size: 18px; /* Font size for h2 */
-            font-weight: normal; /* Normal weight for h2 */
-            text-align: center; /* Center text */
-            margin: 0; /* Remove default margin */
-            opacity: 0; /* Start with the text hidden */
-            animation: fadeIn 3s forwards; /* Apply fade-in animation */
-            animation-delay: 6s; /* Delay before the animation starts */
+            font-size: 30px;
+            font-weight: normal;
+            text-align: center;
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 2.5s;
         }
 
         @keyframes fadeIn {
             to {
-                opacity: 1; /* Fade in to full visibility */
+                opacity: 1;
             }
         }
 
-        /* Menu bar styles */
         nav {
             width: 100%;
             background-color: rgba(255, 255, 255, 0.8);
@@ -102,7 +88,7 @@
             justify-content: center;
             padding: 10px 0;
             list-style: none;
-            margin: 0; /* Added margin 0 here */
+            margin: 0;
         }
 
         .menu-bar li {
@@ -120,23 +106,21 @@
             color: #0077b5;
         }
 
-        /* Emoji navigation */
         .emoji-nav {
             display: flex;
             justify-content: center;
             position: relative;
-            top: 30px; /* Position right below main nav */
+            top: 50px; /* Adjust to position below nav */
             font-size: 24px;
             background-color: transparent;
             z-index: 999;
         }
 
         .emoji-nav span {
-            margin: 0;
+            margin: 0 10px;
             animation: bounce 1s ease-in-out infinite;
         }
 
-        /* Bounce animation for emojis */
         @keyframes bounce {
             0%, 100% {
                 transform: translateY(0);
@@ -146,21 +130,19 @@
             }
         }
 
-        /* Media query for smaller screens */
         @media (max-width: 768px) {
             .menu-bar {
                 display: flex;
                 padding: 10px 0;
                 justify-content: center;
-                gap: 20px; /* Space between items */
+                gap: 20px;
                 font-size: 3vw;
             }
         
             .menu-bar li {
-                margin: 0 10px; /* Adds spacing between nav items */
+                margin: 0 10px;
             }
         
-            /* Adjust container padding */
             .content-wrapper {
                 padding: 10px;
                 text-align: center;
@@ -170,8 +152,8 @@
                 font-size: 10vw; 
             }
             
-            h2, h3 {
-                font-size: 6vw; /* Adjust font size for small screens */
+            h2 {
+                font-size: 6vw;
             }
         }
 
@@ -218,24 +200,21 @@
             100% { transform: translateX(0); }
         }
 
-        /* Finger animation styles */
         .finger {
             position: absolute;
-            top: 60px; /* Adjust this value as needed to position below the nav bar */
+            top: 60px; /* Position below nav */
             font-size: 24px;
-            opacity: 0; /* Start as invisible */
-            animation: fingerAnimation 1s ease-in-out forwards; /* Ensure animation runs */
-            animation-iteration-count: infinite; /* Keep the animation running */
+            opacity: 1; /* Visible throughout animation */
+            animation: fingerAnimation 1s ease-in-out infinite;
         }
         
-        /* Each finger has a different animation delay and positioning */
         .finger-1 { animation-delay: 0.5s; left: 30%; }
         .finger-2 { animation-delay: 1s; left: 50%; }
         .finger-3 { animation-delay: 1.5s; left: 70%; }
         
         @keyframes fingerAnimation {
-            0%, 100% { opacity: 1; transform: translateY(0); }
-            50% { opacity: 0.5; transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -248,16 +227,15 @@
         </ul>
     </nav>
     
-    <!-- Second nav with animated emojis pointing up -->
     <div class="emoji-nav">
         <span class="finger finger-1">☝️</span>
         <span class="finger finger-2">☝️</span>
-        <span class="finger finger-3">☝️</span>
+        <span class="finger finger-3">☝️</span> <!-- Removed extra character -->
     </div>
 
     <div class="content-wrapper">
         <h1>Welcome to My Portfolio</h1>
         <h2> - Puya Fard</h2>
-    </div> <!-- Closing content-wrapper -->
+    </div>
 </body>
 </html>
