@@ -16,7 +16,7 @@
                 #0099ca 160deg,
                 transparent 360deg
             );
-
+        
             --third-glow: conic-gradient(
                 from 90deg at 50% 50%,
                 #ff8b7e 0deg,
@@ -26,7 +26,13 @@
                 transparent 360deg
             );
         }
-
+        
+        @keyframes gradientAnimation {
+            0% { background: #f5f5dc; } /* Beige */
+            50% { background: #dcdcdc; } /* Light silver */
+            100% { background: #f5f5dc; } /* Beige */
+        }
+        
         body {
             margin: 0;
             height: 100vh; /* Full height */
@@ -37,19 +43,10 @@
             font-family: Arial, sans-serif;
             position: relative; /* For positioning pseudo-elements */
             overflow: hidden; /* Prevent overflow */
-        }
-
-        @keyframes gradientAnimation {
-            0% { background: #f5f5dc; } /* Beige */
-            50% { background: #dcdcdc; } /* Light silver */
-            100% { background: #f5f5dc; } /* Beige */
-        }
-
-        body {
             animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
             padding-top: 20px; /* Adjust based on menu height */
         }
-
+        
         h1 {
             font-size: 50px; /* Font size */
             color: #333333;
@@ -60,7 +57,7 @@
             animation: fadeIn 3s forwards; /* Apply fade-in animation */
             animation-delay: 0.5s; /* Delay before the animation starts */
         }
-
+        
         h2 {
             font-size: 30px; /* Font size for h2 */
             font-weight: normal; /* Normal weight for h2 */
@@ -71,7 +68,7 @@
             animation-delay: 2.5s; /* Delay before the animation starts */
             color: #333333;
         }
-
+        
         h3 {
             font-size: 18px; /* Font size for h2 */
             font-weight: normal; /* Normal weight for h2 */
@@ -82,13 +79,13 @@
             animation-delay: 6s; /* Delay before the animation starts */
             color: #333333;
         }
-
+        
         @keyframes fadeIn {
             to {
                 opacity: 1; /* Fade in to full visibility */
             }
         }
-
+        
         nav {
             width: 100%;
             background-color: #333333; /* Match the font color of the rest of the page */
@@ -151,7 +148,8 @@
                 font-size: 6vw;
                 color: #333333;
             }
-    
+        }
+        
         body::before,
         body::after {
             content: '';
@@ -159,7 +157,7 @@
             z-index: -1;
             opacity: 0.8;
         }
-
+        
         body::before {
             background: var(--third-glow);
             border-radius: 50%;
@@ -171,7 +169,7 @@
             left: calc(50vw);
             animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
         }
-
+        
         body::after {
             background: var(--secondary-glow);
             border-radius: 50%;
@@ -182,13 +180,13 @@
             left: calc(50vw - 50vw / 2);
             animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
         }
-
+        
         @keyframes animateBefore {
             0% { transform: translateY(0); }
             50% { transform: translateY(200px) scale(0.8); }
             100% { transform: translateY(0); }
         }
-
+        
         @keyframes animateAfter {
             0% { transform: translateX(0); }
             50% { transform: translateX(-250px) scale(1.2); }
