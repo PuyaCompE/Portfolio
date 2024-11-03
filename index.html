@@ -126,33 +126,25 @@
             color: #0077b5;
         }
         
-        /* Media query for smaller screens */
         @media (max-width: 768px) {
             .menu-bar {
-                display: flex;
-                padding: 20px 0; /* Increased padding for mobile */
-                justify-content: center;
-                gap: 25px; /* Increase space between items */
-                font-size: 3vw;
+                flex-direction: column; /* Stack items vertically on small screens */
+                align-items: center;
+                padding: 10px 0;
+                font-size: 4vw; /* Responsive font size */
             }
             
             .menu-bar li {
-                margin: 10px;
-            }
-            
-            /* Adjust container padding */
-            .content-wrapper {
-                padding: 10px;
-                text-align: center;
+                margin: 5px 0; /* Adjust margin for vertical layout */
             }
         
             h1 {
-                font-size: 7vw; 
+                font-size: 8vw;
                 color: #333333;
             }
             
             h2, h3 {
-                font-size: 4vw;
+                font-size: 5vw;
                 color: #333333;
             }
         }
