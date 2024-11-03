@@ -91,16 +91,8 @@
             100% { transform: translateX(0); }
         }
 
-        .content {
-            padding-top: 60px;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
         h1, h2, h3, p {
-            color: #333333;
+            color: #333333; /* Use the same font color */
             max-width: 800px;
             width: 100%;
             margin: 20px auto;
@@ -108,14 +100,17 @@
 
         h1 {
             font-size: 50px;
+            text-align: left;
         }
 
         h2 {
             font-size: 30px;
+            text-align: left;
         }
 
         h3 {
             font-size: 18px;
+            text-align: left;
             cursor: pointer;
             transition: color 0.3s;
         }
@@ -124,7 +119,7 @@
             color: #0077b5;
         }
 
-        nav {
+        .menu {
             width: 100%;
             background-color: #333333;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -155,6 +150,12 @@
 
         .menu-bar a:hover {
             color: #0077b5;
+        }
+
+        .content {
+            padding-top: 60px;
+            width: 100%;
+            max-width: 800px;
         }
 
         footer {
@@ -202,7 +203,7 @@
 
         .project-report-link {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 0;
             padding: 8px 15px;
             color: #0077b5;
             text-decoration: none;
@@ -212,127 +213,117 @@
             text-align: left;
         }
 
-        @media (max-width: 768px) {
-            .menu-bar {
-                display: flex;
-                padding: 20px 0;
-                justify-content: center;
-                gap: 25px;
-                font-size: 3vw;
-            }
-            
-            .menu-bar li {
-                margin: 10px;
-            }
-            
-            .content-wrapper {
-                padding: 10px;
-                text-align: center;
-            }
+        .toggle-button {
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 5px;
+            font-size: 16px;
+        }
 
-            h1 {
-                font-size: 7vw; 
-                color: #333333;
-            }
-            
-            h2, h3 {
-                font-size: 4vw;
-                color: #333333;
-            }
+        .toggle-button:hover {
+            background-color: #005f8a;
+        }
+
+        .project-details {
+            display: none;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <nav class="menu-bar">
-        <ul>
+    <div class="menu">
+        <ul class="menu-bar">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="personal-background.html">Personal Background</a></li>
         </ul>
-    </nav>
+    </div>
 
-    <div class="content">
-        <h1>Completed Projects</h1>
-        <h2>Click on the projects below to learn more about their details and access the project reports.</h2>
+<div class="content">
+    <h1>Completed Projects</h1>
+    <h2>Click on the projects below to learn more about their details and access the project reports.</h2>
+    <br><br><br>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project1')">SmartZoo Controlling & Monitoring System</h3>
-            <div id="project1" class="project-details">
-                <p class="styled-paragraph">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles, and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.</p>
-                <a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project1')">SmartZoo Controlling & Monitoring System</h3>
+        <div id="project1" class="project-details">
+            <p class="styled-paragraph">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles, and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.</p>
+            <a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project2')">5-stage Pipelined MIPS Processor</h3>
-            <div id="project2" class="project-details">
-                <p class="styled-paragraph">This project aims to integrate and prototype the datapath and control units of a simple 32-bit MIPS processor featuring five pipeline stages, utilizing the Verilog hardware description language. The processor is designed to execute various instructions, including arithmetic, logic, data movement, and flow control.</p>
-                <a href="assets/ECE174-Project-Report (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project2')">5-stage Pipelined MIPS Processor</h3>
+        <div id="project2" class="project-details">
+            <p class="styled-paragraph">This project aims to integrate and prototype the datapath and control units of a simple 32-bit MIPS processor featuring five pipeline stages, utilizing the Verilog hardware description language. The processor is designed to execute various instructions, including arithmetic, logic, data movement, and flow control.</p>
+            <a href="assets/ECE174-Project-Report (3).pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project3')">Cryptography Project: BREACH Attack</h3>
-            <div id="project3" class="project-details">
-                <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server.</p>
-                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project3')">Cryptography Project: BREACH Attack</h3>
+        <div id="project3" class="project-details">
+            <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server.</p>
+            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project4')">DCNN Image Classification Algorithm</h3>
-            <div id="project4" class="project-details">
-                <p class="styled-paragraph">Conducted a comparative study on DCNN, DarkNet-19, ResNet-50, and Efficient B0 architectures, achieving a 94.35% validation accuracy with Efficient B0 on a dataset of over 3500 32x32 grayscale images across 28 classes; custom-designed DCNN achieved 92.35% validation accuracy with the lowest training time, demonstrating efficient model design.</p>
-                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project4')">DCNN Image Classification Algorithm</h3>
+        <div id="project4" class="project-details">
+            <p class="styled-paragraph">Conducted a comparative study on DCNN, DarkNet-19, ResNet-50, and Efficient B0 architectures, achieving a 94.35% validation accuracy with Efficient B0 on a dataset of over 3500 32x32 grayscale images across 28 classes; custom-designed DCNN achieved 92.35% validation accuracy with the lowest training time, demonstrating efficient model design.</p>
+            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project5')">Autonomous Driving Stack Integration</h3>
-            <div id="project5" class="project-details">
-                <p class="styled-paragraph">Developed a comprehensive autonomous driving stack in ROS2, integrating perception, planning, and control modules, enabling real-time navigation and decision-making in dynamic environments.</p>
-                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project5')">Autonomous Driving Stack Integration</h3>
+        <div id="project5" class="project-details">
+            <p class="styled-paragraph">Developed a comprehensive autonomous driving stack in ROS2, integrating perception, planning, and control modules, enabling real-time navigation and decision-making in dynamic environments.</p>
+            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project6')">Edge detection System on Chip (SoC) Design</h3>
-            <div id="project6" class="project-details">
-                <p class="styled-paragraph">Designed and developed a high-performance edge detection algorithm module using SystemC for image and Video processing at 24fps.</p>
-                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project6')">Edge detection System on Chip (SoC) Design</h3>
+        <div id="project6" class="project-details">
+            <p class="styled-paragraph">Designed and developed a high-performance edge detection algorithm module using SystemC for image and Video processing at 24fps.</p>
+            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project7')">Cryptography Project: BREACH Attack</h3>
-            <div id="project7" class="project-details">
-                <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server.</p>
-                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project7')">Cryptography Project: BREACH Attack</h3>
+        <div id="project7" class="project-details">
+            <p class="styled-paragraph">In this project, I implemented a breach attack to explore its potential impact on a targeted system. I researched and selected an appropriate attack method, designed and executed the attack on a simulated system using Python, and analyzed the results through HTTPS requests made between the client and server.</p>
+            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project8')">Research: Nuclear Power in Space</h3>
-            <div id="project8" class="project-details">
-                <p class="styled-paragraph">Abstract- Space missions increasingly rely on nuclear power, notably Radioisotope Thermoelectric Generators (RTGs) and nuclear fission reactors, for energy. This paper reviews their applications, focusing on Nuclear Thermal Propulsion (NTP), analysis, and data acquisition. RTGs, fueled by Plutonium-238, provide reliable energy for space probes and rovers, as seen in the Curiosity (2011) and Mars 2020: Perseverance missions. Nuclear fission reactors, particularly in NTP systems, offer potential for high-energy propulsion, enabling faster exploration. Emphasizing nuclear power's significance, this paper underscores its role in mission success, scientific discovery, and human exploration beyond Earth.</p>
-                <a href="assets/EECS230-report (1).pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project8')">Research: Nuclear Power in Space</h3>
+        <div id="project8" class="project-details">
+            <p class="styled-paragraph">Abstract- Space missions increasingly rely on nuclear power, notably Radioisotope Thermoelectric Generators (RTGs) and nuclear fission reactors, for energy. This paper reviews their applications, focusing on Nuclear Thermal Propulsion (NTP), analysis, and data acquisition. RTGs, fueled by Plutonium-238, provide reliable energy for space probes and rovers, as seen in the Curiosity (2011) and Mars 2020: Perseverance missions. Nuclear fission reactors, particularly in NTP systems, offer potential for high-energy propulsion, enabling faster exploration. Emphasizing nuclear power's significance, this paper underscores its role in mission success, scientific discovery, and human exploration beyond Earth.</p>
+            <a href="assets/EECS230-report (1).pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project9')">Parallel to Serial Interfacing</h3>
-            <div id="project9" class="project-details">
-                <p class="styled-paragraph">The project focuses on enhancing data transmission efficiency within communication networks by implementing a Parallel to Serial Interface and a Serial to Parallel Interface. It explores the integration of these interfaces in conjunction with the OSI model, which consists of seven layers, each serving a unique purpose in the communication process.</p>
-                <a href="assets/ECE 176 Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project9')">Parallel to Serial Interfacing</h3>
+        <div id="project9" class="project-details">
+            <p class="styled-paragraph">The project focuses on enhancing data transmission efficiency within communication networks by implementing a Parallel to Serial Interface and a Serial to Parallel Interface. It explores the integration of these interfaces in conjunction with the OSI model, which consists of seven layers, each serving a unique purpose in the communication process.</p>
+            <a href="assets/ECE 176 Report.pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3 onclick="toggleDetails('project10')">Analysis of Human Behavior in Different Driving Scenarios</h3>
-            <div id="project10" class="project-details">
-                <p class="styled-paragraph">Despite advancements in automotive technology and infrastructure, traffic accidents remain a significant global issue. The graph that you see indicates the the number of deaths due to accidents  between 2018-2022 sourced from NHTSA. This makes it crucial to understand the drivers behaviour to enhance safety. Advanced simulation technology like CARLA gives us an opportunity to study the driving behaviour. The goal of this project is to create and simulate various traffic scenarios using carla simulator and understand the driver behaviour. This is done by gathering vehicle metric data and biometrics such as heart rate and breathing rate.</p>
-                <a href="assets/Final PPT (1).pdf" target="_blank" class="project-report-link">View Project Report</a>
-            </div>
+    <div class="project">
+        <h3 onclick="toggleDetails('project10')">Analysis of Human Behavior in Different Driving Scenarios</h3>
+        <div id="project10" class="project-details">
+            <p class="styled-paragraph">Despite advancements in automotive technology and infrastructure, traffic accidents remain a significant global issue. The graph that you see indicates the the number of deaths due to accidents  between 2018-2022 sourced from NHTSA. This makes it crucial to understand the drivers behaviour to enhance safety. Advanced simulation technology like CARLA gives us an opportunity to study the driving behaviour. The goal of this project is to create and simulate various traffic scenarios using carla simulator and understand the driver behaviour. This is done by gathering vehicle metric data and biometrics such as heart rate and breathing rate.</p>
+            <a href="assets/Final PPT (1).pdf" target="_blank" class="project-report-link">View Project Report</a>
         </div>
     </div>
 
@@ -355,7 +346,9 @@
                 <li><a href="https://puyacompe.github.io/Profolio/" target="_blank" class="fab fa-github"></a></li>
             </ul>
         </div>
+        <br>
         <p>&copy; 2024 Puya Fard. All Rights Reserved.</p>
     </footer>
+</div> <!-- End of content div -->
 </body>
 </html>
