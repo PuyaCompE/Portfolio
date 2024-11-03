@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
+        :root {
             --secondary-glow: conic-gradient(
                 from 10deg at 50% 50%,
                 #eb7494 0deg,
@@ -16,7 +17,7 @@
                 #0099ca 160deg,
                 transparent 360deg
             );
-
+        
             --third-glow: conic-gradient(
                 from 90deg at 50% 50%,
                 #ff8b7e 0deg,
@@ -26,11 +27,11 @@
                 transparent 360deg
             );
         }
-
+        
         @keyframes gradientAnimation {
-            0% { background: #f5f5dc; }
-            50% { background: #dcdcdc; }
-            100% { background: #f5f5dc; }
+            0% { background: #f5f5dc; } /* Beige */
+            50% { background: #dcdcdc; } /* Light silver */
+            100% { background: #f5f5dc; } /* Beige */
         }
 
         body {
@@ -44,10 +45,14 @@
             padding: 20px;
             animation: gradientAnimation 60s ease infinite;
             position: relative;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Allow vertical scrolling */
             box-sizing: border-box;
         }
-
+        
+        .content {
+            flex: 1; /* Allow content to grow and push footer down */
+        }
+        
         footer {
             padding: 10px;
             text-align: center;
@@ -78,21 +83,6 @@
             margin: 20px auto;
             line-height: 1.6;
             text-align: justify;
-        }
-        
-        .signature {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            max-width: 800px;
-            width: 100%;
-            margin: 20px auto 0;
-        }
-        
-        .signature img {
-            max-width: 200px;
-            height: auto;
-            margin: 0;
         }
         
         nav {
