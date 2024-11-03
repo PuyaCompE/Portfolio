@@ -102,6 +102,8 @@
             padding: 15px 0; /* Increased padding for more space */
             list-style: none;
             margin: 0;
+            flex-wrap: wrap; /* Allow items to wrap */
+
         }
         
         .menu-bar ul {
@@ -128,7 +130,6 @@
         
         @media (max-width: 768px) {
             .menu-bar {
-                flex-direction: column; /* Stack items vertically on small screens */
                 align-items: center;
                 padding: 10px 0;
                 font-size: 4vw; /* Responsive font size */
