@@ -216,6 +216,13 @@
             text-align: left;
         }
 
+        .project-details {
+            display: none; /* Initially hide project details */
+            margin-top: 10px;
+        }
+
+
+
         @media (max-width: 768px) {
             .menu-bar {
                 display: flex;
@@ -258,8 +265,6 @@
     <div class="content">
         <br><br>><br><br>
         <h1>Completed Projects</h1>
-        <h2>Click on the projects below to learn more about their details and access the project reports.</h2>
-
         <div class="project">
             <h3 onclick="toggleDetails('project1')">SmartZoo Controlling & Monitoring System</h3>
             <div id="project1" class="project-details">
