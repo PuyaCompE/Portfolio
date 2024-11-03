@@ -34,6 +34,9 @@
         }
 
         body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
             color: #333333;
@@ -42,8 +45,21 @@
             animation: gradientAnimation 60s ease infinite;
             position: relative;
             overflow-x: hidden; /* Allow vertical scrolling */
-            min-height: 100vh;
             box-sizing: border-box;
+        }
+        
+        .content {
+            flex: 1; /* Allow content to grow and push footer down */
+        }
+        
+        footer {
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            margin: 0; /* Remove margin to eliminate gap */
         }
 
         h1, h2 {
@@ -116,17 +132,6 @@
 
         nav.menu-bar a:hover {
             color: #0077b5;
-        }
-
-        footer {
-            padding: 10px;
-            text-align: center;
-            font-size: 12px;
-            background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
-            width: 100%;
-            margin: 0;
         }
 
         .socials {
