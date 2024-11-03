@@ -89,54 +89,53 @@
             }
         }
 
-        /* Menu bar styles */
         nav {
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: #333333; /* Match the font color of the rest of the page */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
         }
-
+        
         .menu-bar {
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 15px 0; /* Increased padding for more space */
             list-style: none;
-            margin: 0; /* Added margin 0 here */
+            margin: 0;
         }
-
+        
         .menu-bar li {
             margin: 0 15px;
         }
-
+        
         .menu-bar a {
             text-decoration: none;
-            color: #333;
+            color: #ffffff; /* Change text color to white */
             font-weight: bold;
             transition: color 0.3s;
         }
-
+        
         .menu-bar a:hover {
             color: #0077b5;
         }
-
+        
         /* Media query for smaller screens */
         @media (max-width: 768px) {
             .menu-bar {
                 display: flex;
-                padding: 10px 0;
+                padding: 20px 0; /* Increased padding for mobile */
                 justify-content: center;
-                gap: 20px; /* Space between items */
+                gap: 25px; /* Increase space between items */
                 font-size: 3vw;
             }
-        
+            
             .menu-bar li {
-                margin: 0 10px; /* Adds spacing between nav items */
+                margin: 0 10px;
             }
-        
+            
             /* Adjust container padding */
             .content-wrapper {
                 padding: 10px;
@@ -149,12 +148,10 @@
             }
             
             h2, h3 {
-                font-size: 6vw; /* Adjust font size for small screens */
+                font-size: 6vw;
                 color: #333333;
             }
-        }
-
-
+    
         body::before,
         body::after {
             content: '';
