@@ -99,11 +99,9 @@
         .menu-bar {
             display: flex;
             justify-content: center;
-            padding: 15px 0; /* Increased padding for more space */
+            padding: 10px; /* Increased padding for more space */
             list-style: none;
             margin: 0;
-            flex-wrap: wrap; /* Allow items to wrap */
-
         }
         
         .menu-bar ul {
@@ -130,9 +128,11 @@
         
         @media (max-width: 768px) {
             .menu-bar {
-                align-items: center;
-                padding: 10px 0;
-                font-size: 4vw; /* Responsive font size */
+                display: flex;
+                padding: 20px 0; /* Increased padding for mobile */
+                justify-content: center;
+                gap: 25px; /* Increase space between items */
+                font-size: 3vw;
             }
             
             .menu-bar li {
