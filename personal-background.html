@@ -244,6 +244,34 @@
         .work-title:hover {
             color: #0077b5;
         }
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 8vw; /* Responsive font size */
+            }
+
+            h2 {
+                font-size: 6vw; /* Responsive font size */
+            }
+
+            h3, p {
+                font-size: 4vw; /* Responsive font size */
+            }
+
+            .menu-bar ul {
+                flex-direction: column; /* Stack menu items vertically */
+                align-items: center;
+            }
+
+            .menu-bar li {
+                margin: 10px 0; /* Adjust margin for vertical layout */
+            }
+
+            .content-wrapper {
+                padding: 10px;
+                text-align: center;
+            }
+        }
     </style>
     <script>
         function toggleDetails(id) {
