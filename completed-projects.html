@@ -4,76 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Completed Projects</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to a CSS file if needed -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --secondary-glow: conic-gradient(
+                from 10deg at 50% 50%,
+                #eb7494 0deg,
+                #ae77b2 55deg,
+                #97b5da 120deg,
+                #0099ca 160deg,
+                transparent 360deg
+            );
+
+            --third-glow: conic-gradient(
+                from 90deg at 50% 50%,
+                #ff8b7e 0deg,
+                #e24e6b 160deg,
+                #7ed2da 120deg,
+                #8bdce0 55deg,
+                transparent 360deg
+            );
+        }
+        
+        @keyframes gradientAnimation {
+            0% { background: #f5f5dc; }
+            50% { background: #dcdcdc; }
+            100% { background: #f5f5dc; }
+        }
+        
         body {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start; /* Align content to the top */
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #ffffff;
+            color: #333333;
+            text-align: center;
             padding: 20px;
-            background-color: #000000;
+            animation: gradientAnimation 60s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        body::before {
+            background: var(--third-glow);
+            border-radius: 50%;
+            width: 50vw;
+            height: 50vw;
+            margin-left: -200px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw);
+            animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+
+        body::after {
+            background: var(--secondary-glow);
+            border-radius: 50%;
+            width: 500px;
+            height: 700px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw - 50vw / 2);
+            animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+
+        @keyframes animateBefore {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(200px) scale(0.8); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes animateAfter {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-250px) scale(1.2); }
+            100% { transform: translateX(0); }
+        }
+
+        h1, h2, h3, p {
+            color: #333333; /* Use the same font color */
+            max-width: 800px;
+            width: 100%;
+            margin: 20px auto;
         }
 
         h1 {
             font-size: 50px;
-            color: #ffffff;
-            text-align: left; /* Keep left-aligned */
-            width: 100%; /* Full width */
-            max-width: 800px; /* Max width constraint */
-            margin: 20px 0 20px 0; /* Adjust margins for top and bottom spacing */
-        }
-
-        h2 {
-            font-size: 24px; /* Adjusted size for h2 */
-            color: #ffffff;
-            text-align: left; /* Left align h2 */
-            width: 100%; /* Full width for h2 */
-            max-width: 800px; /* Constrain width */
-            margin: 30px 0 10px 0; /* Margin for spacing */
-        }
-
-        h3 {
-            font-size: 18px; /* Adjusted size for h3 */
-            color: #ffffff;
-            text-align: left; /* Left align h3 */
-            width: 100%; /* Full width for h3 */
-            max-width: 800px; /* Constrain width */
-            cursor: pointer; /* Change cursor to pointer */
-            transition: color 0.3s; /* Smooth transition for color change */
-        }
-
-        h3:hover {
-            color: #0077b5; /* Change color to blue on hover */
-        }
-
-        .education-section {
-            max-width: 800px;
-            width: 100%;
             text-align: left;
         }
 
-        .education-degree {
-            font-weight: bold;
-            color: #ffffff;
-            margin: 0;
+        h2 {
+            font-size: 30px;
+            text-align: left;
         }
 
-        .education-school {
-            font-weight: normal;
-            color: #ffffff;
-            margin-top: 2px;
+        h3 {
+            font-size: 18px;
+            text-align: left;
+            cursor: pointer;
+            transition: color 0.3s;
         }
 
-        /* Menu bar styles */
+        h3:hover {
+            color: #0077b5;
+        }
+
         .menu {
             width: 100%;
-            background-color: #333333; /* Match the font color of the rest of the page */
+            background-color: #333333;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
@@ -84,7 +132,7 @@
         .menu-bar {
             display: flex;
             justify-content: center;
-            padding: 10px; /* Increased padding for more space */
+            padding: 10px;
             list-style: none;
             margin: 0;
         }
@@ -95,7 +143,7 @@
 
         .menu-bar a {
             text-decoration: none;
-            color: #ffffff; /* Change text color to white */
+            color: #ffffff;
             font-weight: bold;
             transition: color 0.3s;
         }
@@ -104,20 +152,20 @@
             color: #0077b5;
         }
 
-        /* Main content offset for fixed menu */
         .content {
-            padding-top: 60px; /* Add padding to offset fixed menu height */
-            width: 100%; /* Ensure full width for content */
-            max-width: 800px; /* Constrain width */
+            padding-top: 60px;
+            width: 100%;
+            max-width: 800px;
         }
 
         footer {
-            margin-top: auto;
             padding: 10px;
             text-align: center;
             font-size: 12px;
-            background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            margin: 0;
+            background-color: #333333;
+            color: #ffffff;
         }
 
         .socials {
@@ -137,7 +185,7 @@
         }
 
         .socials ul li a {
-            color: #ffffff;
+            color: #333333;
             font-size: 20px;
             transition: color 0.3s;
         }
@@ -146,40 +194,25 @@
             color: #0077b5;
         }
 
-        .skills-list {
-            list-style: none;
-            padding: 0;
-            max-width: 800px;
-            text-align: left;
-        }
-
-        .skills-list li {
-            text-align: left;
-            padding-left: 20px;
-        }
-
-        /* Ensure h3 headers are left-aligned */
-        .skills-list + h3, .skills-list h3 {
-            text-align: left;
-            margin-left: 0; /* Ensure no unintended margin shifts */
-        }
         .styled-paragraph {
             text-align: justify;
             max-width: 800px;
             font-size: 15px;
-            color: #ffffff;
+            color: #333333;
         }
+
         .project-report-link {
-            display: inline-block; /* Keep it like a button */
-            margin-top: 0; /* Space above the link */
-            padding: 8px 15px; /* Padding for a button-like appearance */
-            color: #0077b5; /* Link color */
-            text-decoration: none; /* Remove underline */
-            border: 1px solid #0077b5; /* Optional: add a border */
-            border-radius: 4px; /* Optional: round corners */
-            transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover effects */
-            text-align: left; /* Ensure left alignment */
+            display: inline-block;
+            margin-top: 0;
+            padding: 8px 15px;
+            color: #0077b5;
+            text-decoration: none;
+            border: 1px solid #0077b5;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: left;
         }
+
         .toggle-button {
             background-color: #0077b5;
             color: white;
@@ -189,13 +222,14 @@
             margin-top: 5px;
             font-size: 16px;
         }
+
         .toggle-button:hover {
             background-color: #005f8a;
         }
 
         .project-details {
-            display: none; /* Hide details by default */
-            margin-top: 10px; /* Space above project details */
+            display: none;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -208,7 +242,7 @@
         </ul>
     </div>
     
-<div class="content"> <!-- Added content wrapper to create space below fixed menu -->
+<div class="content">
     <h1>Completed Projects</h1>
     <h2>Click on the projects below to learn more about their details and access the project reports.</h2>
     <br><br><br>
@@ -296,7 +330,6 @@
     <script>
         function toggleDetails(projectId) {
             const details = document.getElementById(projectId);
-            // Toggle the display of the project details
             if (details.style.display === "none" || details.style.display === "") {
                 details.style.display = "block";
             } else {
@@ -313,7 +346,9 @@
                 <li><a href="https://puyacompe.github.io/Profolio/" target="_blank" class="fab fa-github"></a></li>
             </ul>
         </div>
+        <br>
         <p>&copy; 2024 Puya Fard. All Rights Reserved.</p>
     </footer>
 </div> <!-- End of content div -->
 </body>
+</html>
