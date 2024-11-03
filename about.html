@@ -7,7 +7,32 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Body styles */
+        :root {
+            --secondary-glow: conic-gradient(
+                from 10deg at 50% 50%,
+                #eb7494 0deg,
+                #ae77b2 55deg,
+                #97b5da 120deg,
+                #0099ca 160deg,
+                transparent 360deg
+            );
+
+            --third-glow: conic-gradient(
+                from 90deg at 50% 50%,
+                #ff8b7e 0deg,
+                #e24e6b 160deg,
+                #7ed2da 120deg,
+                #8bdce0 55deg,
+                transparent 360deg
+            );
+        }
+
+        @keyframes gradientAnimation {
+            0% { background: #f5f5dc; } /* Beige */
+            50% { background: #dcdcdc; } /* Light silver */
+            100% { background: #f5f5dc; } /* Beige */
+        }
+
         body {
             display: flex;
             flex-direction: column;
@@ -16,28 +41,28 @@
             min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #ffffff;
+            color: #333333;
             text-align: center;
             padding: 20px;
-            background-color: #000000;
+            animation: gradientAnimation 60s ease infinite;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Heading and paragraph styles */
-        h1 {
-            font-size: 50px;
-            color: #ffffff;
+        h1, h2 {
+            color: #333333;
             text-align: left;
             width: 100%;
             max-width: 800px;
             margin: 0 0 20px;
         }
+
+        h1 {
+            font-size: 50px;
+        }
+
         h2 {
             font-size: 30px;
-            color: #ffffff;
-            text-align: left;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 0 20px;
         }
 
         p {
@@ -48,13 +73,12 @@
             text-align: justify;
         }
 
-        /* Signature styles */
         .signature {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
             max-width: 800px;
-            width: 200%;
+            width: 100%;
             margin: 20px auto 0;
         }
 
@@ -64,7 +88,6 @@
             margin: 0;
         }
 
-        /* Menu bar styles */
         nav {
             width: 100%;
             background-color: rgba(255, 255, 255, 0.8);
@@ -80,7 +103,7 @@
             justify-content: center;
             padding: 10px 0;
             list-style: none;
-            margin: 0; /* Added margin 0 here */
+            margin: 0;
         }
 
         nav.menu-bar li {
@@ -134,20 +157,60 @@
         .socials ul li a:hover {
             color: #0077b5;
         }
-        /* Image styles */
+
         .profile-image {
-            width: 200px; /* Set width to 200 pixels */
-            height: auto; /* Maintain aspect ratio */
-            float: left; /* Align image to the left */
-            margin-right: 20px; /* Add space between image and text */
-            margin-bottom: 20px; /* Add some space below the image */
-        }
-        
-        /* Ensure no extra margins are set on the first paragraph following the image */
-        p:first-of-type {
-            margin-top: 0; /* Remove margin-top to tighten the layout */
+            width: 200px;
+            height: auto;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
         }
 
+        p:first-of-type {
+            margin-top: 0;
+        }
+
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        body::before {
+            background: var(--third-glow);
+            border-radius: 50%;
+            width: 50vw;
+            height: 50vw;
+            margin-left: -200px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw);
+            animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+
+        body::after {
+            background: var(--secondary-glow);
+            border-radius: 50%;
+            width: 500px;
+            height: 700px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw - 50vw / 2);
+            animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+
+        @keyframes animateBefore {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(200px) scale(0.8); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes animateAfter {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-250px) scale(1.2); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
@@ -162,7 +225,7 @@
     </nav>
     <br><br><br><br>
     <h1>About Me</h1>
-    <h2><img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Profile Picture" style="width: 200px; height: auto; float: left; margin-right: 20px; margin-bottom: 20px;"></h2> <!-- Profile picture with inline style -->
+    <h2><img src="assets/pfard@uci.edu-48365f5c.jpg" alt="Profile Picture" class="profile-image"></h2>
     <p>
         A wise man once said, “You never change your life until you step out of your comfort zone; change begins at the end of your comfort zone.” — Roy T. Bennett. I wish I had heeded these words sooner. I am a man of principles, hard work, and commitment, driven by a clear purpose: to become the best version of myself in every aspect of life. I pursue this goal in my fitness, academics, and personal life by first stepping outside my comfort zone.
         <br><br>
