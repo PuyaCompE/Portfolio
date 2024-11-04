@@ -272,6 +272,56 @@
         .socials ul li a:hover {
             color: #0077b5; /* Optional: Change color on hover for effect */
         }
+        /* Wrap your welcome text */
+        .welcome-wrapper {
+            position: relative;
+            display: inline-block;
+            padding: 20px;
+            margin: 20px auto;
+        }
+    
+        /* Create the border box animation */
+        .welcome-wrapper::before,
+        .welcome-wrapper::after {
+            content: '';
+            position: absolute;
+            border: 2px solid #0077b5; /* Border color */
+            width: 0;
+            height: 0;
+            transition: 1s ease-out;
+        }
+    
+        /* Start from the top left and animate towards bottom right */
+        .welcome-wrapper::before {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            animation: borderAnimation 3s forwards;
+        }
+    
+        .welcome-wrapper::after {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            animation: borderAnimation 3s 0.5s forwards; /* Delay after the first animation */
+        }
+    
+        @keyframes borderAnimation {
+            0% {
+                width: 0;
+                height: 0;
+            }
+            50% {
+                width: 100%;
+                height: 0;
+            }
+            100% {
+                width: 100%;
+                height: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -284,9 +334,11 @@
     </nav>
     
     <div class="content-wrapper">
-        <h1>Welcome to My Portfolio</h1>
-        <br>
-        <h2> by Puya Fard</h2>
+        <div class="welcome-wrapper">
+            <h1>Welcome to My Portfolio</h1>
+            <br>
+            <h2>by Puya Fard</h2>
+        </div>
         <br><br>
         <footer>
         <div class="socials">
