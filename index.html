@@ -100,7 +100,7 @@
             background-color: #333333; /* Match the font color of the rest of the page */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
-            top: 50px;
+            top: 0;
             left: 0;
             z-index: 1000;
         }
@@ -200,6 +200,43 @@
             50% { transform: translateX(-250px) scale(1.2); }
             100% { transform: translateX(0); }
         }
+        
+        /* Emoji Navigation Bar */
+        .emoji-nav {
+            width: 100%;
+            position: fixed;
+            top: 50px; /* Adjust based on main nav height */
+            left: 0;
+            z-index: 999; /* Should be below the main nav */
+            text-align: center;
+            background-color: transparent; /* Transparent background */
+        }
+        
+        .emoji-bar {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .emoji-bar li {
+            margin: 15px;
+            font-size: 20px; /* Adjust emoji size */
+            color: #ffffff;
+            opacity: 0.7; /* Slightly transparent for better visual effect */
+            transition: opacity 0.3s;
+        }
+        
+        .emoji-bar li:hover {
+            opacity: 1; /* Increase opacity on hover */
+        }
+        
+        /* Match Emoji Bar with Main Nav Items */
+        .menu-bar li, .emoji-bar li {
+            width: 120px; /* Match width with menu items for alignment */
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -208,6 +245,14 @@
             <li><a href="about.html">About Me</a></li>
             <li><a href="personal-background.html">Personal Background</a></li>
             <li><a href="completed-projects.html">Completed Projects</a></li>
+        </ul>
+    </nav>
+    <!-- Transparent Navigation with Emojis -->
+    <nav class="emoji-nav">
+        <ul class="emoji-bar">
+            <li>☝️</li>
+            <li>☝️</li>
+            <li>☝️</li>
         </ul>
     </nav>
     
