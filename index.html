@@ -47,6 +47,39 @@
             padding-top: 20px; /* Adjust based on menu height */
         }
         
+        .introduction {
+            font-size: 18px;
+            color: #333333;
+            text-align: center;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 3s;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0077b5;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+            animation-delay: 3.5s;
+        }
+
+        .explore-link {
+            font-size: 20px;
+            color: #0077b5;
+            text-decoration: none;
+            margin-top: 20px;
+            animation: breathing 2s infinite;
+            display: inline-block;
+        }
+        
         h1 {
             font-size: 50px; /* Font size */
             color: #333333;
@@ -249,19 +282,25 @@
             <li><a href="completed-projects.html"><i class="fas fa-folder"></i>Completed Projects</a></li>
         </ul>
     </nav>
-    
     <div class="content-wrapper">
         <h1>Welcome to My Portfolio</h1>
         <br>
         <h2> by Puya Fard</h2>
+        <div class="introduction">
+            <p>Hello! I'm Puya, a passionate developer and designer. Explore my work and get to know me better!</p>
+        </div>
+        <a href="about.html" class="cta-button">Learn More About Me</a>
+        <a href="explore.html" class="explore-link">Click to Explore!</a>
         <br><br>
         <footer>
-        <div class="socials">
-            <ul>
-                <li><a href="mailto:pfard@uci.edu" class="email-icon" title="Email Me"><i class="fas fa-envelope"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
-            </ul>
-        </div>
+            <div class="socials">
+                <ul>
+                    <li><a href="mailto:pfard@uci.edu" class="email-icon" title="Email Me"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
+                </ul>
+            </div>
+            <br>
+            <p>&copy; 2024 Puya Fard. All Rights Reserved.</p>
         </footer>
     </div> <!-- Closing content-wrapper -->
 
