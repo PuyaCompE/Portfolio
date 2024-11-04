@@ -125,6 +125,16 @@
         .menu-bar a:hover {
             color: #0077b5;
         }
+        /* Additional CSS for styling icons */
+        .menu-bar a i {
+            margin-right: 8px;
+            color: #ffffff; /* Default icon color */
+            transition: color 0.3s;
+        }
+
+        .menu-bar a:hover i {
+            color: #0077b5; /* Hover color */
+        }
         
         @media (max-width: 768px) {
             .menu-bar {
@@ -196,9 +206,9 @@
 <body>
     <nav>
         <ul class="menu-bar">
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="personal-background.html">Personal Background</a></li>
-            <li><a href="completed-projects.html">Completed Projects</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i>About Me</a></li>
+            <li><a href="personal-background.html"><i class="fas fa-graduation-cap"></i>Personal Background</a></li>
+            <li><a href="completed-projects.html"><i class="fas fa-folder"></i>Completed Projects</a></li>
         </ul>
     </nav>
     
