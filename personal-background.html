@@ -37,9 +37,9 @@
         }
         
         @keyframes gradientAnimation {
-            0% { background: #f5f5dc; }
-            50% { background: #dcdcdc; }
-            100% { background: #f5f5dc; }
+            0% { background: #b5b7bb; } /* Beige */
+            50% { background: #afb1ae; } /* Light silver */
+            100% { background: #b5b7bb; } /* Beige */
         }
         
         body {
@@ -183,7 +183,16 @@
         .menu-bar a:hover {
             color: #0077b5;
         }
+        /* Additional CSS for styling icons */
+        .menu-bar a i {
+            margin-right: 8px;
+            color: #ffffff; /* Default icon color */
+            transition: color 0.3s;
+        }
 
+        .menu-bar a:hover i {
+            color: #0077b5; /* Hover color */
+        }
         footer {
             margin-top: auto;
             padding: 10px;
@@ -314,9 +323,9 @@
 <body>
     <nav class="menu-bar">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="completed-projects.html">Completed Projects</a></li>
+            <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i>About Me</a></li>
+            <li><a href="completed-projects.html"><i class="fas fa-folder"></i>Completed Projects</a></li>
         </ul>
     </nav>
     <br><br><br><br>
