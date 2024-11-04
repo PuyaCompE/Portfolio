@@ -202,12 +202,18 @@
             100% { transform: translateX(0); }
         }
         footer {
+            margin-top: auto;
             padding: 10px;
             text-align: center;
             font-size: 12px;
             width: 100%;
             margin: 0; /* Remove margin to eliminate gap */
+            opacity: 0; /* Start with the footer hidden */
+            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation-delay: 2.5s; /* Delay to match h2 */
+
         }
+
         .socials {
             margin-top: 10px;
         }
@@ -255,8 +261,6 @@
                 <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
             </ul>
         </div>
-        <br>
-        <p style="font-size: 12px; text-align: center; color: #333333;">&copy; 2024 Puya Fard. All Rights Reserved.</p>
         </footer>
     </div> <!-- Closing content-wrapper -->
 
