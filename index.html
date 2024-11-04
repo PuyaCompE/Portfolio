@@ -16,89 +16,193 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Existing styles */
+        :root {
+            --secondary-glow: conic-gradient(
+                from 10deg at 50% 50%,
+                #eb7494 0deg,
+                #ae77b2 55deg,
+                #97b5da 120deg,
+                #0099ca 160deg,
+                transparent 360deg
+            );
         
-        /* New styles */
-        .content-wrapper {
-            text-align: center;
-            padding: 2rem;
+            --third-glow: conic-gradient(
+                from 90deg at 50% 50%,
+                #ff8b7e 0deg,
+                #e24e6b 160deg,
+                #7ed2da 120deg,
+                #8bdce0 55deg,
+                transparent 360deg
+            );
         }
         
-        /* Hero Section */
-        .tagline {
-            font-size: 24px;
-            margin-top: 1rem;
-            color: #555;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-            animation-delay: 4s;
+        @keyframes gradientAnimation {
+            0% { background: #f5f5dc; } /* Beige */
+            50% { background: #dcdcdc; } /* Light silver */
+            100% { background: #f5f5dc; } /* Beige */
         }
         
-        /* Project Section */
-        .projects {
-            margin-top: 4rem;
-            text-align: center;
-            padding: 0 2rem;
+        body {
+            margin: 0;
+            height: 100vh; /* Full height */
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            color: white; /* Text color */
+            font-family: Arial, sans-serif;
+            position: relative; /* For positioning pseudo-elements */
+            overflow: hidden; /* Prevent overflow */
+            animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
+            padding-top: 20px; /* Adjust based on menu height */
         }
         
-        .project {
-            display: inline-block;
-            width: 280px;
-            padding: 1.5rem;
-            background-color: #f0f0f0;
-            margin: 1rem;
-            border-radius: 8px;
-            transition: transform 0.3s;
+        h1 {
+            font-size: 50px; /* Font size */
+            color: #333333;
+            font-weight: bold; /* Bold text */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+            opacity: 0; /* Start with the text hidden */
+            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation-delay: 0.5s; /* Delay before the animation starts */
         }
         
-        .project:hover {
-            transform: scale(1.05);
+        h2 {
+            font-size: 30px; /* Font size for h2 */
+            font-weight: normal; /* Normal weight for h2 */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+            opacity: 0; /* Start with the text hidden */
+            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation-delay: 2.5s; /* Delay before the animation starts */
+            color: #333333;
         }
         
-        .project h3 {
-            color: #333;
+        h3 {
+            font-size: 18px; /* Font size for h2 */
+            font-weight: normal; /* Normal weight for h2 */
+            text-align: center; /* Center text */
+            margin: 0; /* Remove default margin */
+            opacity: 0; /* Start with the text hidden */
+            animation: fadeIn 3s forwards; /* Apply fade-in animation */
+            animation-delay: 6s; /* Delay before the animation starts */
+            color: #333333;
         }
         
-        /* Skills Section */
-        .skills {
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Fade in to full visibility */
+            }
+        }
+        
+        nav {
+            width: 100%;
+            background-color: #333333; /* Match the font color of the rest of the page */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        
+        .menu-bar {
             display: flex;
             justify-content: center;
-            margin-top: 4rem;
+            padding: 10px; /* Increased padding for more space */
+            list-style: none;
+            margin: 0;
         }
         
-        .skill {
-            margin: 0 1rem;
-            text-align: center;
+        .menu-bar ul {
+            display: flex; /* Ensure the list items are displayed horizontally */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            list-style: none; /* Remove default list styling */
         }
         
-        .skill i {
-            font-size: 2rem;
-            color: #0077b5;
+        .menu-bar li {
+            margin: 15px;
         }
         
-        /* Footer */
-        footer {
-            margin-top: 3rem;
-            padding: 1.5rem;
-            background-color: #333333;
-            color: white;
-            text-align: center;
-        }
-        
-        footer a {
-            color: #ffffff;
-            margin: 0 1rem;
+        .menu-bar a {
             text-decoration: none;
+            color: #ffffff; /* Change text color to white */
+            font-weight: bold;
             transition: color 0.3s;
         }
         
-        footer a:hover {
+        .menu-bar a:hover {
             color: #0077b5;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-bar {
+                display: flex;
+                padding: 20px 0; /* Increased padding for mobile */
+                justify-content: center;
+                font-size: 3vw;
+            }
+            
+            .menu-bar li {
+                margin: 10px; /* Adjust margin for vertical layout */
+            }
+        
+            h1 {
+                font-size: 8vw;
+                color: #333333;
+            }
+            
+            h2, h3 {
+                font-size: 5vw;
+                color: #333333;
+            }
+        }
+        
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        
+        body::before {
+            background: var(--third-glow);
+            border-radius: 50%;
+            width: 50vw;
+            height: 50vw;
+            margin-left: -200px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw);
+            animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+        
+        body::after {
+            background: var(--secondary-glow);
+            border-radius: 50%;
+            width: 500px;
+            height: 700px;
+            filter: blur(90px);
+            top: calc(50vh - 50vw / 2);
+            left: calc(50vw - 50vw / 2);
+            animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+        }
+        
+        @keyframes animateBefore {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(200px) scale(0.8); }
+            100% { transform: translateY(0); }
+        }
+        
+        @keyframes animateAfter {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-250px) scale(1.2); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Menu -->
     <nav>
         <ul class="menu-bar">
             <li><a href="about.html">About Me</a></li>
@@ -106,61 +210,11 @@
             <li><a href="completed-projects.html">Completed Projects</a></li>
         </ul>
     </nav>
-
-    <!-- Hero Section -->
+    
     <div class="content-wrapper">
         <h1>Welcome to My Portfolio</h1>
-        <h2>by Puya Fard</h2>
-        <p class="tagline">Innovative Engineer with a Passion for Technology and Design</p>
-    </div>
-
-    <!-- Featured Projects Section -->
-    <section class="projects">
-        <h2>Featured Projects</h2>
-        <div class="project">
-            <h3>Project 1: Autonomous Driving Stack</h3>
-            <p>Developed a complete autonomous driving stack using ROS2 with perception, planning, and control modules.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2: Image Classification</h3>
-            <p>Built a DCNN to classify images with 94.35% accuracy using Efficient B0 and custom DCNN architectures.</p>
-        </div>
-        <div class="project">
-            <h3>Project 3: Speech & Music Separation</h3>
-            <p>Implemented a neural network to separate speech from background music using LSTM and Dense layers.</p>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills">
-        <div class="skill">
-            <i class="fab fa-python"></i>
-            <p>Python</p>
-        </div>
-        <div class="skill">
-            <i class="fab fa-js-square"></i>
-            <p>JavaScript</p>
-        </div>
-        <div class="skill">
-            <i class="fab fa-react"></i>
-            <p>React</p>
-        </div>
-        <div class="skill">
-            <i class="fab fa-node"></i>
-            <p>Node.js</p>
-        </div>
-        <div class="skill">
-            <i class="fab fa-html5"></i>
-            <p>HTML5</p>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>Connect with me on:</p>
-        <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/puyacompe" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="mailto:pfard@uci.edu"><i class="fas fa-envelope"></i> Email</a>
-    </footer>
+        <br>
+        <h2> by Puya Fard</h2>
+    </div> <!-- Closing content-wrapper -->
 </body>
 </html>
