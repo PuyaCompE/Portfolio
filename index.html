@@ -272,45 +272,31 @@
         .socials ul li a:hover {
             color: #0077b5; /* Optional: Change color on hover for effect */
         }
-        /* Adjust the wrapper to have larger padding and centered margins */
         .welcome-wrapper {
             position: relative;
             display: inline-block;
-            padding: 40px; /* Increase padding for a larger box */
-            margin: 40px auto; /* Center and space the box */
-            color: #333333; /* Set font color */
+            padding: 40px;
+            margin: 40px auto;
+            color: #333333;
+            border: 3px solid transparent; /* Reserve space for border */
         }
     
-        /* Define the border animation with pseudo-elements */
-        .welcome-wrapper::before,
-        .welcome-wrapper::after {
+        /* Create the border animation with a single pseudo-element */
+        .welcome-wrapper::before {
             content: '';
             position: absolute;
-            border: 3px solid #333333; /* Border color and thickness */
+            top: 0;
+            left: 0;
             width: 0;
             height: 0;
+            border: 3px solid #333333; /* Border color */
             transition: 1s ease-out;
+            box-sizing: border-box; /* Include padding in width/height */
+            animation: singleBorderAnimation 3s forwards;
         }
     
-        /* Create a border animation starting from the top-left */
-        .welcome-wrapper::before {
-            top: -10px; /* Move border slightly outside the wrapper */
-            left: -10px;
-            width: calc(100% + 20px); /* Extend border size */
-            height: 0;
-            animation: borderAnimation 3s forwards;
-        }
-    
-        .welcome-wrapper::after {
-            top: -10px;
-            left: -10px;
-            height: calc(100% + 20px); /* Extend height for larger box */
-            width: 0;
-            animation: borderAnimation 3s 0.5s forwards; /* Delay after first animation */
-        }
-    
-        /* Keyframe animation to expand the border box */
-        @keyframes borderAnimation {
+        /* Keyframe animation for single expanding border */
+        @keyframes singleBorderAnimation {
             0% {
                 width: 0;
                 height: 0;
