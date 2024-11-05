@@ -289,8 +289,8 @@
         }
         .hidden {
             opacity: 0;
-            transform: translateY(20px); /* Slide in from below */
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+            transform: translateY(40px); /* Slide in from below */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
         }
         
         .visible {
@@ -355,7 +355,7 @@
         const observerOptions = {
             root: null, // Use the viewport as the root
             rootMargin: '0px',
-            threshold: 0.1 // Trigger when 10% of the element is visible
+            threshold: 0.2 // Trigger when 10% of the element is visible
         };
     
         // Create the observer
