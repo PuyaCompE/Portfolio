@@ -626,12 +626,6 @@
         });
     </script>
     <script>
-        window.onload = function() {
-            // Redirect to a specific section by changing the URL
-            window.location.href = window.location.origin + window.location.pathname + '#home';
-        };
-    </script>
-    <script>
         document.querySelectorAll('.menu-bar a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
