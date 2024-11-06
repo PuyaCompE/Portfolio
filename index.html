@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -33,20 +32,112 @@
             100% { background: #b5b7bb; } /* Beige */
         }
 
-        body {
+        body, html {
             margin: 0;
-            height: 100vh; /* Full height */
-            display: flex;
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
-            color: white; /* Text color */
+            padding: 0;
+            overflow-x: hidden;
             font-family: Arial, sans-serif;
-            position: relative; /* For positioning pseudo-elements */
-            overflow: hidden; /* Prevent overflow */
-            animation: gradientAnimation 60s ease infinite; /* Animation for gradient */
-            padding-top: 20px; /* Adjust based on menu height */
         }
 
+        nav {
+            width: 100%;
+            background-color: #333333; /* Match the font color of the rest of the page */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            font-size: 16px; /* Set the desired font size */
+
+        }
+
+        .menu-bar {
+            display: flex;
+            justify-content: center;
+            padding: 10px; /* Increased padding for more space */
+            list-style: none;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .menu-bar ul {
+            display: flex; /* Ensure the list items are displayed horizontally */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            list-style: none; /* Remove default list styling */
+        }
+
+        .menu-bar li {
+            margin: 15px;
+        }
+
+        .menu-bar a {
+            text-decoration: none;
+            color: #ffffff; /* Change text color to white */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .menu-bar a:hover {
+            color: #0077b5;
+        }
+        .menu-bar a i {
+            margin-right: 8px;
+            color: #ffffff; /* Default icon color */
+            transition: color 0.3s;
+        }
+
+        .menu-bar a:hover i {
+            color: #0077b5; /* Hover color */
+        }
+
+        .parallax {
+            position: relative;
+            height: 100vh;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding-top: 50px;
+            box-sizing: border-box;
+        }
+
+        #home {
+            background-image: url('path/to/home-image.jpg');
+        }
+
+        #about {
+            background-image: url('path/to/about-image.jpg');
+        }
+
+        #background {
+            background-image: url('path/to/background-image.jpg');
+        }
+
+        #projects {
+            background-image: url('path/to/projects-image.jpg');
+        }
+
+      .content {
+          position: relative; /* Change from absolute to relative */
+          top: 0; /* Align content to the top */
+          left: 50%; /* Center horizontally */
+          transform: translateX(-50%); /* Only translate horizontally */
+          width: 80%;
+          max-width: 800px;
+          padding-top: 20px; /* Add padding if needed to create space from the top */
+          box-sizing: border-box; /* Ensure padding is included in width calculation */
+      }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Existing styles */
         .introduction {
             font-size: 18px;
             color: #333333;
@@ -119,56 +210,6 @@
             }
         }
 
-        nav {
-            width: 100%;
-            background-color: #333333; /* Match the font color of the rest of the page */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .menu-bar {
-            display: flex;
-            justify-content: center;
-            padding: 10px; /* Increased padding for more space */
-            list-style: none;
-            margin: 0;
-        }
-
-        .menu-bar ul {
-            display: flex; /* Ensure the list items are displayed horizontally */
-            padding: 0; /* Remove default padding */
-            margin: 0; /* Remove default margin */
-            list-style: none; /* Remove default list styling */
-        }
-
-        .menu-bar li {
-            margin: 15px;
-        }
-
-        .menu-bar a {
-            text-decoration: none;
-            color: #ffffff; /* Change text color to white */
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu-bar a:hover {
-            color: #0077b5;
-        }
-        /* Additional CSS for styling icons */
-        .menu-bar a i {
-            margin-right: 8px;
-            color: #ffffff; /* Default icon color */
-            transition: color 0.3s;
-        }
-
-        .menu-bar a:hover i {
-            color: #0077b5; /* Hover color */
-        }
-
         @media (max-width: 768px) {
             .menu-bar {
                 display: flex;
@@ -234,109 +275,160 @@
             50% { transform: translateX(-250px) scale(1.2); }
             100% { transform: translateX(0); }
         }
-        footer {
-            margin-top: auto;
-            padding: 10px;
-            text-align: center;
-            font-size: 12px;
-            width: 100%;
-            margin: 0; /* Remove margin to eliminate gap */
-            opacity: 0; /* Start with the footer hidden */
-            animation: fadeIn 3s forwards; /* Apply fade-in animation */
-            animation-delay: 3.5s; /* Delay to match h2 */
-
-        }
-
-        .socials {
-            margin-top: 10px;
-        }
-
-        .socials ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .socials ul li {
-            margin: 0 15px;
-        }
-
-        .socials ul li a {
-            color: #333333; /* Match the font color of the rest of the page */
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        .socials ul li a:hover {
-            color: #0077b5; /* Optional: Change color on hover for effect */
-        }
-        .welcome-wrapper {
-            position: relative;
-            display: inline-block;
-            padding: 40px;
-            margin: 40px auto;
+        .section-title {
+            text-align: justify;
+            max-width: 800px;
+            font-size: 30px;
+            margin-top: 0;
             color: #333333;
-            border: 3px solid transparent; /* Reserve space for border */
+            font-weight: bold;
         }
 
-        /* Create the border animation with a single pseudo-element */
-        .welcome-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border: 3px solid #333333; /* Border color */
-            transition: 1s ease-out;
-            box-sizing: border-box; /* Include padding in width/height */
-            animation: singleBorderAnimation 3s forwards;
+        .section-content {
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto; /* Centers the text block */
+            text-align: justify; /* Justifies the content */
+            line-height: 1.6;
+            color: #333333;
+            padding: 20px; /* Padding for better readability */
+        }
+        .hidden {
+            opacity: 0;
+            transform: translateY(40px); /* Slide in from below */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
         }
 
-        /* Keyframe animation for single expanding border */
-        @keyframes singleBorderAnimation {
-            0% {
-                width: 0;
-                height: 0;
-            }
-            50% {
-                width: 100%;
-                height: 0;
-            }
-            100% {
-                width: 100%;
-                height: 100%;
-            }
+        .visible {
+            opacity: 1;
+            transform: translateY(0); /* Normal position */
+        }
+        .signature {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            max-width: 800px;
+            width: 100%;
+            margin: 20px auto 0;
+        }
+        
+        .signature img {
+            max-width: 200px;
+            height: auto;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <nav>
+    <nav id="navbar">
         <ul class="menu-bar">
-            <li><a href="about.html"><i class="fas fa-info-circle"></i>About Me</a></li>
-            <li><a href="personal-background.html"><i class="fas fa-graduation-cap"></i>Personal Background</a></li>
-            <li><a href="completed-projects.html"><i class="fas fa-folder"></i>Completed Projects</a></li>
+            <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i>About Me</a></li>
+            <li><a href="#background"><i class="fas fa-graduation-cap"></i>Personal Background</a></li>
+            <li><a href="#projects"><i class="fas fa-folder"></i>Completed Projects</a></li>
         </ul>
     </nav>
 
-    <div class="content-wrapper">
-        <div class="welcome-wrapper">
+    <section id="home" class="parallax">
+        <div class="content">
+        	<br><br><br><br><br><br><br><br><br><br><br><br>
             <h1>Welcome to My Portfolio</h1>
-            <br>
             <h2>by Puya Fard</h2>
         </div>
-        <br><br>
-        <footer>
+    </section>
+
+    <section id="about" class="parallax">
+        <div class="content">
+            <h2 class="section-title hidden">About Me</h2>
+            <p class="section-content hidden">A wise man once said, “You never change your life until you step out of your comfort zone; change begins at the end of your comfort zone.” — Roy T. Bennett. I wish I had heeded these words sooner. I am a man of principles, hard work, and commitment, driven by a clear purpose: to become the best version of myself in every aspect of life. I pursue this goal in my fitness, academics, and personal life by first stepping outside my comfort zone. 
+            <br><br>
+            My journey has been complicated and lengthy. Since I was 10, I’ve moved frequently with my family, and even now, as I navigate life on my own, that pattern continues. This lifestyle has taught me to cherish every moment, even on my days off, because those moments may never come again. While this realization is significant, it can also be perilous, as I sometimes find myself living solely in the present without considering the consequences of my actions or my future. I believe it’s essential to strike a balance between enjoying the moment and planning ahead, and that pursuit of balance is my current life philosophy.
+           <br><br>
+           Outside of academics and philosophy, I’m a fitness enthusiast. This means I carefully cook, scale, and portion my meals, often planning what I’ll eat for the next week or two. Some might call it a bit obsessive, but I genuinely enjoy it. I work out at the gym, focusing on pushing my body to achieve an aesthetic look. In my free time, I also enjoy watching movies, shopping online, and exploring new food spots and coffee shops on the weekends. My favorite cuisines are Persian, Turkish, Japanese, and Italian.
+           <br><br>
+           For those looking to change their lives, try something new, or feeling scared to take that first step: just do it. You only live once, and opportunities don’t wait. Embrace the unknown, step outside your comfort zone, and take that leap. You’ll be surprised at what you can achieve when you start moving forward.
+			</p>
+            <div class="signature">
+                <img src="assets/signature 2.png" alt="Signature">
+            </div>
+        </div>
+    </section>
+
+    <section id="background" class="parallax">
+        <div class="content">
+            <h2 class="section-title hidden">Personal Background</h2>
+            <p class="section-content hidden">Throughout my academic journey, I have learned an important lesson that I would like to share: never be convinced that you know everything...</p>
+        </div>
+    </section>
+
+    <section id="projects" class="parallax">
+        <div class="content">
+            <h2 class="section-title hidden">Completed Projects</h2>
+            <p class="section-content hidden">Click to expand project details.</p>
+            <!-- Add project details here -->
+        </div>
+    </section>
+
+    <footer>
         <div class="socials">
             <ul>
                 <li><a href="mailto:pfard@uci.edu" class="email-icon" title="Email Me"><i class="fas fa-envelope"></i></a></li>
                 <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
             </ul>
         </div>
-        </footer>
-    </div> <!-- Closing content-wrapper -->
+        <p>&copy; 2024 Puya Fard. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Select all elements with the 'hidden' class
+        const hiddenElements = document.querySelectorAll('.hidden');
 
+        // Options for the observer (which are the default values)
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.2 // Trigger when 10% of the element is visible
+        };
+
+        // Create the observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When the element is in view, add the 'visible' class
+                    entry.target.classList.add('visible');
+                    // Optionally, you can unobserve the element after it has been shown
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe each hidden element
+        hiddenElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+    <script>
+        // Scroll to the top of the page when it loads
+        window.onload = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'  // This enables smooth scrolling
+            });
+    </script>
+    <script>
+        document.querySelectorAll('.menu-bar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const navbarHeight = document.getElementById('navbar').offsetHeight;
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - navbarHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
