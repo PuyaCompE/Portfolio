@@ -485,7 +485,7 @@
             <h2 class="section-title hidden">Personal Background</h2>
             <h3 class="section-title3 hidden">Statement & Resume</h3>
             <p class="section-content hidden">Throughout my academic journey, I have learned an important lesson that I would like to share: never be convinced that you know everything. I have often found myself proven wrong about information I was certain I understood. This experience has taught me that knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence in their knowledge, but rather that we should remain open to learning more and be willing to adjust our viewpoints on subjects that matter.
-           <br><a href="assets/FARD_RESUME.pdf" target="_blank" class="project-report-link">View Resume</a>
+           <br><a href="assets/ResmFard.pdf" target="_blank" class="project-report-link">View Resume</a>
         </p>
         <div class="education-section">
             <h3 class="section-title3 hidden">Education</h3><br>
@@ -494,12 +494,12 @@
                 University of California, Irvine<br>
                 <a href="assets/Transcript UCI.pdf" target="_blank" class="project-report-link">View Transcript</a>
             </p>
-            <p class="education-degree hidden">Bachelors of Science in Computer Engineering (2021-2024)</p>
+            <p class="education-degree hidden"> Bachelor of Science in Computer Engineering (2021-2024)</p>
             <p class="education-school hidden">
                 California State University, Fresno<br>
                 <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
             </p>
-            <p class="education-degree hidden hidden">Bachelors of Science in Computer Engineering (2019-2021)</p>
+            <p class="education-degree hidden hidden">Completion of Transferrable courses (2019-2021)</p>
             <p class="education-school hidden">
                 Santa Monica College, Santa Monica<br>
                 <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
@@ -509,13 +509,15 @@
         <div class="work-experience-section hidden">
             <h3 class="section-title3 hidden">Work Experience</h2><br>
             <div>
-                <p class="work-title hidden" onclick="toggleDetails('research-assistant-details')">Research Assistant, Associate Prof. Dr. Salma Elmalaki (Mar 2024 - Present)</p>
-                <div id="research-assistant-details" class="work-details hidden" style="display: none;">
-                    <p>• Research topic: Human-aware automotive testbed using CARLA with VR environment, supervised by Associate Prof. Dr. Salma Elmalaki in the Pervasive Autonomy Lab.</p>
-                    <p>• Successfully assembled a fully functional testbed, integrating a steering wheel, pedals, and a track chair synchronized with the CARLA simulator, utilizing a VR headset for immersive display.</p>
-                    <p>• Optimized user experience to match real world driving standards for best performance and data harvesting results.</p>
-                    <p>• Developed a PyGame script to enable this application to operate seamlessly on the CarlaUE4 platform.</p>
-                </div>
+		<p class="work-title hidden" onclick="toggleDetails('research-assistant-details')">Research Assistant, Associate Prof. Dr. Salma Elmalaki (Mar 2024 - Present)</p>
+		<div id="research-assistant-details" class="work-details hidden" style="display: none;">
+		    <p>• Research topic: Human-aware automotive testbed using CARLA with VR environment, supervised by Associate Prof. Dr. Salma Elmalaki in the Pervasive Autonomy Lab.</p>
+		    <p>• Successfully assembled a fully functional testbed, integrating a steering wheel, pedals, and a track chair synchronized with the CARLA simulator, utilizing a VR headset for immersive display.</p>
+		    <p>• Optimized user experience to match real-world driving standards for best performance and data harvesting results.</p>
+		    <p>• Developed a PyGame script to enable this application to operate seamlessly on the CarlaUE4 platform.</p>
+		    <p><a href="assets/UC_Irvine___Pervasive_Autonomy_Testbed_using_CARLA.pdf" target="_blank" class="project-report-link">View Project Report</a></p>
+		    <p><a href="https://github.com/PuyaCompE/CARLA_2024.git" target="_blank" class="project-github-link">View GitHub Repository</a></p>
+		</div>
                 <br>
                 <p class="work-title hidden" onclick="toggleDetails('ta-grader-details')">Teaching Assistant & Grader, California State University, Fresno (Feb 2022 - May 2023)</p>
                 <div id="ta-grader-details" class="work-details hidden" style="display: none;">
@@ -550,14 +552,7 @@
         	<h2 class="section-title hidden">Completed Projects</h2> 
             <h4 class="section-title4h hidden" onclick="toggleDetails('project1')">SmartZoo Controlling & Monitoring System</h4>
             <div id="project1" class="project-details">
-                <p class="section-content hidden">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles, and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.<br>
-	            <div class="signature">
-	                <img src="assets/basicblockdiagram.png" alt="project">
-	            </div><br>		
-		The Smart Zoo is a project that is going to be a primary control and monitoring system that will have sensors and nodes connected to its microcontroller end, and user input and application interface to the other. And all of these systems will be working and functioning via WiFi and cloud-based programming and communication. A very basic idea behind our project is modeled in Fig. 3. As we can see we have three major modules in this project. The software user interface, cloud and data processing, and data gathering node.
-                <br>
-		The Stingray module physical diagram below is created to visualize how our physical components are standing along and within the complete system of sensors and modules. We have a total of 5 input sensors that will be individually configured and connected to our microcontroller. These are the temperature sensor, ph-sensor, oxidation sensor, camera module, and actuator that will be the controlling part. The data collected will be stored in the SD card module and transmitted via the WiFi module.
-		<img src="assets/basicblockdiagram.png" alt="stng diagram" ><br>
+                <p class="section-content hidden">Created a safe and intelligent control environment that ensures the safety of stingrays, reptiles, and elephants in the zoo. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store data.
 		<a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-report-link">View Project Report</a></p>
             </div>
             <h4 class="section-title4h hidden" onclick="toggleDetails('project2')">5-stage Pipelined MIPS Processor</h4>
@@ -573,17 +568,16 @@
             <h4 class="section-title4h hidden" onclick="toggleDetails('project4')">DCNN Image Classification Algorithm</h4>
             <div id="project4" class="project-details">
                 <p class="section-content hidden">Conducted a comparative study on DCNN, DarkNet-19, ResNet-50, and Efficient B0 architectures, achieving a 94.35% validation accuracy with Efficient B0 on a dataset of over 3500 32x32 grayscale images across 28 classes; custom-designed DCNN achieved 92.35% validation accuracy with the lowest training time, demonstrating efficient model design.<br>
-                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a></p>
+                <a href="assets/ECE172-Final Project-Report.pdf" target="_blank" class="project-report-link">View Project Report</a></p>
             </div>
             <h4 class="section-title4h hidden" onclick="toggleDetails('project5')">Autonomous Driving Stack Integration</h4>
             <div id="project5" class="project-details">
                 <p class="section-content hidden">Developed a comprehensive autonomous driving stack in ROS2, integrating perception, planning, and control modules, enabling real-time navigation and decision-making in dynamic environments.<br>
-                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a></p>
+                <a href="assets/Lab5 report (1).pdf" target="_blank" class="project-report-link">View Project Report</a></p>
             </div>
             <h4 class="section-title4h hidden" onclick="toggleDetails('project6')">Edge detection System on Chip (SoC) Design</h4>
             <div id="project6" class="project-details">
                 <p class="section-content hidden">Designed and developed a high-performance edge detection algorithm module using SystemC for image and Video processing at 24fps.<br>
-                <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">View Project Report</a></p>
             </div>
             <h4 class="section-title4h hidden" onclick="toggleDetails('project8')">Research: Nuclear Power in Space</h4>
             <div id="project8" class="project-details">
@@ -592,19 +586,29 @@
             </div>
             <h4 class="section-title4h hidden" onclick="toggleDetails('project9')">Parallel to Serial Interfacing</h4>
             <div id="project9" class="project-details">
-                <p class="section-content hidden">The project focuses on enhancing data transmission efficiency within communication networks by implementing a Parallel to Serial Interface and a Serial to Parallel Interface. It explores the integration of these interfaces in conjunction with the OSI model, which consists of seven layers, each serving a unique purpose in the communication process.<br>
+                <p class="section-content hidden">The project focuses on enhancing data transmission efficiency within communication networks by implementing a Parallel to Serial Interface and a Serial Parallel Interface. It explores the integration of these interfaces in conjunction with the OSI model, which consists of seven layers, each serving a unique purpose in the communication process.<br>
                 <a href="assets/ECE 176 Report.pdf" target="_blank" class="project-report-link">View Project Report</a></p>
             </div>
             <h4 class="section-title4h hidden" onclick="toggleDetails('project10')">Analysis of Human Behavior in Different Driving Scenarios</h4>
             <div id="project10" class="project-details">
-                <p class="section-content hidden">Despite advancements in automotive technology and infrastructure, traffic accidents remain a significant global issue. The graph that you see indicates the the number of deaths due to accidents  between 2018-2022 sourced from NHTSA. This makes it crucial to understand the drivers behaviour to enhance safety. Advanced simulation technology like CARLA gives us an opportunity to study the driving behaviour. The goal of this project is to create and simulate various traffic scenarios using carla simulator and understand the driver behaviour. This is done by gathering vehicle metric data and biometrics such as heart rate and breathing rate.<br>
+                <p class="section-content hidden">Despite advancements in automotive technology and infrastructure, traffic accidents remain a significant global issue. The graph that you see indicates the number of deaths due to accidents  between 2018-2022 sourced from NHTSA. This makes it crucial to understand the drivers behavior to enhance safety. Advanced simulation technology like CARLA gives us an opportunity to study driving behaviour. The goal of this project is to create and simulate various traffic scenarios using the Carla simulator and understand the driver's behavior. This is done by gathering vehicle metric data and biometrics such as heart rate and breathing rate.<br>
                 <a href="assets/Final PPT (1).pdf" target="_blank" class="project-report-link">View Project Report</a></p>
             </div>
+            <h4 class="section-title4h hidden" onclick="toggleDetails('project11')">Music Regeneration and Classification using ML Signal Processing</h4>
+            <div id="project1" class="project-details">
+                <p class="section-content hidden">The objective of this project is to do music signal recreation. Leveraging the trained CNN model, genre-specific feature representations are synthesized into new music signals. These features are converted into audio waveforms, demonstrating the potential of neural networks to generate realistic genre-specific samples. To validate the quality of the recreated music signals, they are reclassified using the same trained model, ensuring fidelity to the original genres. Finally, a Principle Component Analysis (PCA) will be performed on the reconstructed data for the four genres to examine and highlight the distinct differences in their variance distributions.
+		<a href="assets/Final_Project___Report.pdf" target="_blank" class="project-report-link">View Project Report</a></p>
+            </div>
+            <h4 class="section-title4h hidden" onclick="toggleDetails('project12')">DL Accelerator and Dataflow design for DL Models</h4>
+            <div id="project1" class="project-details">
+                <p class="section-content hidden">Deep learning (DL) accelerators are critical for optimizing computational workloads across various applications. The co-design space of DL accelerators comprises three interconnected domains: the deep learning model, the dataflow, and the hardware architecture. Each of these components introduces unique constraints and opportunities for optimization. This project aims to co-optimize dataflow and hardware architecture for given DL models vgg16 and UNet using the MAESTRO cost model. The objectives are to minimize latency and energy consumption while adhering to predefined hardware and dataflow constraints. This report outlines the optimization strategies employed, decisions taken during the design process, and results obtained.
+		<a href="assets/Final_Project___Report___EECS_298__DL_Accelerator.pdf" target="_blank" class="project-report-link">View Project Report</a></p>
+            </div>	
         </div>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="socials">
             <ul>
-                <li><a href="mailto:pfard@uci.edu" class="email-icon" title="Email Me"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="mailto:puyafardce@gmail.com" class="email-icon" title="Email Me"><i class="fas fa-envelope"></i></a></li>
                 <li><a href="https://www.instagram.com/py.frd/" target="_blank" class="fab fa-instagram"></a></li>
                 <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin"></a></li>
                 <li><a href="https://puyacompe.github.io/Profolio/" target="_blank" class="fab fa-github"></a></li>
