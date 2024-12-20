@@ -442,33 +442,66 @@
             display: none; /* Initially hide project details */
             margin-top: 10px;
         }
-	  /* Embedded Computing Skills (Blue) */
-	  .skill-embedded progress {
-	      background-color: #4A90E2;
-	  }
-	  
-	  /* Software Development Skills (Green) */
-	  .skill-software progress {
-	      background-color: #4CAF50;
-	  }
-	  
-	  /* Project Management Skills (Orange) */
-	  .skill-management progress {
-	      background-color: #FF9800;
-	  }
-	  
-	  /* Progress bars alignment */
-	  .skill {
-	      margin: 10px 0;
-	      text-align: left;
-	  }
-	  
-	  progress {
-	      width: 50%;
-	      height: 20px;
-	      margin-top: 2px;
-	      display: block;
-	  }
+        /* Gradient Progress Bar (Yellow to Orange to Red) */
+        progress {
+            width: 50%;
+            height: 20px;
+            margin-top: 2px;
+            display: block;
+            appearance: none; /* Removes default styling */
+            background: linear-gradient(to right, yellow, orange, red);
+        }
+        
+        /* Adding indicator ticks */
+        progress::-webkit-progress-bar {
+            background-color: #f0f0f0; /* Light grey background */
+            border-radius: 5px;
+        }
+        
+        progress::-webkit-progress-value {
+            background: linear-gradient(to right, yellow, orange, red); /* Gradient color */
+            border-radius: 5px;
+        }
+        
+        progress::-webkit-progress-value {
+            /* Adding indicator ticks */
+            background: linear-gradient(to right, yellow, orange, red);
+            border-radius: 5px;
+        }
+        
+        /* Embedded Computing Skills (Blue) */
+        .skill-embedded progress::-webkit-progress-value {
+            background: linear-gradient(to right, blue, darkblue);
+        }
+        
+        /* Software Development Skills (Green) */
+        .skill-software progress::-webkit-progress-value {
+            background: linear-gradient(to right, green, darkgreen);
+        }
+        
+        /* Project Management Skills (Orange) */
+        .skill-management progress::-webkit-progress-value {
+            background: linear-gradient(to right, orange, darkorange);
+        }
+        
+        /* Remove the custom ticks */
+        progress {
+            position: relative;
+        }
+        
+        progress::after {
+            content: "10";
+            position: absolute;
+            top: -10px;
+            right: 0;
+        }
+
+        /* Align skill text to the left */
+        .skill {
+            margin: 5px 0;
+            text-align: left;
+        }
+
 
 
 
