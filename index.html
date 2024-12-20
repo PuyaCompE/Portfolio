@@ -328,6 +328,7 @@
             font-weight: bold;
         }
         .section-title4h {
+            font-weight: bold;
             text-align: justify;
             font-size: 18px;
             margin-top: 12px;
@@ -339,7 +340,6 @@
 
         .section-title4h:hover {
             color: #0077b5; /* Change text color on hover */
-            transform: scale(1.01); /* Slightly increase the size of the text on hover */
         }
         
         .section-title4 {
@@ -426,6 +426,17 @@
         .work-title:hover {
             color: #0077b5;
         }
+        .skills-section {
+            display: none; /* Initially hidden */
+            color: #333333; /* Default text color */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+        
+        .section-title4:hover {
+            color: #0077b5; /* Blue color on hover */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
         .project-report-link {
             display: inline-block;
             margin-top: 10px;
@@ -551,7 +562,7 @@
         </p>
         <div class="education-section">
             <h3 class="section-title3 hidden">Education</h3><br>
-            <p class="education-degree hidden">Master of Science in Computer Engineering (2023-2024)</p>
+            <p class="education-degree hidden" >Master of Science in Computer Engineering (2023-2024)</p>
             <p class="education-school hidden">
                 University of California, Irvine<br>
                 <a href="assets/UCI_Transcript.pdf" target="_blank" class="project-report-link">View Transcript</a>
@@ -567,7 +578,7 @@
                 <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
             </p>
         </div>
-        <br><br>
+        <br>
         <div class="work-experience-section hidden">
             <h3 class="section-title3 hidden">Experience</h2><br>
             <div>
@@ -594,75 +605,93 @@
                 </div>
             </div>
         </div>
-  <div>
-      <br><h3 class="section-title3 hidden">Skills</h3>
-  
-      <h4 class="section-title4 hidden" onclick="toggleDetails('skill1')">Embedded Computing Skills</h4>
-      <div class="skill skill-embedded">
-          <label for="cadence">Cadence</label>
-          <progress id="cadence" value="6" max="10"></progress>
-      </div>
-      <div class="skill skill-embedded">
-          <label for="verilog">VHDL</label>
-          <progress id="verilog" value="7" max="10"></progress>
-      </div>
-      <div class="skill skill-embedded">
-          <label for="fpga">FPGA</label>
-          <progress id="fpga" value="9" max="10"></progress>
-      </div>
-      <div class="skill skill-embedded">
-          <label for="soc">System-on-Chip (SystemC)</label>
-          <progress id="soc" value="9" max="10"></progress>
-      </div>
-      <div class="skill skill-embedded">
-          <label for="qp">QuartusPrime</label>
-          <progress id="qp" value="9" max="10"></progress>
-      </div>
-      <div class="skill skill-embedded">
-          <label for="linux">Linux Programming</label>
-          <progress id="linux" value="10" max="10"></progress>
-      </div>
-      <h4 class="section-title4 hidden" onclick="toggleDetails('skill2')">Software Development Skills</h4>
-      <div class="skill skill-software">
-          <label for="c">Assembly Programming</label>
-          <progress id="c" value="5" max="10"></progress>
-      </div>
-
-      <div class="skill skill-software">
-          <label for="c">C Programming</label>
-          <progress id="c" value="7" max="10"></progress>
-      </div>
-      <div class="skill skill-software">
-          <label for="html">HTML</label>
-          <progress id="html" value="8" max="10"></progress>
-      </div>
-      <div class="skill skill-software">
-          <label for="cpp">C++</label>
-          <progress id="cpp" value="9" max="10"></progress>
-      </div>
-      <div class="skill skill-software">
-          <label for="python">Python</label>
-          <progress id="python" value="10" max="10"></progress>
-      </div>
-      <h4 class="section-title4 hidden">Project Management Skills</h4>
-
-      <h4 class="section-title4 hidden">Project Management Skills</h4>
-      <div class="skill skill-management">
-          <label for="topsis">TOPSIS</label>
-          <progress id="topsis" value="8" max="10"></progress>
-      </div>
-      <div class="skill skill-management">
-          <label for="scheduling">Scheduling</label>
-          <progress id="scheduling" value="9" max="10"></progress>
-      </div>
-      <div class="skill skill-management">
-          <label for="planning">Planning</label>
-          <progress id="planning" value="10" max="10"></progress>
-      </div>
-  </div>
-
-
+    <div>
+        <br>
+        <h3 class="section-title3 hidden">Skills</h3>
+    
+        <p class="section-title4h hidden" onclick="toggleDetails('embedded-skills')">Embedded Computing Skills</p>
+        <div id="embedded-skills" class="skills-section hidden" style="display: none;">
+            <div class="skill skill-embedded">
+                <label for="cadence">Cadence</label>
+                <progress id="cadence" value="6" max="10"></progress>
+            </div>
+            <div class="skill skill-embedded">
+                <label for="verilog">VHDL</label>
+                <progress id="verilog" value="7" max="10"></progress>
+            </div>
+            <div class="skill skill-embedded">
+                <label for="fpga">FPGA</label>
+                <progress id="fpga" value="9" max="10"></progress>
+            </div>
+            <div class="skill skill-embedded">
+                <label for="soc">System-on-Chip (SystemC)</label>
+                <progress id="soc" value="9" max="10"></progress>
+            </div>
+            <div class="skill skill-embedded">
+                <label for="qp">QuartusPrime</label>
+                <progress id="qp" value="9" max="10"></progress>
+            </div>
+            <div class="skill skill-embedded">
+                <label for="linux">Linux Programming</label>
+                <progress id="linux" value="10" max="10"></progress>
+            </div>
         </div>
+    
+        <p class="section-title4h hidden" onclick="toggleDetails('software-skills')">Software Development Skills</p>
+        <div id="software-skills" class="skills-section hidden" style="display: none;">
+            <div class="skill skill-software">
+                <label for="assembly">Assembly Programming</label>
+                <progress id="assembly" value="5" max="10"></progress>
+            </div>
+            <div class="skill skill-software">
+                <label for="c">C Programming</label>
+                <progress id="c" value="7" max="10"></progress>
+            </div>
+            <div class="skill skill-software">
+                <label for="html">HTML</label>
+                <progress id="html" value="8" max="10"></progress>
+            </div>
+            <div class="skill skill-software">
+                <label for="cpp">C++</label>
+                <progress id="cpp" value="9" max="10"></progress>
+            </div>
+            <div class="skill skill-software">
+                <label for="python">Python</label>
+                <progress id="python" value="10" max="10"></progress>
+            </div>
+        </div>
+        <p class="section-title4h hidden" onclick="toggleDetails('ML-skills')">Machine Learning Skills</p>
+        <div id="ML-skills" class="skills-section hidden" style="display: none;">
+            <div class="skill skill-ml">
+                <label for="PyTorch">PyTorch</label>
+                <progress id="PyTorch" value="9" max="10"></progress>
+            </div>
+            <div class="skill skill-ml">
+                <label for="TensorFlow">TensorFlow</label>
+                <progress id="TensorFlow" value="9" max="10"></progress>
+            </div>
+            <div class="skill skill-ml">
+                <label for="keras">Keras</label>
+                <progress id="keras" value="9" max="10"></progress>
+            </div>
+        </div>
+        <p class="section-title4h hidden" onclick="toggleDetails('management-skills')">Project Management Skills</p>
+        <div id="management-skills" class="skills-section hidden" style="display: none;">
+            <div class="skill skill-management">
+                <label for="topsis">TOPSIS</label>
+                <progress id="topsis" value="8" max="10"></progress>
+            </div>
+            <div class="skill skill-management">
+                <label for="scheduling">Scheduling</label>
+                <progress id="scheduling" value="9" max="10"></progress>
+            </div>
+            <div class="skill skill-management">
+                <label for="planning">Planning</label>
+                <progress id="planning" value="10" max="10"></progress>
+            </div>
+        </div>
+    </div>
+
     </section>
 
     <section id="projects" class="parallax">
