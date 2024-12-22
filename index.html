@@ -512,7 +512,59 @@
             margin: 5px 0;
             text-align: left;
         }
-
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000; /* On top of other content */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scrolling if needed */
+            background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+        }
+    
+        .modal-content {
+            position: relative;
+            margin: 10% auto; /* Center the modal */
+            padding: 20px;
+            background: white;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.3s;
+        }
+    
+        .modal-content object, .modal-content iframe {
+            display: block;
+            margin: 0 auto;
+        }
+    
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
 
 
@@ -553,9 +605,11 @@
         <div class="content">
             <h2 class="section-title hidden">Background</h2>
             <h3 class="section-title3 hidden">Resume</h3>
-            <p class="section-content hidden">Throughout my academic journey, I have learned an important lesson that I would like to share: never be convinced that you know everything. I have often found myself proven wrong about information I was certain I understood. This experience has taught me that knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence in their knowledge, but rather that we should remain open to learning more and be willing to adjust our viewpoints on subjects that matter.
-           <br><a href="assets/CV.Fard.pdf" target="_blank" class="project-report-link">View Resume</a>
-        </p>
+            <p class="section-content hidden">
+                Throughout my academic journey, I have learned an important lesson that I would like to share: never be convinced that you know everything. I have often found myself proven wrong about information I was certain I understood. This experience has taught me that knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence in their knowledge, but rather that we should remain open to learning more and be willing to adjust our viewpoints on subjects that matter.
+                <br>
+                <a href="#" class="project-report-link" onclick="openResumeModal(event)">View Resume</a>
+            </p>
         <div class="education-section">
             <h3 class="section-title3 hidden">Education</h3>
             <p class="education-degree hidden" >Master of Science in Computer Engineering (2023-2024)</p>
@@ -573,6 +627,30 @@
                 Santa Monica College, Santa Monica<br>
                 <a href="assets/Transcript CSUF.pdf" target="_blank" class="project-report-link">View Transcript</a>
             </p>
+        </div>
+        <!-- Modal Section -->
+        <div id="resumeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeResumeModal()">&times;</span>
+                <object
+                    data="https://example.com/resume.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="600px"
+                >
+                    <iframe
+                        src="https://example.com/resume.pdf"
+                        width="100%"
+                        height="600px"
+                        style="border: none;"
+                    >
+                        <p>
+                            Your browser does not support PDFs.
+                            <a href="https://example.com/resume.pdf">Download the Resume</a>.
+                        </p>
+                    </iframe>
+                </object>
+            </div>
         </div>
         <br>
         <div class="work-experience-section hidden">
@@ -837,6 +915,29 @@
                 top: 0,
                 behavior: 'smooth'  // This enables smooth scrolling
             });
+    </script>
+    <script>
+        function openResumeModal() {
+            document.getElementById("resumeModal").style.display = "block";
+        }
+    
+        function closeResumeModal() {
+            document.getElementById("resumeModal").style.display = "none";
+        }
+    
+        // Close the modal if user clicks anywhere outside of it
+        window.onclick = function (event) {
+            const modal = document.getElementById("resumeModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+    <script>
+    function openResumeModal(event) {
+        event.preventDefault(); // Prevents the default anchor behavior
+        document.getElementById("resumeModal").style.display = "block";
+    }
     </script>
 </body>
 </html>
