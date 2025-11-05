@@ -1,665 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --secondary-glow: conic-gradient(
-                from 10deg at 50% 50%,
-                #eb7494 0deg,
-                #ae77b2 55deg,
-                #97b5da 120deg,
-                #0099ca 160deg,
-                transparent 360deg
-            );
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puya Fard – Portfolio</title>
+  <style>
+    /* Base variables borrowed from your subpages' style */
+    :root {
+      --primary-color: #0077b5; /* matches LinkedIn accent you used */
+      --bg: #0b0f1a;
+      --panel: #0f1524;
+      --muted: #a8b3cf;
+      --text: #e6e9f4;
+      --card: #121a2e;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 6px 28px rgba(0,0,0,0.35);
+      --radius: 16px;
+      --maxw: 1060px;
+    }
 
-            --third-glow: conic-gradient(
-                from 90deg at 50% 50%,
-                #ff8b7e 0deg,
-                #e24e6b 160deg,
-                #7ed2da 120deg,
-                #8bdce0 55deg,
-                transparent 360deg
-            );
-        }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, system-ui, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif; }
+    a { color: var(--primary-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-        @keyframes gradientAnimation {
-            0% { background: #b5b7bb; } /* Beige */
-            50% { background: #afb1ae; } /* Light silver */
-            100% { background: #b5b7bb; } /* Beige */
-        }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            font-family: Arial, sans-serif;
-        }
+    /* Nav similar to your pages */
+    .navbar { position: sticky; top: 0; z-index: 50; background: rgba(11,15,26,0.75); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 12px; padding-bottom: 12px; }
+    .logo { font-weight: 700; letter-spacing: 0.3px; }
+    .nav-links { list-style: none; display: flex; gap: 14px; margin: 0; padding: 0; }
+    .nav-links a { padding: 8px 12px; border-radius: 10px; }
+    .nav-links a:hover { background: rgba(255,255,255,0.06); text-decoration: none; }
 
-        nav {
-            width: 100%;
-            background-color: #333333; /* Match the font color of the rest of the page */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            font-size: 16px; /* Set the desired font size */
+    /* Hero */
+    .hero { padding: 64px 0; background: radial-gradient(1200px 500px at 50% -200px, rgba(122,162,255,0.22), rgba(11,15,26,0)); text-align: center; }
+    .hero h1 { margin: 0 0 12px; font-size: clamp(28px, 4.2vw, 44px); line-height: 1.1; }
+    .hero p { margin: 0 auto; max-width: 800px; color: var(--muted); }
+    .btn-row { display:flex; gap:12px; flex-wrap: wrap; justify-content:center; margin-top: 18px; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; font-weight:600; text-decoration:none; }
+    .btn-primary { background: var(--primary-color); color: #fff; }
+    .btn-outline { border: 1px solid currentColor; opacity: .9; }
 
-        }
+    /* Sections */
+    section { padding: 28px 0; }
+    .cards { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 900px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--text); opacity: .9; }
+    .card .actions { margin-top: 14px; }
 
-        .menu-bar {
-            display: flex;
-            justify-content: center;
-            padding: 10px; /* Increased padding for more space */
-            list-style: none;
-            margin: 0;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .menu-bar ul {
-            display: flex; /* Ensure the list items are displayed horizontally */
-            padding: 0; /* Remove default padding */
-            margin: 0; /* Remove default margin */
-            list-style: none; /* Remove default list styling */
-        }
-
-        .menu-bar li {
-            margin: 15px;
-        }
-
-        .menu-bar a {
-            text-decoration: none;
-            color: #ffffff; /* Change text color to white */
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        .menu-bar a:hover {
-            color: #0077b5;
-        }
-        .menu-bar a i {
-            margin-right: 8px;
-            color: #ffffff; /* Default icon color */
-            transition: color 0.3s;
-        }
-
-        .menu-bar a:hover i {
-            color: #0077b5; /* Hover color */
-        }
-
-        .parallax {
-            position: relative;
-            min-height: 100vh;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            color: #b5b7bb;
-            text-align: center;
-            padding-top: 50px;
-            box-sizing: border-box;
-        }
-
-        #home {
-            background-image: url('path/to/home-image.jpg');
-        }
-
-        #about {
-            background-image: url('path/to/about-image.jpg');
-        }
-
-        #background {
-            background-image: url('path/to/background-image.jpg');
-        }
-
-        #projects {
-            background-image: url('path/to/projects-image.jpg');
-        }
-
-        .content {
-            position: relative; /* Change from absolute to relative */
-            top: 0; /* Align content to the top */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Only translate horizontally */
-            width: 80%;
-            max-width: 800px;
-            padding-top: 20px; /* Add padding if needed to create space from the top */
-            box-sizing: border-box; /* Ensure padding is included in width calculation */
-        }
-
-        footer {
-            text-align: center;
-            font-size: 12px;
-            width: 100%;
-            margin: 0;
-            color: #333333;
-            padding-top: 150px; /* Add padding if needed to create space from the top */
-        }
-
-        .socials {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 12px;
-            width: 100%;
-            margin: 0;        
-            color: #333333;
-	}
-
-        .socials ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .socials ul li {
-            margin: 0 15px;
-        }
-
-        .socials ul li a {
-            color: #333333;
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        .socials ul li a:hover {
-            color: #0077b5;
-        }
-
-
-        /* Existing styles */
-        .introduction {
-            font-size: 18px;
-            color: #333333;
-            text-align: center;
-            margin: 20px 0;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-            animation-delay: 3s;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #0077b5;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-            animation-delay: 3.5s;
-        }
-
-        .explore-link {
-            font-size: 20px;
-            color: #0077b5;
-            text-decoration: none;
-            margin-top: 20px;
-            animation: breathing 2s infinite;
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 50px; /* Font size */
-            color: #333333;
-            font-weight: bold; /* Bold text */
-            text-align: center; /* Center text */
-            margin: 0; /* Remove default margin */
-            opacity: 0; /* Start with the text hidden */
-            animation: fadeIn 3s forwards; /* Apply fade-in animation */
-            animation-delay: 0.5s; /* Delay before the animation starts */
-        }
-
-        h2 {
-            font-size: 30px; /* Font size for h2 */
-            font-weight: normal; /* Normal weight for h2 */
-            text-align: center; /* Center text */
-            margin: 0; /* Remove default margin */
-            opacity: 0; /* Start with the text hidden */
-            animation: fadeIn 3s forwards; /* Apply fade-in animation */
-            animation-delay: 1.5s; /* Delay before the animation starts */
-            color: #333333;
-        }
-
-        h3 {
-            font-size: 18px; /* Font size for h2 */
-            font-weight: normal; /* Normal weight for h2 */
-            text-align: center; /* Center text */
-            margin: 0; /* Remove default margin */
-            opacity: 0; /* Start with the text hidden */
-            animation: fadeIn 3s forwards; /* Apply fade-in animation */
-            animation-delay: 6s; /* Delay before the animation starts */
-            color: #333333;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1; /* Fade in to full visibility */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .menu-bar {
-                display: flex;
-                padding: 20px 0; /* Increased padding for mobile */
-                justify-content: center;
-                font-size: 2.8vw;
-            }
-
-            .menu-bar li {
-                margin: 10px; /* Adjust margin for vertical layout */
-            }
-
-            h1 {
-                font-size: 8vw;
-                color: #333333;
-            }
-
-            h2, h3 {
-                font-size: 5vw;
-                color: #333333;
-            }
-        }
-
-        body::before,
-        body::after {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            opacity: 0.8;
-        }
-
-        body::before {
-            background: var(--third-glow);
-            border-radius: 50%;
-            width: 50vw;
-            height: 50vw;
-            margin-left: -200px;
-            filter: blur(90px);
-            top: calc(50vh - 50vw / 2);
-            left: calc(50vw);
-            animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
-        }
-
-        body::after {
-            background: var(--secondary-glow);
-            border-radius: 50%;
-            width: 500px;
-            height: 700px;
-            filter: blur(90px);
-            top: calc(50vh - 50vw / 2);
-            left: calc(50vw - 50vw / 2);
-            animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
-        }
-
-        @keyframes animateBefore {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(200px) scale(0.8); }
-            100% { transform: translateY(0); }
-        }
-
-        @keyframes animateAfter {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(-250px) scale(1.2); }
-            100% { transform: translateX(0); }
-        }
-        .section-title {
-            text-align: justify;
-            max-width: 800px;
-            font-size: 30px;
-            margin-top: 0;
-            margin-bottom: 20px;
-            color: #333333;
-            font-weight: bold;
-        }
-        .section-title3 {
-            text-align: justify;
-            max-width: 800px;
-            font-size: 25px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            color: #333333;
-            font-weight: bold;
-        }
-        .section-title4h {
-            font-weight: bold;
-            text-align: justify;
-            font-size: 18px;
-            margin-top: 12px;
-            margin-bottom: 12px;
-            color: #333333;
-            cursor: pointer; /* Add a pointer cursor to indicate it's interactive */
-            transition: color 0.3s, transform 0.3s; /* Smooth transition for color and size */
-        }
-
-        .section-title4h:hover {
-            color: #0077b5; /* Change text color on hover */
-        }
-        
-        .section-title4 {
-            text-align: justify;
-            max-width: 800px;
-            font-size: 18px;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            color: #333333;
-        }
-
-        .section-content {
-            font-size: 16px;
-            max-width: 800px;
-            margin: 0 auto; /* Centers the text block */
-            text-align: justify; /* Justifies the content */
-            line-height: 1.4;
-            color: #333333;
-			text-indent: 0;
-        }
-        .hidden {
-            opacity: 0;
-            transform: translateY(40px); /* Slide in from below */
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
-        }
-
-        .visible {
-            opacity: 1;
-            transform: translateY(0); /* Normal position */
-        }
-        .signature {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            max-width: 800px;
-            width: 100%;
-            margin: 40px auto 0;
-        }
-        
-        .signature img {
-            max-width: 150px;
-            height: auto;
-            margin: 0;
-        }
-	.project img{
-	    max-width: 150px;
-            height: auto;
-            margin: 0;
-        }
-        .project-report-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            color: #0077b5;
-            text-decoration: none;
-            border: 1px solid #0077b5;
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-            text-align: left;
-        }
-        .education-section, .work-experience-section {
-            max-width: 800px;
-            width: 100%;
-            text-align: left;
-        }
-
-        .education-degree, .work-title {
-            font-weight: bold;
-            color: #333333; /* Match font color */
-            margin: 0;
-            cursor: pointer;
-        }
-
-        .education-school {
-            font-weight: normal;
-            color: #333333; /* Match font color */
-            margin-top: 2px;
-        }
-
-        .work-details {
-            display: none;
-            color: #333333; /* Change this to your desired text color */
-        }
-        .work-title:hover {
-            color: #0077b5;
-        }
-        .skills-section {
-            display: none; /* Initially hidden */
-            color: #333333; /* Default text color */
-            transition: all 0.3s ease; /* Smooth transition */
-        }
-        
-        .section-title4:hover {
-            color: #0077b5; /* Blue color on hover */
-            cursor: pointer; /* Pointer cursor on hover */
-        }
-
-        .project-report-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            color: #0077b5;
-            text-decoration: none;
-            border: 1px solid #0077b5;
-            border-radius: 4px;
-            transition: background-color 0.3s, color 0.3s;
-            text-align: left;
-        }
-
-        .project-details {
-            display: none; /* Initially hide project details */
-            margin-top: 10px;
-        }
-        /* Gradient Progress Bar (Yellow to Orange to Red) */
-        progress {
-            width: 50%;
-            height: 20px;
-            margin-top: 2px;
-            display: block;
-            appearance: none; /* Removes default styling */
-            background: linear-gradient(to right, yellow, orange, red);
-        }
-        
-        /* Adding indicator ticks */
-        progress::-webkit-progress-bar {
-            background-color: #f0f0f0; /* Light grey background */
-            border-radius: 5px;
-        }
-        
-        progress::-webkit-progress-value {
-            background: linear-gradient(to right, yellow, orange, red); /* Gradient color */
-            border-radius: 5px;
-        }
-        
-        progress::-webkit-progress-value {
-            /* Adding indicator ticks */
-            background: linear-gradient(to right, yellow, orange, red);
-            border-radius: 5px;
-        }
-        
-        /* Embedded Computing Skills (Blue) */
-        .skill-embedded progress::-webkit-progress-value {
-            background: linear-gradient(to right, blue, darkblue);
-        }
-        
-        /* Software Development Skills (Green) */
-        .skill-software progress::-webkit-progress-value {
-            background: linear-gradient(to right, green, darkgreen);
-        }
-        
-        /* Project Management Skills (Orange) */
-        .skill-management progress::-webkit-progress-value {
-            background: linear-gradient(to right, orange, darkorange);
-        }
-        
-        /* Remove the custom ticks */
-        progress {
-            position: relative;
-        }
-        
-        progress::after {
-            content: "10";
-            position: absolute;
-            top: -10px;
-            right: 0;
-        }
-
-        /* Align skill text to the left */
-        .skill {
-            margin: 5px 0;
-            text-align: left;
-        }
-
-
-
-
-    </style>
+    footer { border-top: 1px solid var(--border); text-align:center; padding: 28px 0; color: var(--muted); }
+  </style>
 </head>
 <body>
-    <nav id="navbar">
-        <ul class="menu-bar">
-            <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="#about"><i class="fas fa-info-circle"></i>About Me</a></li>
-            <li><a href="#background"><i class="fas fa-graduation-cap"></i>Background</a></li>
-            <li><a href="#projects"><i class="fas fa-folder"></i>Projects</a></li>
-        </ul>
-    </nav>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Puya Fard</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="personal-background.html">Background</a></li>
+        <li><a href="completed-projects.html">Projects</a></li>
+        <li><a href="https://github.com/PuyaCompE" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section id="home" class="parallax">
-        <div class="content">
-        	<br><br><br><br><br><br><br><br><br><br><br><br>
-            <h1>Welcome to My Portfolio</h1>
-            <h2>by Puya Fard</h2>
+  <header class="hero">
+    <div class="container">
+      <h1>Embedded & Networking Engineer</h1>
+      <p>Firmware and systems for Wi-Fi routers. Explore my background and projects.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="completed-projects.html">View Projects</a>
+        <a class="btn btn-outline" href="about.html">About Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="cards">
+          <div class="card">
+            <h3>About</h3>
+            <p>Focus areas, tools, and how I approach embedded and networking work.</p>
+            <div class="actions"><a class="btn btn-primary" href="about.html">Read About</a></div>
+          </div>
+          <div class="card">
+            <h3>Personal Background</h3>
+            <p>Education and experience that shape my engineering approach.</p>
+            <div class="actions"><a class="btn btn-primary" href="personal-background.html">See Background</a></div>
+          </div>
+          <div class="card">
+            <h3>Completed Projects</h3>
+            <p>Selected work across router firmware, performance, and automation.</p>
+            <div class="actions"><a class="btn btn-primary" href="completed-projects.html">Browse Projects</a></div>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <section id="about" class="parallax">
-        
-        <div class="content" id="about-content"></div>
-    
-    </section>
-
-    <section id="background" class="parallax">
-        
-        <div class="content" id="background-content"></div>
-    
-
-    </section>
-
-    <section id="projects" class="parallax">
-        
-        <div class="content" id="projects-content"></div>
-    
-    </section>
-    <script>
-        // Select all elements with the 'hidden' class
-        const hiddenElements = document.querySelectorAll('.hidden');
-
-        // Options for the observer (which are the default values)
-        const observerOptions = {
-            root: null, // Use the viewport as the root
-            rootMargin: '0px',
-            threshold: 0.2 // Trigger when 10% of the element is visible
-        };
-
-        // Create the observer
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // When the element is in view, add the 'visible' class
-                    entry.target.classList.add('visible');
-                    // Optionally, you can unobserve the element after it has been shown
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe each hidden element
-        hiddenElements.forEach(element => {
-            observer.observe(element);
-        });
-    </script>
-    <script>
-        document.querySelectorAll('.menu-bar a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                const navbarHeight = document.getElementById('navbar').offsetHeight;
-
-                window.scrollTo({
-                    top: targetElement.offsetTop - navbarHeight,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-    <script>
-        function toggleDetails(id) {
-            const details = document.getElementById(id);
-            if (details.style.display === "none" || details.style.display === "") {
-                details.style.display = "block";
-            } else {
-                details.style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        function toggleDetails(projectId) {
-            const details = document.getElementById(projectId);
-            if (details.style.display === "none" || details.style.display === "") {
-                details.style.display = "block";
-            } else {
-                details.style.display = "none";
-            }
-        }
-    </script>
-    <script>
-        // Scroll to the top of the page when it loads
-        window.onload = function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'  // This enables smooth scrolling
-            });
-    </script>
-
-<script>
-(async () => {
-  async function inject(fromUrl, sourceSelector, targetSelector) {
-    try {
-      const res = await fetch(fromUrl, { cache: "no-store" });
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, "text/html");
-      const source = doc.querySelector(sourceSelector);
-      const target = document.querySelector(targetSelector);
-      if (source && target) {
-        target.innerHTML = source.innerHTML;
-
-        // Remap links to keep users within the single-page app
-        const map = new Map([
-          ["index.html", "#home"],
-          ["about.html", "#about"],
-          ["personal-background.html", "#background"],
-          ["completed-projects.html", "#projects"],
-        ]);
-        target.querySelectorAll("a[href]").forEach(a => {
-          const href = a.getAttribute("href");
-          if (map.has(href)) a.setAttribute("href", map.get(href));
-        });
-      }
-    } catch (e) {
-      console.error("Inject failed for", fromUrl, e);
-    }
-  }
-  await inject("about.html", ".container", "#about-content");
-  await inject("personal-background.html", ".container", "#background-content");
-  await inject("completed-projects.html", ".container", "#projects-content");
-})();
-</script>
-
+  <footer>
+    <div class="container">© 2025 Puya Fard</div>
+  </footer>
 </body>
 </html>
