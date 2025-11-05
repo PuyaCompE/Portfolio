@@ -1,773 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-46H9GVHWWF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-46H9GVHWWF');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Background - Puya Fard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #0077b5;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --bg-light: #f8f9fa;
-            --border-color: #e0e0e0;
-            --hover-bg: #f0f0f0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding-bottom: 50px;
-        }
-
-        /* Navigation */
-        nav {
-            width: 100%;
-            background-color: rgba(51, 51, 51, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .menu-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-bar ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-bar li {
-            margin: 0 20px;
-        }
-
-        .menu-bar a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 20px 10px;
-            transition: color 0.3s ease;
-            font-size: 15px;
-        }
-
-        .menu-bar a i {
-            margin-right: 8px;
-            transition: color 0.3s ease;
-        }
-
-        .menu-bar a:hover,
-        .menu-bar a:hover i {
-            color: var(--primary-color);
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1000px;
-            margin: 100px auto 50px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 50px;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .hero-section p {
-            font-size: 18px;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .resume-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 25px;
-            padding: 14px 32px;
-            background: white;
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .resume-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Content Sections */
-        .content-section {
-            padding: 50px;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 35px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        .section-header i {
-            font-size: 32px;
-            color: var(--primary-color);
-        }
-
-        .section-header h2 {
-            font-size: 32px;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        /* Education Cards */
-        .education-item {
-            margin-bottom: 35px;
-            padding: 25px;
-            background: var(--bg-light);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .education-item:hover {
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transform: translateX(5px);
-        }
-
-        .education-degree {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .education-school {
-            font-size: 18px;
-            color: var(--text-light);
-            margin-bottom: 8px;
-        }
-
-        .education-date {
-            font-size: 15px;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .transcript-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: white;
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            border: 2px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-
-        .transcript-link:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        /* Work Experience Cards */
-        .work-item {
-            margin-bottom: 40px;
-            padding: 30px;
-            background: white;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .work-item:hover {
-            border-color: var(--primary-color);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .work-header {
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-
-        .work-title-section h3 {
-            font-size: 24px;
-            color: var(--text-dark);
-            font-weight: 700;
-            margin-bottom: 8px;
-            transition: color 0.3s ease;
-        }
-
-        .work-header:hover .work-title-section h3 {
-            color: var(--primary-color);
-        }
-
-        .work-company {
-            font-size: 18px;
-            color: var(--text-light);
-            font-weight: 600;
-        }
-
-        .work-date {
-            font-size: 15px;
-            color: var(--primary-color);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .toggle-icon {
-            font-size: 20px;
-            color: var(--primary-color);
-            transition: transform 0.3s ease;
-        }
-
-        .toggle-icon.active {
-            transform: rotate(180deg);
-        }
-
-        .work-details {
-            display: none;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .work-details.active {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .work-description {
-            font-size: 16px;
-            color: var(--text-dark);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .detail-section {
-            margin-top: 25px;
-        }
-
-        .detail-section h4 {
-            font-size: 18px;
-            color: var(--text-dark);
-            font-weight: 700;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .detail-section h4 i {
-            color: var(--primary-color);
-            font-size: 20px;
-        }
-
-        .detail-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .detail-list li {
-            padding: 10px 0 10px 30px;
-            position: relative;
-            color: var(--text-dark);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .detail-list li:before {
-            content: "▸";
-            position: absolute;
-            left: 10px;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 12px;
-        }
-
-        .tag {
-            padding: 8px 16px;
-            background: var(--bg-light);
-            color: var(--text-dark);
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            border: 1px solid var(--border-color);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .skill-category {
-            padding: 25px;
-            background: var(--bg-light);
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .skill-category h3 {
-            font-size: 20px;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .skill-category p {
-            font-size: 15px;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: rgba(51, 51, 51, 0.95);
-            color: white;
-            margin-top: 50px;
-        }
-
-        .socials ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 15px;
-        }
-
-        .socials a {
-            color: white;
-            font-size: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .socials a:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                margin: 80px 15px 30px;
-                border-radius: 15px;
-            }
-
-            .hero-section {
-                padding: 40px 25px;
-            }
-
-            .hero-section h1 {
-                font-size: 32px;
-            }
-
-            .content-section {
-                padding: 30px 25px;
-            }
-
-            .section-header h2 {
-                font-size: 26px;
-            }
-
-            .menu-bar li {
-                margin: 0 10px;
-            }
-
-            .menu-bar a {
-                font-size: 13px;
-                padding: 15px 5px;
-            }
-
-            .work-header {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .work-date {
-                align-self: flex-start;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Professional Background – Puya Fard</title>
+  <meta name="description" content="Education and work experience of Puya Fard." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-46H9GVHWWF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-46H9GVHWWF');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root{
+      --primary-color:#0077b5;
+      --bg:#0b0f1a;--panel:#0f1524;--muted:#a8b3cf;--text:#e6e9f4;
+      --card:#121a2e;--border:rgba(255,255,255,0.08);
+      --shadow:0 6px 28px rgba(0,0,0,.35);
+      --radius:16px;--maxw:1100px;--focus:0 0 0 3px rgba(122,162,255,.35)
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html:focus-within{scroll-behavior:smooth}
+    @media (prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}}
+    html,body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:var(--primary-color);text-decoration:none;transition:all .3s ease}
+    a:hover{text-decoration:underline}
+    :where(a,button,[tabindex]):focus{outline:none}
+    :where(a,button,[tabindex]):focus-visible{box-shadow:var(--focus);border-radius:10px}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+
+    /* NAV */
+    .navbar{position:sticky;top:0;z-index:50;background:rgba(11,15,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .navbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+    .brand{font-weight:700;letter-spacing:.3px;font-size:1.1rem;color:var(--text)}
+    .nav-links{list-style:none;display:flex;gap:8px;margin:0;padding:0}
+    .nav-links a{padding:10px 14px;border-radius:10px;font-weight:500;font-size:.95rem;display:flex;align-items:center;gap:6px;color:var(--text)}
+    .nav-links a i{font-size:.9rem;opacity:.85}
+    .nav-links a[aria-current="page"],.nav-links a:hover{background:rgba(255,255,255,.08);text-decoration:none;color:var(--primary-color)}
+
+    /* PAGE HEADER */
+    .page-header{padding:64px 0 48px;text-align:center;background:radial-gradient(1400px 400px at 50% -200px,rgba(0,119,181,.12),rgba(11,15,26,0))}
+    .page-header h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:12px;background:linear-gradient(135deg,var(--text),var(--primary-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .page-header p{color:var(--muted);font-size:1.05rem;max-width:700px;margin:0 auto 24px;line-height:1.7}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.95rem;transition:all .3s ease;background:var(--primary-color);color:#fff;box-shadow:0 4px 14px rgba(0,119,181,.25)}
+    .btn:hover{background:#005a8d;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,119,181,.35);text-decoration:none}
+    .btn i{font-size:.9rem}
+
+    /* SECTIONS */
+    .content-section{padding:48px 0}
+    .content-section:not(:last-child){border-bottom:1px solid var(--border)}
+
+    .section-title{display:flex;align-items:center;gap:12px;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;margin-bottom:32px;color:var(--text)}
+    .section-title i{color:var(--primary-color);font-size:1.8rem}
+
+    /* EDUCATION CARDS */
+    .education-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:24px;border-left:4px solid var(--primary-color);transition:all .3s ease}
+    .education-item:hover{box-shadow:0 8px 28px rgba(0,0,0,.4);transform:translateX(4px)}
+    .edu-degree{font-size:1.3rem;font-weight:600;color:var(--text);margin-bottom:6px}
+    .edu-school{font-size:1.05rem;color:var(--muted);margin-bottom:4px}
+    .edu-date{font-size:.9rem;color:var(--primary-color);font-weight:600;margin-bottom:16px}
+    .edu-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(0,119,181,.1);color:var(--primary-color);border-radius:8px;font-weight:600;font-size:.85rem;border:1px solid rgba(0,119,181,.2);transition:all .3s ease}
+    .edu-link:hover{background:rgba(0,119,181,.2);text-decoration:none;transform:translateY(-1px)}
+
+    /* WORK EXPERIENCE CARDS */
+    .work-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px;margin-bottom:24px;transition:all .3s ease}
+    .work-item:hover{border-color:rgba(0,119,181,.3);box-shadow:0 8px 28px rgba(0,0,0,.4)}
+    .work-header{cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+    .work-title-sec h3{font-size:1.3rem;color:var(--text);font-weight:600;margin-bottom:6px;transition:color .3s}
+    .work-header:hover .work-title-sec h3{color:var(--primary-color)}
+    .work-company{font-size:1rem;color:var(--muted);font-weight:500}
+    .work-date{font-size:.9rem;color:var(--primary-color);font-weight:600;white-space:nowrap}
+    .toggle-icon{font-size:1.1rem;color:var(--primary-color);transition:transform .3s;margin-left:12px}
+    .toggle-icon.active{transform:rotate(180deg)}
+
+    .work-details{display:none;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+    .work-details.active{display:block;animation:slideIn .3s ease}
+    @keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
+    .work-desc{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:24px}
+
+    .detail-section{margin-top:28px}
+    .detail-section h4{font-size:1.1rem;color:var(--text);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+    .detail-section h4 i{color:var(--primary-color);font-size:1.2rem}
+
+    .detail-list{list-style:none;padding:0}
+    .detail-list li{padding:10px 0 10px 24px;position:relative;color:var(--muted);font-size:.95rem;line-height:1.7}
+    .detail-list li:before{content:"▸";position:absolute;left:0;color:var(--primary-color);font-weight:bold;font-size:1.1rem}
+
+    .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .tag{padding:8px 14px;background:rgba(0,119,181,.08);color:var(--primary-color);border-radius:6px;font-size:.85rem;font-weight:600;border:1px solid rgba(0,119,181,.2)}
+
+    /* SKILLS GRID */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:32px}
+    .skill-category{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;border-left:4px solid var(--primary-color);transition:all .3s ease}
+    .skill-category:hover{box-shadow:0 8px 28px rgba(0,0,0,.4);transform:translateY(-2px)}
+    .skill-category h3{font-size:1.15rem;color:var(--text);margin-bottom:14px;font-weight:600}
+    .skill-category p{color:var(--muted);font-size:.95rem;line-height:1.6;margin:0}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:40px 0;color:var(--muted);margin-top:64px}
+    .footer-content{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+    .social-links{display:flex;gap:16px;list-style:none}
+    .social-links a{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--text);font-size:1.2rem;transition:all .3s ease}
+    .social-links a:hover{background:var(--primary-color);border-color:var(--primary-color);color:#fff;transform:translateY(-3px);text-decoration:none}
+
+    @media(max-width:768px){
+      .navbar .container{flex-direction:column;gap:12px;padding-block:12px}
+      .nav-links{flex-wrap:wrap;justify-content:center;gap:6px}
+      .nav-links a{padding:8px 12px;font-size:.85rem}
+      .page-header{padding:48px 0 32px}
+      .content-section{padding:32px 0}
+      .work-header{flex-direction:column}
+      .work-date{align-self:flex-start}
+      .skills-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="menu-bar">
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i>About Me</a></li>
-                <li><a href="completed-projects.html"><i class="fas fa-folder"></i>Completed Projects</a></li>
-            </ul>
-        </div>
-    </nav>
-
+  <nav class="navbar" aria-label="Primary">
     <div class="container">
-        <div class="hero-section">
-            <h1>Professional Background</h1>
-            <p>Throughout my academic journey, I have learned an important lesson: never be convinced that you know everything. Knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence, but rather remain open to learning and willing to adjust viewpoints on subjects that matter.</p>
-            <a href="assets/FARD_RESUME.pdf" target="_blank" class="resume-button">
-                <i class="fas fa-download"></i>
-                Download Resume
-            </a>
-        </div>
-
-        <!-- Education Section -->
-        <div class="content-section">
-            <div class="section-header">
-                <i class="fas fa-graduation-cap"></i>
-                <h2>Education</h2>
-            </div>
-
-            <div class="education-item">
-                <div class="education-degree">Master of Science in Computer Engineering</div>
-                <div class="education-school">University of California, Irvine</div>
-                <div class="education-date">2023 - 2024</div>
-                <a href="assets/Transcript UCI.pdf" target="_blank" class="transcript-link">
-                    <i class="fas fa-file-alt"></i>
-                    View Transcript
-                </a>
-            </div>
-
-            <div class="education-item">
-                <div class="education-degree">Bachelor of Science in Computer Engineering</div>
-                <div class="education-school">California State University, Fresno</div>
-                <div class="education-date">2021 - 2024</div>
-                <a href="assets/Transcript CSUF.pdf" target="_blank" class="transcript-link">
-                    <i class="fas fa-file-alt"></i>
-                    View Transcript
-                </a>
-            </div>
-
-            <div class="education-item">
-                <div class="education-degree">Associate Degree in Computer Engineering</div>
-                <div class="education-school">Santa Monica College</div>
-                <div class="education-date">2019 - 2021</div>
-                <a href="assets/Transcript SMC.pdf" target="_blank" class="transcript-link">
-                    <i class="fas fa-file-alt"></i>
-                    View Transcript
-                </a>
-            </div>
-        </div>
-
-        <!-- Work Experience Section -->
-        <div class="content-section" style="background: var(--bg-light);">
-            <div class="section-header">
-                <i class="fas fa-briefcase"></i>
-                <h2>Work Experience</h2>
-            </div>
-
-            <!-- TP-Link Position -->
-            <div class="work-item">
-                <div class="work-header" onclick="toggleWork('tplink')">
-                    <div class="work-title-section">
-                        <h3>Software Engineer</h3>
-                        <div class="work-company">TP-Link Systems Inc.</div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
-                        <div class="work-date">Oct 2024 - Present</div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-tplink"></i>
-                    </div>
-                </div>
-                <div class="work-details" id="details-tplink">
-                    <div class="work-description">
-                        Developing and maintaining embedded software solutions for networking devices, focusing on system optimization, feature development, and cross-functional collaboration to deliver high-quality products.
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-project-diagram"></i>Key Projects & Contributions</h4>
-                        <ul class="detail-list">
-                            <li>Architected and implemented firmware features for enterprise-grade routers, improving network throughput by 25% and reducing latency</li>
-                            <li>Developed automated testing frameworks for QoS (Quality of Service) features, reducing testing time by 40% and improving bug detection rate</li>
-                            <li>Led cross-team collaboration to integrate advanced security protocols (WPA3, VPN enhancements) across multiple product lines</li>
-                            <li>Optimized memory usage in embedded systems, resulting in 30% reduction in RAM consumption for resource-constrained devices</li>
-                            <li>Implemented real-time monitoring dashboards for network traffic analysis, enabling proactive network management</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-tools"></i>Tools & Technologies</h4>
-                        <div class="tags">
-                            <span class="tag">C/C++</span>
-                            <span class="tag">Linux</span>
-                            <span class="tag">Embedded Systems</span>
-                            <span class="tag">OpenWrt</span>
-                            <span class="tag">Git/GitLab</span>
-                            <span class="tag">JIRA</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Bash Scripting</span>
-                            <span class="tag">TCP/IP</span>
-                            <span class="tag">REST APIs</span>
-                        </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-cogs"></i>Skills Gained</h4>
-                        <ul class="detail-list">
-                            <li>Advanced embedded systems programming and optimization techniques</li>
-                            <li>Network protocol implementation and debugging (802.11, TCP/IP stack)</li>
-                            <li>Agile development methodologies and sprint planning</li>
-                            <li>Code review practices and technical documentation</li>
-                            <li>Cross-functional team collaboration and stakeholder communication</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-chart-line"></i>Impact & Outcomes</h4>
-                        <ul class="detail-list">
-                            <li>Contributed to 3 major product releases shipped to millions of users worldwide</li>
-                            <li>Reduced customer-reported firmware bugs by 35% through improved testing methodologies</li>
-                            <li>Mentored 2 junior engineers in embedded systems development best practices</li>
-                            <li>Received "Outstanding Contributor" recognition for exceeding performance goals in Q1 2025</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Research Assistant Position -->
-            <div class="work-item">
-                <div class="work-header" onclick="toggleWork('research')">
-                    <div class="work-title-section">
-                        <h3>Research Assistant</h3>
-                        <div class="work-company">UC Irvine - Pervasive Autonomy Lab</div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
-                        <div class="work-date">Mar 2024 - Present</div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-research"></i>
-                    </div>
-                </div>
-                <div class="work-details" id="details-research">
-                    <div class="work-description">
-                        Research on human-aware automotive testbed using CARLA simulator with VR environment, supervised by Associate Prof. Dr. Salma Elmalaki in the Pervasive Autonomy Lab.
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-project-diagram"></i>Key Achievements</h4>
-                        <ul class="detail-list">
-                            <li>Successfully assembled a fully functional testbed integrating steering wheel, pedals, and track chair synchronized with CARLA simulator</li>
-                            <li>Developed PyGame script to enable seamless operation on CarlaUE4 platform with VR headset integration</li>
-                            <li>Optimized user experience to match real-world driving standards for performance and data harvesting</li>
-                            <li>Conducted human behavior analysis in various driving scenarios to improve autonomous vehicle safety</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-tools"></i>Tools & Technologies</h4>
-                        <div class="tags">
-                            <span class="tag">CARLA Simulator</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">PyGame</span>
-                            <span class="tag">VR (Virtual Reality)</span>
-                            <span class="tag">ROS2</span>
-                            <span class="tag">Data Analysis</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Teaching Assistant Position -->
-            <div class="work-item">
-                <div class="work-header" onclick="toggleWork('ta')">
-                    <div class="work-title-section">
-                        <h3>Teaching Assistant & Grader</h3>
-                        <div class="work-company">California State University, Fresno</div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
-                        <div class="work-date">Feb 2022 - May 2023</div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-ta"></i>
-                    </div>
-                </div>
-                <div class="work-details" id="details-ta">
-                    <div class="work-description">
-                        Supported students in various ECE courses, providing guidance on course materials, conducting review sessions, and maintaining academic standards.
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-project-diagram"></i>Responsibilities</h4>
-                        <ul class="detail-list">
-                            <li>Conducted weekly office hours and review sessions for 100+ students</li>
-                            <li>Graded assignments, projects, and exams for multiple ECE courses</li>
-                            <li>Provided one-on-one tutoring for students struggling with complex concepts</li>
-                            <li>Assisted professors in lab sessions and curriculum development</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Web Design Intern Position -->
-            <div class="work-item">
-                <div class="work-header" onclick="toggleWork('web')">
-                    <div class="work-title-section">
-                        <h3>Web Design Intern</h3>
-                        <div class="work-company">California State University, Fresno</div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
-                        <div class="work-date">Jun 2022 - Aug 2022</div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-web"></i>
-                    </div>
-                </div>
-                <div class="work-details" id="details-web">
-                    <div class="work-description">
-                        Redesigned and maintained multiple department websites, focusing on improving user experience and accessibility.
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-project-diagram"></i>Key Contributions</h4>
-                        <ul class="detail-list">
-                            <li>Redesigned 5+ department websites with modern, responsive designs</li>
-                            <li>Improved website accessibility compliance to meet WCAG 2.1 standards</li>
-                            <li>Assisted faculty and students with web-related inquiries and technical support</li>
-                            <li>Implemented SEO best practices, increasing organic traffic by 40%</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4><i class="fas fa-tools"></i>Tools & Technologies</h4>
-                        <div class="tags">
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">WordPress</span>
-                            <span class="tag">Adobe Creative Suite</span>
-                            <span class="tag">Responsive Design</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Skills Section -->
-        <div class="content-section">
-            <div class="section-header">
-                <i class="fas fa-code"></i>
-                <h2>Engineering Skills</h2>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Embedded Computing</h3>
-                    <p>Cadence, Linux, ModelSim, FPGA, Microcontrollers, SoC, Quartus Prime, SystemC, HDL, MultiSim, OpenWrt</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Software Development</h3>
-                    <p>C/C++, Python, C#, Java, JavaScript, Assembly, HTML/CSS, SQL, Bash, HDL (Verilog/VHDL)</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Tools & Frameworks</h3>
-                    <p>Git/GitHub, JIRA, Docker, ROS2, TensorFlow, PyTorch, CARLA, OpenCV, Qt, REST APIs</p>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Project Management</h3>
-                    <p>Agile/Scrum, TOPSIS, SWOT Analysis, Scheduling, Project Control, Sprint Planning, Technical Documentation</p>
-                </div>
-            </div>
-        </div>
+      <div class="brand">Puya Fard</div>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i>About</a></li>
+        <li><a href="personal-background.html" aria-current="page"><i class="fas fa-graduation-cap"></i>Background</a></li>
+        <li><a href="completed-projects.html"><i class="fas fa-folder"></i>Projects</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <footer>
-        <div class="socials">
-            <ul>
-                <li><a href="https://www.instagram.com/py.frd/" target="_blank" class="fab fa-instagram" aria-label="Instagram"></a></li>
-                <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin" aria-label="LinkedIn"></a></li>
-                <li><a href="https://github.com/PuyaCompE" target="_blank" class="fab fa-github" aria-label="GitHub"></a></li>
-            </ul>
+  <header class="page-header">
+    <div class="container">
+      <h1>Professional Background</h1>
+      <p>Throughout my academic journey, I have learned an important lesson: never be convinced that you know everything. Knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence, but rather remain open to learning and willing to adjust viewpoints on subjects that matter.</p>
+      <a href="assets/FARD_RESUME.pdf" target="_blank" class="btn"><i class="fas fa-download"></i>Download Resume</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- EDUCATION SECTION -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i>Education</h2>
+
+        <div class="education-item">
+          <div class="edu-degree">Master of Science in Computer Engineering</div>
+          <div class="edu-school">University of California, Irvine</div>
+          <div class="edu-date">2023 - 2024</div>
+          <a href="assets/Transcript UCI.pdf" target="_blank" class="edu-link"><i class="fas fa-file-alt"></i>View Transcript</a>
         </div>
-        <p>&copy; 2024 Puya Fard. All Rights Reserved.</p>
-    </footer>
 
-    <script>
-        function toggleWork(id) {
-            const details = document.getElementById('details-' + id);
-            const icon = document.getElementById('icon-' + id);
-            
-            if (details.classList.contains('active')) {
-                details.classList.remove('active');
-                icon.classList.remove('active');
-            } else {
-                details.classList.add('active');
-                icon.classList.add('active');
-            }
-        }
-    </script>
+        <div class="education-item">
+          <div class="edu-degree">Bachelor of Science in Computer Engineering</div>
+          <div class="edu-school">California State University, Fresno</div>
+          <div class="edu-date">2021 - 2024</div>
+          <a href="assets/Transcript CSUF.pdf" target="_blank" class="edu-link"><i class="fas fa-file-alt"></i>View Transcript</a>
+        </div>
+
+        <div class="education-item">
+          <div class="edu-degree">Associate Degree in Computer Engineering</div>
+          <div class="edu-school">Santa Monica College</div>
+          <div class="edu-date">2019 - 2021</div>
+          <a href="assets/Transcript SMC.pdf" target="_blank" class="edu-link"><i class="fas fa-file-alt"></i>View Transcript</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i>Work Experience</h2>
+
+        <!-- TP-LINK -->
+        <div class="work-item">
+          <div class="work-header" onclick="toggleWork('tplink')">
+            <div class="work-title-sec">
+              <h3>Software Engineer</h3>
+              <div class="work-company">TP-Link Systems Inc.</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="work-date">Oct 2024 - Present</div>
+              <i class="fas fa-chevron-down toggle-icon" id="icon-tplink"></i>
+            </div>
+          </div>
+          <div class="work-details" id="details-tplink">
+            <div class="work-desc">
+              Developing and maintaining embedded software solutions for networking devices, focusing on system optimization, feature development, and cross-functional collaboration to deliver high-quality products.
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-project-diagram"></i>Key Projects & Contributions</h4>
+              <ul class="detail-list">
+                <li>Architected and implemented firmware features for enterprise-grade routers, improving network throughput by 25% and reducing latency</li>
+                <li>Developed automated testing frameworks for QoS (Quality of Service) features, reducing testing time by 40% and improving bug detection rate</li>
+                <li>Led cross-team collaboration to integrate advanced security protocols (WPA3, VPN enhancements) across multiple product lines</li>
+                <li>Optimized memory usage in embedded systems, resulting in 30% reduction in RAM consumption for resource-constrained devices</li>
+                <li>Implemented real-time monitoring dashboards for network traffic analysis, enabling proactive network management</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-tools"></i>Tools & Technologies</h4>
+              <div class="tags">
+                <span class="tag">C/C++</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">OpenWrt</span>
+                <span class="tag">Git/GitLab</span>
+                <span class="tag">JIRA</span>
+                <span class="tag">Python</span>
+                <span class="tag">Bash Scripting</span>
+                <span class="tag">TCP/IP</span>
+                <span class="tag">REST APIs</span>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-cogs"></i>Skills Gained</h4>
+              <ul class="detail-list">
+                <li>Advanced embedded systems programming and optimization techniques</li>
+                <li>Network protocol implementation and debugging (802.11, TCP/IP stack)</li>
+                <li>Agile development methodologies and sprint planning</li>
+                <li>Code review practices and technical documentation</li>
+                <li>Cross-functional team collaboration and stakeholder communication</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-chart-line"></i>Impact & Outcomes</h4>
+              <ul class="detail-list">
+                <li>Contributed to 3 major product releases shipped to millions of users worldwide</li>
+                <li>Reduced customer-reported firmware bugs by 35% through improved testing methodologies</li>
+                <li>Mentored 2 junior engineers in embedded systems development best practices</li>
+                <li>Received "Outstanding Contributor" recognition for exceeding performance goals in Q1 2025</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESEARCH ASSISTANT -->
+        <div class="work-item">
+          <div class="work-header" onclick="toggleWork('research')">
+            <div class="work-title-sec">
+              <h3>Research Assistant</h3>
+              <div class="work-company">UC Irvine - Pervasive Autonomy Lab</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="work-date">Mar 2024 - Present</div>
+              <i class="fas fa-chevron-down toggle-icon" id="icon-research"></i>
+            </div>
+          </div>
+          <div class="work-details" id="details-research">
+            <div class="work-desc">
+              Research on human-aware automotive testbed using CARLA simulator with VR environment, supervised by Associate Prof. Dr. Salma Elmalaki.
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-project-diagram"></i>Key Achievements</h4>
+              <ul class="detail-list">
+                <li>Successfully assembled a fully functional testbed integrating steering wheel, pedals, and track chair synchronized with CARLA simulator</li>
+                <li>Developed PyGame script to enable seamless operation on CarlaUE4 platform with VR headset integration</li>
+                <li>Optimized user experience to match real-world driving standards for performance and data harvesting</li>
+                <li>Conducted human behavior analysis in various driving scenarios to improve autonomous vehicle safety</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-tools"></i>Tools & Technologies</h4>
+              <div class="tags">
+                <span class="tag">CARLA Simulator</span>
+                <span class="tag">Python</span>
+                <span class="tag">PyGame</span>
+                <span class="tag">VR</span>
+                <span class="tag">ROS2</span>
+                <span class="tag">Data Analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEACHING ASSISTANT -->
+        <div class="work-item">
+          <div class="work-header" onclick="toggleWork('ta')">
+            <div class="work-title-sec">
+              <h3>Teaching Assistant & Grader</h3>
+              <div class="work-company">California State University, Fresno</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="work-date">Feb 2022 - May 2023</div>
+              <i class="fas fa-chevron-down toggle-icon" id="icon-ta"></i>
+            </div>
+          </div>
+          <div class="work-details" id="details-ta">
+            <div class="work-desc">
+              Supported students in various ECE courses, providing guidance on course materials, conducting review sessions, and maintaining academic standards.
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-project-diagram"></i>Responsibilities</h4>
+              <ul class="detail-list">
+                <li>Conducted weekly office hours and review sessions for 100+ students</li>
+                <li>Graded assignments, projects, and exams for multiple ECE courses</li>
+                <li>Provided one-on-one tutoring for students struggling with complex concepts</li>
+                <li>Assisted professors in lab sessions and curriculum development</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEB DESIGN INTERN -->
+        <div class="work-item">
+          <div class="work-header" onclick="toggleWork('web')">
+            <div class="work-title-sec">
+              <h3>Web Design Intern</h3>
+              <div class="work-company">California State University, Fresno</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="work-date">Jun 2022 - Aug 2022</div>
+              <i class="fas fa-chevron-down toggle-icon" id="icon-web"></i>
+            </div>
+          </div>
+          <div class="work-details" id="details-web">
+            <div class="work-desc">
+              Redesigned and maintained multiple department websites, focusing on improving user experience and accessibility.
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-project-diagram"></i>Key Contributions</h4>
+              <ul class="detail-list">
+                <li>Redesigned 5+ department websites with modern, responsive designs</li>
+                <li>Improved website accessibility compliance to meet WCAG 2.1 standards</li>
+                <li>Assisted faculty and students with web-related inquiries and technical support</li>
+                <li>Implemented SEO best practices, increasing organic traffic by 40%</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-tools"></i>Tools & Technologies</h4>
+              <div class="tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">WordPress</span>
+                <span class="tag">Adobe Creative Suite</span>
+                <span class="tag">Responsive Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title"><i class="fas fa-code"></i>Engineering Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Embedded Computing</h3>
+            <p>Cadence, Linux, ModelSim, FPGA, Microcontrollers, SoC, Quartus Prime, SystemC, HDL, MultiSim, OpenWrt</p>
+          </div>
+          <div class="skill-category">
+            <h3>Software Development</h3>
+            <p>C/C++, Python, C#, Java, JavaScript, Assembly, HTML/CSS, SQL, Bash, HDL (Verilog/VHDL)</p>
+          </div>
+          <div class="skill-category">
+            <h3>Tools & Frameworks</h3>
+            <p>Git/GitHub, JIRA, Docker, ROS2, TensorFlow, PyTorch, CARLA, OpenCV, Qt, REST APIs</p>
+          </div>
+          <div class="skill-category">
+            <h3>Project Management</h3>
+            <p>Agile/Scrum, TOPSIS, SWOT Analysis, Scheduling, Project Control, Sprint Planning, Technical Documentation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <ul class="social-links">
+          <li><a href="https://github.com/PuyaCompE" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/py.frd/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="mailto:puyafardce@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+        <p>© 2025 Puya Fard. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleWork(id) {
+      const details = document.getElementById('details-' + id);
+      const icon = document.getElementById('icon-' + id);
+      
+      if (details.classList.contains('active')) {
+        details.classList.remove('active');
+        icon.classList.remove('active');
+      } else {
+        details.classList.add('active');
+        icon.classList.add('active');
+      }
+    }
+  </script>
 </body>
 </html>

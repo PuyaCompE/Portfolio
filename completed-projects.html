@@ -1,696 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-46H9GVHWWF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-46H9GVHWWF');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Completed Projects - Puya Fard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Completed Projects – Puya Fard</title>
+  <meta name="description" content="Technical projects by Puya Fard across ML/AI, embedded systems, autonomous vehicles, and more." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-46H9GVHWWF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-46H9GVHWWF');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root{
+      --primary-color:#0077b5;
+      --bg:#0b0f1a;--panel:#0f1524;--muted:#a8b3cf;--text:#e6e9f4;
+      --card:#121a2e;--border:rgba(255,255,255,0.08);
+      --shadow:0 6px 28px rgba(0,0,0,.35);
+      --radius:16px;--maxw:1100px;--focus:0 0 0 3px rgba(122,162,255,.35)
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html:focus-within{scroll-behavior:smooth}
+    @media (prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}}
+    html,body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+    a{color:var(--primary-color);text-decoration:none;transition:all .3s ease}
+    a:hover{text-decoration:underline}
+    :where(a,button,[tabindex]):focus{outline:none}
+    :where(a,button,[tabindex]):focus-visible{box-shadow:var(--focus);border-radius:10px}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
 
-        :root {
-            --primary-color: #0077b5;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --bg-light: #f8f9fa;
-            --border-color: #e0e0e0;
-        }
+    /* NAV */
+    .navbar{position:sticky;top:0;z-index:50;background:rgba(11,15,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .navbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+    .brand{font-weight:700;letter-spacing:.3px;font-size:1.1rem;color:var(--text)}
+    .nav-links{list-style:none;display:flex;gap:8px;margin:0;padding:0}
+    .nav-links a{padding:10px 14px;border-radius:10px;font-weight:500;font-size:.95rem;display:flex;align-items:center;gap:6px;color:var(--text)}
+    .nav-links a i{font-size:.9rem;opacity:.85}
+    .nav-links a[aria-current="page"],.nav-links a:hover{background:rgba(255,255,255,.08);text-decoration:none;color:var(--primary-color)}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding-bottom: 50px;
-        }
+    /* PAGE HEADER */
+    .page-header{padding:64px 0 48px;text-align:center;background:radial-gradient(1400px 400px at 50% -200px,rgba(0,119,181,.12),rgba(11,15,26,0))}
+    .page-header h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:12px;background:linear-gradient(135deg,var(--text),var(--primary-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .page-header p{color:var(--muted);font-size:1.05rem}
 
-        /* Navigation */
-        nav {
-            width: 100%;
-            background-color: rgba(51, 51, 51, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
+    /* SECTIONS */
+    .category-section{padding:48px 0}
+    .category-section:not(:last-child){border-bottom:1px solid var(--border)}
 
-        .menu-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-        }
+    .category-header{display:flex;align-items:center;gap:12px;margin-bottom:32px}
+    .category-header i{font-size:1.8rem;color:var(--primary-color)}
+    .category-header h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--text)}
 
-        .menu-bar ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    /* PROJECT CARDS */
+    .project-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:20px;overflow:hidden;transition:all .3s ease}
+    .project-card:hover{border-color:rgba(0,119,181,.3);box-shadow:0 8px 28px rgba(0,0,0,.4)}
 
-        .menu-bar li {
-            margin: 0 20px;
-        }
+    .project-header{padding:24px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;background:rgba(255,255,255,.02)}
+    .project-header:hover{background:rgba(0,119,181,.05)}
 
-        .menu-bar a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            padding: 20px 10px;
-            transition: color 0.3s ease;
-            font-size: 15px;
-        }
+    .project-title-sec{flex:1}
+    .project-title-sec h3{font-size:1.2rem;color:var(--text);font-weight:600;margin-bottom:10px;transition:color .3s}
+    .project-header:hover .project-title-sec h3{color:var(--primary-color)}
 
-        .menu-bar a i {
-            margin-right: 8px;
-            transition: color 0.3s ease;
-        }
+    .project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{padding:6px 12px;background:rgba(0,119,181,.08);color:var(--primary-color);border:1px solid rgba(0,119,181,.2);border-radius:6px;font-size:.75rem;font-weight:600}
 
-        .menu-bar a:hover,
-        .menu-bar a:hover i {
-            color: var(--primary-color);
-        }
+    .toggle-icon{font-size:1.1rem;color:var(--primary-color);transition:transform .3s}
+    .toggle-icon.active{transform:rotate(180deg)}
 
-        /* Main Container */
-        .container {
-            max-width: 1100px;
-            margin: 100px auto 50px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+    .project-details{display:none;padding:24px;background:var(--card);border-top:1px solid var(--border)}
+    .project-details.active{display:block;animation:slideIn .3s ease}
+    @keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 
-        .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 50px;
-            text-align: center;
-        }
+    .project-details p{color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:20px;text-align:justify}
 
-        .hero-section h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
+    .project-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--primary-color);color:#fff;border-radius:8px;font-weight:600;font-size:.9rem;transition:all .3s ease;box-shadow:0 4px 12px rgba(0,119,181,.25)}
+    .project-link:hover{background:#005a8d;transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,119,181,.35);text-decoration:none}
 
-        .hero-section p {
-            font-size: 18px;
-            opacity: 0.95;
-        }
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:40px 0;color:var(--muted);margin-top:64px}
+    .footer-content{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+    .social-links{display:flex;gap:16px;list-style:none}
+    .social-links a{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--text);font-size:1.2rem;transition:all .3s ease}
+    .social-links a:hover{background:var(--primary-color);border-color:var(--primary-color);color:#fff;transform:translateY(-3px);text-decoration:none}
 
-        .content-section {
-            padding: 50px;
-        }
-
-        .category-section {
-            margin-bottom: 50px;
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--primary-color);
-        }
-
-        .category-header i {
-            font-size: 28px;
-            color: var(--primary-color);
-        }
-
-        .category-header h2 {
-            font-size: 30px;
-            color: var(--text-dark);
-            font-weight: 700;
-        }
-
-        .project-card {
-            background: white;
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            border-color: var(--primary-color);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-header {
-            padding: 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--bg-light);
-            transition: background 0.3s ease;
-        }
-
-        .project-header:hover {
-            background: #e8f4f8;
-        }
-
-        .project-title-section {
-            flex: 1;
-        }
-
-        .project-title-section h3 {
-            font-size: 20px;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-bottom: 5px;
-            transition: color 0.3s ease;
-        }
-
-        .project-header:hover .project-title-section h3 {
-            color: var(--primary-color);
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .tag {
-            padding: 4px 12px;
-            background: white;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .toggle-icon {
-            font-size: 18px;
-            color: var(--primary-color);
-            transition: transform 0.3s ease;
-        }
-
-        .toggle-icon.active {
-            transform: rotate(180deg);
-        }
-
-        .project-details {
-            display: none;
-            padding: 25px;
-            background: white;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .project-details.active {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .project-details p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .project-report-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .project-report-link:hover {
-            background: #005a8d;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: rgba(51, 51, 51, 0.95);
-            color: white;
-            margin-top: 50px;
-        }
-
-        .socials ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 15px;
-        }
-
-        .socials a {
-            color: white;
-            font-size: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .socials a:hover {
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                margin: 80px 15px 30px;
-                border-radius: 15px;
-            }
-
-            .hero-section {
-                padding: 40px 25px;
-            }
-
-            .hero-section h1 {
-                font-size: 32px;
-            }
-
-            .content-section {
-                padding: 30px 20px;
-            }
-
-            .category-header h2 {
-                font-size: 24px;
-            }
-
-            .project-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-
-            .project-title-section h3 {
-                font-size: 18px;
-            }
-
-            .menu-bar li {
-                margin: 0 10px;
-            }
-
-            .menu-bar a {
-                font-size: 13px;
-                padding: 15px 5px;
-            }
-        }
-    </style>
+    @media(max-width:768px){
+      .navbar .container{flex-direction:column;gap:12px;padding-block:12px}
+      .nav-links{flex-wrap:wrap;justify-content:center;gap:6px}
+      .nav-links a{padding:8px 12px;font-size:.85rem}
+      .page-header{padding:48px 0 32px}
+      .category-section{padding:32px 0}
+      .project-header{flex-direction:column;gap:12px}
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="menu-bar">
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i>About Me</a></li>
-                <li><a href="personal-background.html"><i class="fas fa-graduation-cap"></i>Personal Background</a></li>
-            </ul>
-        </div>
-    </nav>
-
+  <nav class="navbar" aria-label="Primary">
     <div class="container">
-        <div class="hero-section">
-            <h1>Completed Projects</h1>
-            <p>Explore my technical projects across various domains of computer engineering</p>
-        </div>
-
-        <div class="content-section">
-            <!-- Machine Learning & AI Projects -->
-            <div class="category-section">
-                <div class="category-header">
-                    <i class="fas fa-brain"></i>
-                    <h2>Machine Learning & AI</h2>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project4')">
-                        <div class="project-title-section">
-                            <h3>DCNN Image Classification Algorithm</h3>
-                            <div class="project-tags">
-                                <span class="tag">Deep Learning</span>
-                                <span class="tag">CNN</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">TensorFlow</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project4"></i>
-                    </div>
-                    <div class="project-details" id="details-project4">
-                        <p>Conducted a comparative study on DCNN, DarkNet-19, ResNet-50, and Efficient B0 architectures, achieving a 94.35% validation accuracy with Efficient B0 on a dataset of over 3500 32x32 grayscale images across 28 classes. Custom-designed DCNN achieved 92.35% validation accuracy with the lowest training time, demonstrating efficient model design.</p>
-                        <a href="assets/ECE172-Final Project-Report.pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project11')">
-                        <div class="project-title-section">
-                            <h3>Music Regeneration and Classification using ML Signal Processing</h3>
-                            <div class="project-tags">
-                                <span class="tag">Signal Processing</span>
-                                <span class="tag">CNN</span>
-                                <span class="tag">PCA</span>
-                                <span class="tag">Audio Processing</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project11"></i>
-                    </div>
-                    <div class="project-details" id="details-project11">
-                        <p>Implemented music signal recreation using a trained CNN model. Leveraged genre-specific feature representations synthesized into new music signals. Features were converted into audio waveforms, demonstrating the potential of neural networks to generate realistic genre-specific samples. Validated the quality through reclassification and performed PCA analysis to examine variance distributions across four genres.</p>
-                        <a href="assets/Final_Project___Report.pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project12')">
-                        <div class="project-title-section">
-                            <h3>DL Accelerator and Dataflow Design for DL Models</h3>
-                            <div class="project-tags">
-                                <span class="tag">Hardware Acceleration</span>
-                                <span class="tag">MAESTRO</span>
-                                <span class="tag">Optimization</span>
-                                <span class="tag">VGG16</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project12"></i>
-                    </div>
-                    <div class="project-details" id="details-project12">
-                        <p>Co-optimized dataflow and hardware architecture for DL models (VGG16 and UNet) using the MAESTRO cost model. Focused on minimizing latency and energy consumption while adhering to predefined hardware and dataflow constraints. The project demonstrates expertise in the co-design space of DL accelerators comprising deep learning models, dataflow, and hardware architecture.</p>
-                        <a href="assets/Final_Project___Report___EECS_298__DL_Accelerator.pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Autonomous Systems & Robotics -->
-            <div class="category-section">
-                <div class="category-header">
-                    <i class="fas fa-car"></i>
-                    <h2>Autonomous Systems & Robotics</h2>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project5')">
-                        <div class="project-title-section">
-                            <h3>Autonomous Driving Stack Integration</h3>
-                            <div class="project-tags">
-                                <span class="tag">ROS2</span>
-                                <span class="tag">Perception</span>
-                                <span class="tag">Planning</span>
-                                <span class="tag">Control</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project5"></i>
-                    </div>
-                    <div class="project-details" id="details-project5">
-                        <p>Developed a comprehensive autonomous driving stack in ROS2, integrating perception, planning, and control modules. The system enables real-time navigation and decision-making in dynamic environments, demonstrating end-to-end autonomous vehicle capabilities from sensor data processing to vehicle control.</p>
-                        <a href="assets/Lab5 report (1).pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project10')">
-                        <div class="project-title-section">
-                            <h3>Analysis of Human Behavior in Different Driving Scenarios</h3>
-                            <div class="project-tags">
-                                <span class="tag">CARLA Simulator</span>
-                                <span class="tag">Human Factors</span>
-                                <span class="tag">Data Analysis</span>
-                                <span class="tag">VR</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project10"></i>
-                    </div>
-                    <div class="project-details" id="details-project10">
-                        <p>Despite advancements in automotive technology and infrastructure, traffic accidents remain a significant global issue. This project creates and simulates various traffic scenarios using the CARLA simulator to understand driver behavior. Data gathering includes vehicle metrics and biometrics such as heart rate and breathing rate to enhance safety through better understanding of driver behavior patterns.</p>
-                        <a href="assets/Final PPT (1).pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hardware & Embedded Systems -->
-            <div class="category-section">
-                <div class="category-header">
-                    <i class="fas fa-microchip"></i>
-                    <h2>Hardware & Embedded Systems</h2>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project2')">
-                        <div class="project-title-section">
-                            <h3>5-stage Pipelined MIPS Processor</h3>
-                            <div class="project-tags">
-                                <span class="tag">Verilog</span>
-                                <span class="tag">HDL</span>
-                                <span class="tag">MIPS</span>
-                                <span class="tag">Pipeline</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project2"></i>
-                    </div>
-                    <div class="project-details" id="details-project2">
-                        <p>Integrated and prototyped the datapath and control units of a simple 32-bit MIPS processor featuring five pipeline stages using Verilog hardware description language. The processor executes various instructions including arithmetic, logic, data movement, and flow control operations with optimized pipeline hazard handling.</p>
-                        <a href="assets/ECE174-Project-Report (3).pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project6')">
-                        <div class="project-title-section">
-                            <h3>Edge Detection System on Chip (SoC) Design</h3>
-                            <div class="project-tags">
-                                <span class="tag">SystemC</span>
-                                <span class="tag">SoC</span>
-                                <span class="tag">Image Processing</span>
-                                <span class="tag">Real-time</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project6"></i>
-                    </div>
-                    <div class="project-details" id="details-project6">
-                        <p>Designed and developed a high-performance edge detection algorithm module using SystemC for image and video processing at 24fps. The system demonstrates real-time processing capabilities suitable for embedded vision applications.</p>
-                        <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project9')">
-                        <div class="project-title-section">
-                            <h3>Parallel to Serial Interfacing</h3>
-                            <div class="project-tags">
-                                <span class="tag">Communication</span>
-                                <span class="tag">OSI Model</span>
-                                <span class="tag">Interface Design</span>
-                                <span class="tag">Hardware</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project9"></i>
-                    </div>
-                    <div class="project-details" id="details-project9">
-                        <p>Focused on enhancing data transmission efficiency within communication networks by implementing Parallel to Serial and Serial to Parallel Interfaces. Explored the integration of these interfaces with the OSI model's seven layers, demonstrating understanding of layered communication protocols.</p>
-                        <a href="assets/ECE 176 Report.pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- IoT & Systems Integration -->
-            <div class="category-section">
-                <div class="category-header">
-                    <i class="fas fa-network-wired"></i>
-                    <h2>IoT & Systems Integration</h2>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project1')">
-                        <div class="project-title-section">
-                            <h3>SmartZoo Controlling & Monitoring System</h3>
-                            <div class="project-tags">
-                                <span class="tag">IoT</span>
-                                <span class="tag">Cloud</span>
-                                <span class="tag">Embedded Systems</span>
-                                <span class="tag">UI/UX</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project1"></i>
-                    </div>
-                    <div class="project-details" id="details-project1">
-                        <p>Created a safe and intelligent control environment ensuring the safety of stingrays, reptiles, and elephants in zoo settings. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store environmental data in real-time.</p>
-                        <a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cybersecurity -->
-            <div class="category-section">
-                <div class="category-header">
-                    <i class="fas fa-shield-alt"></i>
-                    <h2>Cybersecurity</h2>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project3')">
-                        <div class="project-title-section">
-                            <h3>Cryptography Project: BREACH Attack</h3>
-                            <div class="project-tags">
-                                <span class="tag">Security</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">HTTPS</span>
-                                <span class="tag">Cryptography</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project3"></i>
-                    </div>
-                    <div class="project-details" id="details-project3">
-                        <p>Implemented a BREACH attack to explore its potential impact on targeted systems. Researched and selected appropriate attack methods, designed and executed the attack on simulated systems using Python, and analyzed results through HTTPS requests between client and server to understand vulnerability exploitation.</p>
-                        <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Research Projects -->
-            <div class="category-section">
-                <div class="category-header">
-                    <i class="fas fa-flask"></i>
-                    <h2>Research Projects</h2>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project13')">
-                        <div class="project-title-section">
-                            <h3>Human-aware Automotive Testbed using CARLA</h3>
-                            <div class="project-tags">
-                                <span class="tag">Research</span>
-                                <span class="tag">CARLA</span>
-                                <span class="tag">VR</span>
-                                <span class="tag">Human Factors</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project13"></i>
-                    </div>
-                    <div class="project-details" id="details-project13">
-                        <p>Presents the design of a human-aware automotive testbed using CARLA (Car Learning to Act), incorporating human-vehicle interaction and environment sensing to enhance testing and validation of autonomous systems. The testbed enables realistic vehicle behavior simulation including traffic, pedestrians, and environmental conditions, ensuring robust system performance in various scenarios.</p>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header" onclick="toggleProject('project8')">
-                        <div class="project-title-section">
-                            <h3>Research: Nuclear Power in Space</h3>
-                            <div class="project-tags">
-                                <span class="tag">Research</span>
-                                <span class="tag">Space Technology</span>
-                                <span class="tag">Nuclear Power</span>
-                                <span class="tag">RTG</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down toggle-icon" id="icon-project8"></i>
-                    </div>
-                    <div class="project-details" id="details-project8">
-                        <p>Space missions increasingly rely on nuclear power, notably Radioisotope Thermoelectric Generators (RTGs) and nuclear fission reactors. This paper reviews their applications, focusing on Nuclear Thermal Propulsion (NTP), analysis, and data acquisition. RTGs provide reliable energy for space probes and rovers. Nuclear fission reactors offer potential for high-energy propulsion, enabling faster space exploration.</p>
-                        <a href="assets/EECS230-report (1).pdf" target="_blank" class="project-report-link">
-                            <i class="fas fa-file-pdf"></i>
-                            View Project Report
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="brand">Puya Fard</div>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i>About</a></li>
+        <li><a href="personal-background.html"><i class="fas fa-graduation-cap"></i>Background</a></li>
+        <li><a href="completed-projects.html" aria-current="page"><i class="fas fa-folder"></i>Projects</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <footer>
-        <div class="socials">
-            <ul>
-                <li><a href="https://www.instagram.com/py.frd/" target="_blank" class="fab fa-instagram" aria-label="Instagram"></a></li>
-                <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" class="fab fa-linkedin" aria-label="LinkedIn"></a></li>
-                <li><a href="https://github.com/PuyaCompE" target="_blank" class="fab fa-github" aria-label="GitHub"></a></li>
-            </ul>
+  <header class="page-header">
+    <div class="container">
+      <h1>Completed Projects</h1>
+      <p>Explore my technical projects across various domains of computer engineering</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ML & AI -->
+    <section class="category-section">
+      <div class="container">
+        <div class="category-header">
+          <i class="fas fa-brain"></i>
+          <h2>Machine Learning & AI</h2>
         </div>
-        <p>&copy; 2024 Puya Fard. All Rights Reserved.</p>
-    </footer>
 
-    <script>
-        function toggleProject(id) {
-            const details = document.getElementById('details-' + id);
-            const icon = document.getElementById('icon-' + id);
-            
-            if (details.classList.contains('active')) {
-                details.classList.remove('active');
-                icon.classList.remove('active');
-            } else {
-                details.classList.add('active');
-                icon.classList.add('active');
-            }
-        }
-    </script>
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project4')">
+            <div class="project-title-sec">
+              <h3>DCNN Image Classification Algorithm</h3>
+              <div class="project-tags">
+                <span class="tag">Deep Learning</span>
+                <span class="tag">CNN</span>
+                <span class="tag">Python</span>
+                <span class="tag">TensorFlow</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project4"></i>
+          </div>
+          <div class="project-details" id="details-project4">
+            <p>Conducted a comparative study on DCNN, DarkNet-19, ResNet-50, and Efficient B0 architectures, achieving a 94.35% validation accuracy with Efficient B0 on a dataset of over 3500 32x32 grayscale images across 28 classes. Custom-designed DCNN achieved 92.35% validation accuracy with the lowest training time, demonstrating efficient model design.</p>
+            <a href="assets/ECE172-Final Project-Report.pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project11')">
+            <div class="project-title-sec">
+              <h3>Music Regeneration and Classification using ML Signal Processing</h3>
+              <div class="project-tags">
+                <span class="tag">Signal Processing</span>
+                <span class="tag">CNN</span>
+                <span class="tag">PCA</span>
+                <span class="tag">Audio</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project11"></i>
+          </div>
+          <div class="project-details" id="details-project11">
+            <p>Implemented music signal recreation using a trained CNN model. Leveraged genre-specific feature representations synthesized into new music signals. Features were converted into audio waveforms, demonstrating the potential of neural networks to generate realistic genre-specific samples. Validated quality through reclassification and performed PCA analysis to examine variance distributions across four genres.</p>
+            <a href="assets/Final_Project___Report.pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project12')">
+            <div class="project-title-sec">
+              <h3>DL Accelerator and Dataflow Design for DL Models</h3>
+              <div class="project-tags">
+                <span class="tag">Hardware Acceleration</span>
+                <span class="tag">MAESTRO</span>
+                <span class="tag">Optimization</span>
+                <span class="tag">VGG16</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project12"></i>
+          </div>
+          <div class="project-details" id="details-project12">
+            <p>Co-optimized dataflow and hardware architecture for DL models (VGG16 and UNet) using the MAESTRO cost model. Focused on minimizing latency and energy consumption while adhering to predefined hardware and dataflow constraints. Demonstrates expertise in the co-design space of DL accelerators comprising deep learning models, dataflow, and hardware architecture.</p>
+            <a href="assets/Final_Project___Report___EECS_298__DL_Accelerator.pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Autonomous Systems -->
+    <section class="category-section">
+      <div class="container">
+        <div class="category-header">
+          <i class="fas fa-car"></i>
+          <h2>Autonomous Systems & Robotics</h2>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project5')">
+            <div class="project-title-sec">
+              <h3>Autonomous Driving Stack Integration</h3>
+              <div class="project-tags">
+                <span class="tag">ROS2</span>
+                <span class="tag">Perception</span>
+                <span class="tag">Planning</span>
+                <span class="tag">Control</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project5"></i>
+          </div>
+          <div class="project-details" id="details-project5">
+            <p>Developed a comprehensive autonomous driving stack in ROS2, integrating perception, planning, and control modules. The system enables real-time navigation and decision-making in dynamic environments, demonstrating end-to-end autonomous vehicle capabilities from sensor data processing to vehicle control.</p>
+            <a href="assets/Lab5 report (1).pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project10')">
+            <div class="project-title-sec">
+              <h3>Analysis of Human Behavior in Different Driving Scenarios</h3>
+              <div class="project-tags">
+                <span class="tag">CARLA</span>
+                <span class="tag">Human Factors</span>
+                <span class="tag">Data Analysis</span>
+                <span class="tag">VR</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project10"></i>
+          </div>
+          <div class="project-details" id="details-project10">
+            <p>Despite advancements in automotive technology, traffic accidents remain a significant global issue. This project creates and simulates various traffic scenarios using the CARLA simulator to understand driver behavior. Data gathering includes vehicle metrics and biometrics such as heart rate and breathing rate to enhance safety through better understanding of driver behavior patterns.</p>
+            <a href="assets/Final PPT (1).pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hardware & Embedded -->
+    <section class="category-section">
+      <div class="container">
+        <div class="category-header">
+          <i class="fas fa-microchip"></i>
+          <h2>Hardware & Embedded Systems</h2>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project2')">
+            <div class="project-title-sec">
+              <h3>5-stage Pipelined MIPS Processor</h3>
+              <div class="project-tags">
+                <span class="tag">Verilog</span>
+                <span class="tag">HDL</span>
+                <span class="tag">MIPS</span>
+                <span class="tag">Pipeline</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project2"></i>
+          </div>
+          <div class="project-details" id="details-project2">
+            <p>Integrated and prototyped the datapath and control units of a simple 32-bit MIPS processor featuring five pipeline stages using Verilog hardware description language. The processor executes various instructions including arithmetic, logic, data movement, and flow control operations with optimized pipeline hazard handling.</p>
+            <a href="assets/ECE174-Project-Report (3).pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project6')">
+            <div class="project-title-sec">
+              <h3>Edge Detection System on Chip (SoC) Design</h3>
+              <div class="project-tags">
+                <span class="tag">SystemC</span>
+                <span class="tag">SoC</span>
+                <span class="tag">Image Processing</span>
+                <span class="tag">Real-time</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project6"></i>
+          </div>
+          <div class="project-details" id="details-project6">
+            <p>Designed and developed a high-performance edge detection algorithm module using SystemC for image and video processing at 24fps. The system demonstrates real-time processing capabilities suitable for embedded vision applications.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project9')">
+            <div class="project-title-sec">
+              <h3>Parallel to Serial Interfacing</h3>
+              <div class="project-tags">
+                <span class="tag">Communication</span>
+                <span class="tag">OSI Model</span>
+                <span class="tag">Interface Design</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project9"></i>
+          </div>
+          <div class="project-details" id="details-project9">
+            <p>Focused on enhancing data transmission efficiency within communication networks by implementing Parallel to Serial and Serial to Parallel Interfaces. Explored the integration of these interfaces with the OSI model's seven layers, demonstrating understanding of layered communication protocols.</p>
+            <a href="assets/ECE 176 Report.pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IoT -->
+    <section class="category-section">
+      <div class="container">
+        <div class="category-header">
+          <i class="fas fa-network-wired"></i>
+          <h2>IoT & Systems Integration</h2>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project1')">
+            <div class="project-title-sec">
+              <h3>SmartZoo Controlling & Monitoring System</h3>
+              <div class="project-tags">
+                <span class="tag">IoT</span>
+                <span class="tag">Cloud</span>
+                <span class="tag">Embedded</span>
+                <span class="tag">UI/UX</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project1"></i>
+          </div>
+          <div class="project-details" id="details-project1">
+            <p>Created a safe and intelligent control environment ensuring the safety of stingrays, reptiles, and elephants in zoo settings. This project leverages embedded systems, cloud-based programming, and a software-based user interface to monitor, collect, and store environmental data in real-time.</p>
+            <a href="assets/ProjectCharterV1.10 (3).pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cybersecurity -->
+    <section class="category-section">
+      <div class="container">
+        <div class="category-header">
+          <i class="fas fa-shield-alt"></i>
+          <h2>Cybersecurity</h2>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project3')">
+            <div class="project-title-sec">
+              <h3>Cryptography Project: BREACH Attack</h3>
+              <div class="project-tags">
+                <span class="tag">Security</span>
+                <span class="tag">Python</span>
+                <span class="tag">HTTPS</span>
+                <span class="tag">Cryptography</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project3"></i>
+          </div>
+          <div class="project-details" id="details-project3">
+            <p>Implemented a BREACH attack to explore its potential impact on targeted systems. Researched and selected appropriate attack methods, designed and executed the attack on simulated systems using Python, and analyzed results through HTTPS requests between client and server to understand vulnerability exploitation.</p>
+            <a href="assets/ECE 156 - Final Technical Report.pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="category-section">
+      <div class="container">
+        <div class="category-header">
+          <i class="fas fa-flask"></i>
+          <h2>Research Projects</h2>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project13')">
+            <div class="project-title-sec">
+              <h3>Human-aware Automotive Testbed using CARLA</h3>
+              <div class="project-tags">
+                <span class="tag">Research</span>
+                <span class="tag">CARLA</span>
+                <span class="tag">VR</span>
+                <span class="tag">Human Factors</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project13"></i>
+          </div>
+          <div class="project-details" id="details-project13">
+            <p>Presents the design of a human-aware automotive testbed using CARLA (Car Learning to Act), incorporating human-vehicle interaction and environment sensing to enhance testing and validation of autonomous systems. The testbed enables realistic vehicle behavior simulation including traffic, pedestrians, and environmental conditions, ensuring robust system performance in various scenarios.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header" onclick="toggleProject('project8')">
+            <div class="project-title-sec">
+              <h3>Research: Nuclear Power in Space</h3>
+              <div class="project-tags">
+                <span class="tag">Research</span>
+                <span class="tag">Space Technology</span>
+                <span class="tag">Nuclear Power</span>
+                <span class="tag">RTG</span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-down toggle-icon" id="icon-project8"></i>
+          </div>
+          <div class="project-details" id="details-project8">
+            <p>Space missions increasingly rely on nuclear power, notably Radioisotope Thermoelectric Generators (RTGs) and nuclear fission reactors. This paper reviews their applications, focusing on Nuclear Thermal Propulsion (NTP), analysis, and data acquisition. RTGs provide reliable energy for space probes and rovers. Nuclear fission reactors offer potential for high-energy propulsion, enabling faster space exploration.</p>
+            <a href="assets/EECS230-report (1).pdf" target="_blank" class="project-link"><i class="fas fa-file-pdf"></i>View Project Report</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <ul class="social-links">
+          <li><a href="https://github.com/PuyaCompE" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/py.frd/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="mailto:puyafardce@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+        <p>© 2025 Puya Fard. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleProject(id) {
+      const details = document.getElementById('details-' + id);
+      const icon = document.getElementById('icon-' + id);
+      
+      if (details.classList.contains('active')) {
+        details.classList.remove('active');
+        icon.classList.remove('active');
+      } else {
+        details.classList.add('active');
+        icon.classList.add('active');
+      }
+    }
+  </script>
 </body>
 </html>
