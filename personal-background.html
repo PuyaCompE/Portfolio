@@ -6,6 +6,18 @@
   <title>Professional Background – Puya Fard</title>
   <meta name="description" content="Education and work experience of Puya Fard." />
   <meta name="theme-color" content="#0b0f1a" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Puya Fard" />
+  <meta property="og:title" content="Professional Background – Puya Fard" />
+  <meta property="og:description" content="Education and work experience of Puya Fard, embedded software engineer at TP-Link." />
+  <meta property="og:url" content="https://puyacompe.github.io/Portfolio/personal-background.html" />
+  <meta property="og:image" content="https://puyacompe.github.io/Portfolio/assets/Image%2011-3-24%20at%2009.53.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Professional Background – Puya Fard" />
+  <meta name="twitter:description" content="Education and work experience of Puya Fard, embedded software engineer at TP-Link." />
+  <meta name="twitter:image" content="https://puyacompe.github.io/Portfolio/assets/Image%2011-3-24%20at%2009.53.jpeg" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-46H9GVHWWF"></script>
   <script>
@@ -18,112 +30,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    :root{
-      --primary-color:#0077b5;
-      --bg:#0b0f1a;--panel:#0f1524;--muted:#a8b3cf;--text:#e6e9f4;
-      --card:#121a2e;--border:rgba(255,255,255,0.08);
-      --shadow:0 6px 28px rgba(0,0,0,.35);
-      --radius:16px;--maxw:1100px;--focus:0 0 0 3px rgba(122,162,255,.35)
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html:focus-within{scroll-behavior:smooth}
-    @media (prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}}
-    html,body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-    a{color:var(--primary-color);text-decoration:none;transition:all .3s ease}
-    a:hover{text-decoration:underline}
-    :where(a,button,[tabindex]):focus{outline:none}
-    :where(a,button,[tabindex]):focus-visible{box-shadow:var(--focus);border-radius:10px}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-
-    /* NAV */
-    .navbar{position:sticky;top:0;z-index:50;background:rgba(11,15,26,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-    .navbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-    .brand{font-weight:700;letter-spacing:.3px;font-size:1.1rem;color:var(--text)}
-    .nav-links{list-style:none;display:flex;gap:8px;margin:0;padding:0}
-    .nav-links a{padding:10px 14px;border-radius:10px;font-weight:500;font-size:.95rem;display:flex;align-items:center;gap:6px;color:var(--text)}
-    .nav-links a i{font-size:.9rem;opacity:.85}
-    .nav-links a[aria-current="page"],.nav-links a:hover{background:rgba(255,255,255,.08);text-decoration:none;color:var(--primary-color)}
-
-    /* PAGE HEADER */
-    .page-header{padding:64px 0 48px;text-align:center;background:radial-gradient(1400px 400px at 50% -200px,rgba(0,119,181,.12),rgba(11,15,26,0))}
-    .page-header h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:12px;background:linear-gradient(135deg,var(--text),var(--primary-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .page-header p{color:var(--muted);font-size:1.05rem;max-width:700px;margin:0 auto 24px;line-height:1.7}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.95rem;transition:all .3s ease;background:var(--primary-color);color:#fff;box-shadow:0 4px 14px rgba(0,119,181,.25)}
-    .btn:hover{background:#005a8d;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,119,181,.35);text-decoration:none}
-    .btn i{font-size:.9rem}
-
-    /* SECTIONS */
-    .content-section{padding:48px 0}
-    .content-section:not(:last-child){border-bottom:1px solid var(--border)}
-
-    .section-title{display:flex;align-items:center;gap:12px;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;margin-bottom:32px;color:var(--text)}
-    .section-title i{color:var(--primary-color);font-size:1.8rem}
-
-    /* EDUCATION CARDS */
-    .education-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:24px;border-left:4px solid var(--primary-color);transition:all .3s ease}
-    .education-item:hover{box-shadow:0 8px 28px rgba(0,0,0,.4);transform:translateX(4px)}
-    .edu-degree{font-size:1.3rem;font-weight:600;color:var(--text);margin-bottom:6px}
-    .edu-school{font-size:1.05rem;color:var(--muted);margin-bottom:4px}
-    .edu-date{font-size:.9rem;color:var(--primary-color);font-weight:600;margin-bottom:16px}
-    .edu-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(0,119,181,.1);color:var(--primary-color);border-radius:8px;font-weight:600;font-size:.85rem;border:1px solid rgba(0,119,181,.2);transition:all .3s ease}
-    .edu-link:hover{background:rgba(0,119,181,.2);text-decoration:none;transform:translateY(-1px)}
-
-    /* WORK EXPERIENCE CARDS */
-    .work-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px;margin-bottom:24px;transition:all .3s ease}
-    .work-item:hover{border-color:rgba(0,119,181,.3);box-shadow:0 8px 28px rgba(0,0,0,.4)}
-    .work-header{cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
-    .work-title-sec h3{font-size:1.3rem;color:var(--text);font-weight:600;margin-bottom:6px;transition:color .3s}
-    .work-header:hover .work-title-sec h3{color:var(--primary-color)}
-    .work-company{font-size:1rem;color:var(--muted);font-weight:500}
-    .work-date{font-size:.9rem;color:var(--primary-color);font-weight:600;white-space:nowrap}
-    .toggle-icon{font-size:1.1rem;color:var(--primary-color);transition:transform .3s;margin-left:12px}
-    .toggle-icon.active{transform:rotate(180deg)}
-
-    .work-details{display:none;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
-    .work-details.active{display:block;animation:slideIn .3s ease}
-    @keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-
-    .work-desc{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:24px}
-
-    .detail-section{margin-top:28px}
-    .detail-section h4{font-size:1.1rem;color:var(--text);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-    .detail-section h4 i{color:var(--primary-color);font-size:1.2rem}
-
-    .detail-list{list-style:none;padding:0}
-    .detail-list li{padding:10px 0 10px 24px;position:relative;color:var(--muted);font-size:.95rem;line-height:1.7}
-    .detail-list li:before{content:"▸";position:absolute;left:0;color:var(--primary-color);font-weight:bold;font-size:1.1rem}
-
-    .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .tag{padding:8px 14px;background:rgba(0,119,181,.08);color:var(--primary-color);border-radius:6px;font-size:.85rem;font-weight:600;border:1px solid rgba(0,119,181,.2)}
-
-    /* SKILLS GRID */
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:32px}
-    .skill-category{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;border-left:4px solid var(--primary-color);transition:all .3s ease}
-    .skill-category:hover{box-shadow:0 8px 28px rgba(0,0,0,.4);transform:translateY(-2px)}
-    .skill-category h3{font-size:1.15rem;color:var(--text);margin-bottom:14px;font-weight:600}
-    .skill-category p{color:var(--muted);font-size:.95rem;line-height:1.6;margin:0}
-
-    /* FOOTER */
-    footer{border-top:1px solid var(--border);padding:40px 0;color:var(--muted);margin-top:64px}
-    .footer-content{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
-    .social-links{display:flex;gap:16px;list-style:none}
-    .social-links a{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--card);border:1px solid var(--border);color:var(--text);font-size:1.2rem;transition:all .3s ease}
-    .social-links a:hover{background:var(--primary-color);border-color:var(--primary-color);color:#fff;transform:translateY(-3px);text-decoration:none}
-
-    @media(max-width:768px){
-      .navbar .container{flex-direction:column;gap:12px;padding-block:12px}
-      .nav-links{flex-wrap:wrap;justify-content:center;gap:6px}
-      .nav-links a{padding:8px 12px;font-size:.85rem}
-      .page-header{padding:48px 0 32px}
-      .content-section{padding:32px 0}
-      .work-header{flex-direction:column}
-      .work-date{align-self:flex-start}
-      .skills-grid{grid-template-columns:1fr}
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <nav class="navbar" aria-label="Primary">
     <div class="container">
       <div class="brand">Puya Fard</div>
@@ -140,11 +51,11 @@
     <div class="container">
       <h1>Professional Background</h1>
       <p>Throughout my academic journey, I have learned an important lesson: never be convinced that you know everything. Knowledge is always subject to change and can be updated with new information. It's not that one should lack confidence, but rather remain open to learning and willing to adjust viewpoints on subjects that matter.</p>
-      <a href="assets/Embedded Software Engineer.pdf" target="_blank" class="btn"><i class="fas fa-download"></i>Download Resume</a>
+      <a href="assets/Fard_Puya_Resume.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-download"></i>Download Resume</a>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- EDUCATION SECTION -->
     <section class="content-section">
       <div class="container">
@@ -160,7 +71,7 @@
         <div class="education-item">
           <div class="edu-degree">Bachelor of Science in Computer Engineering</div>
           <div class="edu-school">California State University, Fresno</div>
-          <div class="edu-date">2021 - 2024</div>
+          <div class="edu-date">2021 - 2023</div>
           <a href="assets/Transcript CSUF.pdf" target="_blank" class="edu-link"><i class="fas fa-file-alt"></i>View Transcript</a>
         </div>
 
@@ -182,27 +93,43 @@
         <div class="work-item">
           <div class="work-header" onclick="toggleWork('tplink')">
             <div class="work-title-sec">
-              <h3>Software Engineer</h3>
-              <div class="work-company">TP-Link Systems Inc.</div>
+              <h3>Embedded Software Engineer</h3>
+              <div class="work-company">TP-Link Systems Inc. — Irvine, CA</div>
             </div>
             <div style="display:flex;align-items:center;gap:12px">
-              <div class="work-date">Oct 2024 - Present</div>
+              <div class="work-date">Jan 2025 - Present</div>
               <i class="fas fa-chevron-down toggle-icon" id="icon-tplink"></i>
             </div>
           </div>
           <div class="work-details" id="details-tplink">
             <div class="work-desc">
-              Developing and maintaining embedded software solutions for networking devices, focusing on system optimization, feature development, and cross-functional collaboration to deliver high-quality products.
+              Working across the QoS, HomeShield, networking, and cloud modules of the Deco mesh router product line — developing low-level networking and cloud-connected firmware on embedded Linux. My work spans hardware acceleration, kernel modules, and client-to-router and router-to-router data aggregation across MediaTek and Qualcomm chipsets, alongside project lifecycle management, cross-team coordination, and mentoring. Recipient of the TP-Link CEO Award of Excellence (2025) for ownership, technical contribution, and work ethic.
             </div>
 
             <div class="detail-section">
-              <h4><i class="fas fa-project-diagram"></i>Key Projects & Contributions</h4>
+              <h4><i class="fas fa-project-diagram"></i>Platform & Ownership</h4>
               <ul class="detail-list">
-                <li>Architected and implemented firmware features for enterprise-grade routers, improving network throughput by 25% and reducing latency</li>
-                <li>Developed automated testing frameworks for QoS (Quality of Service) features, reducing testing time by 40% and improving bug detection rate</li>
-                <li>Led cross-team collaboration to integrate advanced security protocols (WPA3, VPN enhancements) across multiple product lines</li>
-                <li>Optimized memory usage in embedded systems, resulting in 30% reduction in RAM consumption for resource-constrained devices</li>
-                <li>Implemented real-time monitoring dashboards for network traffic analysis, enabling proactive network management</li>
+                <li>Develop new features, fix bugs, and maintain production firmware for the Deco mesh router fleet across MediaTek (BE25, BE26, BE13000) and Qualcomm (BE65, BE85) chipsets</li>
+                <li>Drive the project lifecycle for remodel projects from feature design through firmware delivery — owner of the BE13000v2 remodel project, sold at Costco nationwide</li>
+                <li>Mentor a newly hired junior engineer on embedded Linux debugging, OpenWrt build architecture and workflows, and setting up complex test topologies with MikroTik RouterOS</li>
+                <li>Serve as the firmware point of contact across the iOS/Android app, Cloud, QA, System QA, and platform-line teams, unblocking design questions and new-feature work to keep release schedules on track</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-microchip"></i>Low-level Networking & Hardware Acceleration</h4>
+              <ul class="detail-list">
+                <li>Work directly with the MediaTek (MT798x) and Qualcomm (IPQ53xx, IPQ95xx) SDKs, including hardware acceleration paths through HNAT on MediaTek and the QCA-NSS-ECM and PPE modules on Qualcomm</li>
+                <li>Debug complex issues end-to-end — identifying root causes with tools such as GDB and SLUB, then delivering fixes in a timely manner</li>
+                <li>Architect cloud-connected subsystems that report device telemetry and subscription state to the TP-Link cloud over NATS, including parental-control cloud-lookup table integration</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4><i class="fas fa-lightbulb"></i>Features, Tooling & IP</h4>
+              <ul class="detail-list">
+                <li>Lead AI-powered QoS feature integration across firmware components — application classification, application DPI marking and handling, and traffic offloading to PPE engines — coordinating a multi-patch Gerrit series spanning userspace and kernel</li>
+                <li>Co-authored two patent filings for HomeShield firmware inventions covering subscription-aware kernel enforcement and cloud telemetry reporting</li>
               </ul>
             </div>
 
@@ -210,37 +137,19 @@
               <h4><i class="fas fa-tools"></i>Tools & Technologies</h4>
               <div class="tags">
                 <span class="tag">C/C++</span>
-                <span class="tag">Linux</span>
-                <span class="tag">Embedded Systems</span>
-                <span class="tag">OpenWrt</span>
-                <span class="tag">Git/GitLab</span>
-                <span class="tag">JIRA</span>
+                <span class="tag">Lua</span>
                 <span class="tag">Python</span>
-                <span class="tag">Bash Scripting</span>
+                <span class="tag">Embedded Linux</span>
+                <span class="tag">OpenWrt</span>
+                <span class="tag">QSDK</span>
+                <span class="tag">Kernel Modules</span>
+                <span class="tag">netfilter/iptables</span>
+                <span class="tag">GDB</span>
+                <span class="tag">Gerrit</span>
+                <span class="tag">NATS</span>
+                <span class="tag">QoS / DPI</span>
                 <span class="tag">TCP/IP</span>
-                <span class="tag">REST APIs</span>
               </div>
-            </div>
-
-            <div class="detail-section">
-              <h4><i class="fas fa-cogs"></i>Skills Gained</h4>
-              <ul class="detail-list">
-                <li>Advanced embedded systems programming and optimization techniques</li>
-                <li>Network protocol implementation and debugging (802.11, TCP/IP stack)</li>
-                <li>Agile development methodologies and sprint planning</li>
-                <li>Code review practices and technical documentation</li>
-                <li>Cross-functional team collaboration and stakeholder communication</li>
-              </ul>
-            </div>
-
-            <div class="detail-section">
-              <h4><i class="fas fa-chart-line"></i>Impact & Outcomes</h4>
-              <ul class="detail-list">
-                <li>Contributed to 3 major product releases shipped to millions of users worldwide</li>
-                <li>Reduced customer-reported firmware bugs by 35% through improved testing methodologies</li>
-                <li>Mentored 2 junior engineers in embedded systems development best practices</li>
-                <li>Received "Outstanding Contributor" recognition for exceeding performance goals in Q1 2025</li>
-              </ul>
             </div>
           </div>
         </div>
@@ -249,11 +158,11 @@
         <div class="work-item">
           <div class="work-header" onclick="toggleWork('research')">
             <div class="work-title-sec">
-              <h3>Research Assistant</h3>
-              <div class="work-company">UC Irvine - Pervasive Autonomy Lab</div>
+              <h3>Graduate Research Assistant</h3>
+              <div class="work-company">UC Irvine — Pervasive Autonomy Lab</div>
             </div>
             <div style="display:flex;align-items:center;gap:12px">
-              <div class="work-date">Mar 2024 - Present</div>
+              <div class="work-date">Mar 2024 - Dec 2024</div>
               <i class="fas fa-chevron-down toggle-icon" id="icon-research"></i>
             </div>
           </div>
@@ -363,20 +272,28 @@
         <h2 class="section-title"><i class="fas fa-code"></i>Engineering Skills</h2>
         <div class="skills-grid">
           <div class="skill-category">
-            <h3>Embedded Computing</h3>
-            <p>Cadence, Linux, ModelSim, FPGA, Microcontrollers, SoC, Quartus Prime, SystemC, HDL, MultiSim, OpenWrt</p>
+            <h3>Languages</h3>
+            <p>C, C++, Python, Lua, Assembly, C#, Java, JavaScript, HTML/CSS, SQL, Bash, HDL (Verilog/VHDL)</p>
           </div>
           <div class="skill-category">
-            <h3>Software Development</h3>
-            <p>C/C++, Python, C#, Java, JavaScript, Assembly, HTML/CSS, SQL, Bash, HDL (Verilog/VHDL)</p>
+            <h3>Embedded Linux</h3>
+            <p>OpenWrt, QSDK, kernel modules, netfilter/iptables, kernel debugging (GDB, SLUB), UCI configuration, Docker-based build environments, WSL2</p>
+          </div>
+          <div class="skill-category">
+            <h3>Networking</h3>
+            <p>TCP/IP, Ethernet, socket programming, QoS (HQoS, HNAT, TC), DPI, NAT, mesh networking (AWN, APSD), Wi-Fi 6/7/8</p>
+          </div>
+          <div class="skill-category">
+            <h3>Hardware & Computing</h3>
+            <p>Cadence, ModelSim, FPGA, Microcontrollers, SoC, Quartus Prime, SystemC, MultiSim</p>
           </div>
           <div class="skill-category">
             <h3>Tools & Frameworks</h3>
-            <p>Git/GitHub, JIRA, Docker, ROS2, TensorFlow, PyTorch, CARLA, OpenCV, Qt, REST APIs</p>
+            <p>Git/GitHub, Gerrit, JIRA, NATS, ROS2, TensorFlow, PyTorch, CARLA, OpenCV, Qt, REST APIs</p>
           </div>
           <div class="skill-category">
             <h3>Project Management</h3>
-            <p>Agile/Scrum, TOPSIS, SWOT Analysis, Scheduling, Project Control, Sprint Planning, Technical Documentation</p>
+            <p>Agile/Scrum, Project lifecycle management, Cross-team coordination, Scheduling, Sprint Planning, Technical Documentation</p>
           </div>
         </div>
       </div>
@@ -389,10 +306,9 @@
         <ul class="social-links">
           <li><a href="https://github.com/PuyaCompE" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
           <li><a href="https://www.linkedin.com/in/puyafard" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-          <li><a href="https://www.instagram.com/py.frd/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
           <li><a href="mailto:puyafardce@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
         </ul>
-        <p>© 2025 Puya Fard. All rights reserved.</p>
+        <p>© 2026 Puya Fard. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -411,5 +327,6 @@
       }
     }
   </script>
+  <script src="main.js"></script>
 </body>
 </html>
